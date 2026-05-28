@@ -6,7 +6,7 @@ from tavily import TavilyClient
 
 # --- Config ---
 OUTPUT_DIR = "AI与机器人部"
-DEEPSEEK_MODEL = "deepseek-chat"
+DEEPSEEK_MODEL = "deepseek-v4-pro"
 
 # --- Init clients ---
 deepseek = OpenAI(
