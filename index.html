@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 与机器人周报</title>
+<style>
+  :root {
+    --bg: #ffffff; --card-bg: #f8f9fb; --text: #1a1a2e;
+    --text-secondary: #555; --accent: #2563eb; --border: #e2e5ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+    max-width: 720px; margin: 0 auto; padding: 40px 24px;
+  }
+  .header { text-align: center; padding: 32px 0; border-bottom: 2px solid var(--border); margin-bottom: 32px; }
+  .header h1 { font-size: 26px; font-weight: 800; }
+  .header h1 span { color: var(--accent); }
+  .header p { color: var(--text-secondary); margin-top: 6px; font-size: 14px; }
+  .report-list { list-style: none; }
+  .report-list li { margin-bottom: 10px; }
+  .report-list a {
+    display: block; padding: 14px 18px;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 10px; text-decoration: none; color: var(--text);
+    transition: box-shadow 0.15s;
+  }
+  .report-list a:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .report-list .date { font-weight: 700; font-size: 16px; }
+  .report-list .label { font-size: 12px; color: var(--text-secondary); }
+  .latest-badge {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-left: 8px;
+    vertical-align: middle;
+  }
+  .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>AI 与机器人<span>周报</span></h1>
+  <p>每周一 9:00（北京时间）自动生成 · 学术论文与技术突破 · 中英双源</p>
+</div>
+<ul class="report-list" id="reports">
+  <li><a href="#">加载中...</a></li>
+</ul>
+<div class="footer">
+  <p>由 GitHub Actions 自动生成 · <a href="https://github.com/Practitioner108/ai-robotics-weekly" style="color: var(--accent);">查看仓库</a></p>
+</div>
+<script>
+(async () => {
+  try {
+    const resp = await fetch('https://api.github.com/repos/Practitioner108/ai-robotics-weekly/contents/AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8');
+    const files = await resp.json();
+    if (!Array.isArray(files)) throw new Error('not a dir');
+    const htmls = files
+      .filter(f => f.name.endsWith('.html'))
+      .sort((a, b) => b.name.localeCompare(a.name));
+    if (htmls.length === 0) {
+      document.getElementById('reports').innerHTML = '<li style="color:var(--text-secondary);text-align:center;padding:20px;">暂无报告</li>';
+      return;
+    }
+    document.getElementById('reports').innerHTML = htmls.map((f, i) => {
+      const d = f.name.replace('.html', '');
+      return `<li><a href="AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8/${encodeURIComponent(f.name)}">
+        <span class="date">${d}</span>${i === 0 ? '<span class="latest-badge">最新</span>' : ''}
+        <span class="label"> · 点击查看</span>
+      </a></li>`;
+    }).join('');
+  } catch {
+    document.getElementById('reports').innerHTML = '<li style="color:var(--text-secondary);text-align:center;padding:20px;">加载失败，请直接访问仓库</li>';
+  }
+})();
+</script>
+</body>
+</html>
