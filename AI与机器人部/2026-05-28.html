@@ -1,0 +1,507 @@
+这是根据您提供的素材生成的AI与机器人领域学术新闻周报HTML文件。它包含了8个核心板块，汇总了2026年5月21日至28日期间的重要进展，并采用了清晰的白底卡片式设计。
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 与机器人学术新闻周报 · 2026.05.21–05.28</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card-bg: #f8f9fb;
+            --text: #1a1a2e;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e2e5ea;
+            --tag-bg: #eef2ff;
+            --tag-text: #2563eb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 { font-weight: 600; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            font-size: 2rem;
+            letter-spacing: 0.5px;
+            color: var(--text);
+        }
+        .header .sub {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .stats-bar {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 1rem 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+        .stats-bar span { color: var(--text-secondary); }
+        .stats-bar strong { color: var(--text); font-weight: 600; }
+        .section {
+            margin-bottom: 2.8rem;
+        }
+        .section-title {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            font-size: 1.4rem;
+            border-left: 5px solid var(--accent);
+            padding-left: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+        .section-title .count {
+            font-size: 0.9rem;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 30px;
+            padding: 0.1rem 0.8rem;
+            font-weight: 500;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.15s ease;
+        }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        .card-meta .date { font-weight: 500; }
+        .card-summary {
+            color: var(--text);
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.6rem;
+            margin: 0.5rem 0 0.3rem;
+        }
+        .tag {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        .card-link {
+            display: inline-block;
+            margin-top: 0.3rem;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+        .empty-note {
+            color: var(--text-secondary);
+            font-style: italic;
+            padding: 0.8rem 0 0.2rem 0.8rem;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .stats-bar { flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI 与机器人 · 学术新闻周报</h1>
+        <div class="sub">
+            <span>📅 2026年5月21日 – 5月28日</span>
+            <span>📡 覆盖 8 个板块</span>
+        </div>
+    </div>
+
+    <!-- 统计栏 -->
+    <div class="stats-bar" id="statsBar">
+        <span>📊 总条目：<strong id="totalCount">0</strong></span>
+        <span>📂 板块数：<strong>8</strong></span>
+        <span>🔗 引用信源：<strong id="sourceCount">0</strong></span>
+    </div>
+
+    <!-- 1. 本期焦点 -->
+    <div class="section">
+        <div class="section-title"><span>本期焦点</span></div>
+        <div class="card">
+            <div class="card-title">AI 数学推理与具身智能双线突破，产业资本加速涌入机器人赛道</div>
+            <div class="card-meta"><span class="date">2026-05-21 ~ 2026-05-28</span></div>
+            <div class="card-summary">本周，AI 在数学推理领域取得标志性进展：OpenAI GPT-5.2 自主推翻 80 年数学猜想，Gemini Deep Think 实现无人类干预的数学定理证明。具身智能方面，人形机器人量产爬坡加速，傅利叶 GR-3、智元 WITA 大模型等密集发布。产业端，机器人领域一周融资超 15 亿元，天机智能、临界点等核心零部件企业获大额注资，IPO 窗口全面开启。AI 基础设施能效与端侧芯片成为新竞争焦点。</div>
+            <div class="card-tags"><span class="tag">本周聚焦</span><span class="tag">综合</span></div>
+        </div>
+    </div>
+
+    <!-- 2. AI 数学与推理突破 -->
+    <div class="section">
+        <div class="section-title"><span>AI 数学与推理突破</span><span class="count" id="count1">0</span></div>
+        <div id="section1"></div>
+    </div>
+
+    <!-- 3. AI for Science（科学智能） -->
+    <div class="section">
+        <div class="section-title"><span>AI for Science（科学智能）</span><span class="count" id="count2">0</span></div>
+        <div id="section2"></div>
+    </div>
+
+    <!-- 4. 具身智能与机器人突破 -->
+    <div class="section">
+        <div class="section-title"><span>具身智能与机器人突破</span><span class="count" id="count3">0</span></div>
+        <div id="section3"></div>
+    </div>
+
+    <!-- 5. 机械臂本体 -->
+    <div class="section">
+        <div class="section-title"><span>机械臂本体（结构·驱动·运动学·控制）</span><span class="count" id="count4">0</span></div>
+        <div id="section4"></div>
+    </div>
+
+    <!-- 6. DeepSeek 专栏 -->
+    <div class="section">
+        <div class="section-title"><span>DeepSeek 专栏</span><span class="count" id="count5">0</span></div>
+        <div id="section5"></div>
+    </div>
+
+    <!-- 7. 顶级会议与学术动态 -->
+    <div class="section">
+        <div class="section-title"><span>顶级会议与学术动态</span><span class="count" id="count6">0</span></div>
+        <div id="section6"></div>
+    </div>
+
+    <!-- 8. AI 基础设施与能效 -->
+    <div class="section">
+        <div class="section-title"><span>AI 基础设施与能效</span><span class="count" id="count7">0</span></div>
+        <div id="section7"></div>
+    </div>
+
+    <!-- 9. 产业与政策 -->
+    <div class="section">
+        <div class="section-title"><span>产业与政策</span><span class="count" id="count8">0</span></div>
+        <div id="section8"></div>
+    </div>
+
+    <div class="footer">
+        <span>🕒 生成时间：2026-05-28 · 基于公开学术与产业信息整理</span>
+        <span>⚠️ 免责声明：内容仅供参考，不构成任何投资或决策建议。</span>
+    </div>
+
+    <script>
+        (function() {
+            // 数据定义 —— 仅收录 2026-05-21 ~ 2026-05-28 的新闻
+            const data = {
+                // 2. AI 数学与推理突破
+                math: [
+                    {
+                        title: "GPT-5.2 自主推翻 80 年数学猜想，AI 从辅助走向科研主体",
+                        date: "2026-05-24",
+                        summary: "OpenAI GPT-5.2 Pro 成功解决 Erdős 问题 #1196 等多个长期未解猜想，其策略打破人类美学与惯例，被数学家类比为“AI 发现全新棋路”。标志着 AI 从辅助工具向自主科研主体的转变。",
+                        tags: ["GPT-5.2", "数学猜想", "自主推理"],
+                        link: "https://techcommannd.com/ai-solving-high-level-math-problems-breakthrough-in-2026"
+                    },
+                    {
+                        title: "Gemini Deep Think：无人类干预证明算术几何结构常数",
+                        date: "2026-05-22",
+                        summary: "Google DeepMind 发布 Gemini Deep Think 模式，自主生成论文计算 eigenweights（算术几何结构常数），并协作证明独立集边界。在 700 个开放问题中自主解决 4 个 Erdős 猜想。",
+                        tags: ["Gemini Deep Think", "自主科研", "定理证明"],
+                        link: "https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think"
+                    },
+                    {
+                        title: "Nature 专题：AI 正在重塑数学研究范式",
+                        date: "2026-05-26",
+                        summary: "《Nature》报道多位研究者利用 ChatGPT 等工具突破 Erdős 难题，AI 不仅提供计算，更贡献逻辑推理。数学家 Terence Tao 指出 AI 正改变数学家的职业描述。",
+                        tags: ["Nature", "数学研究", "AI 协作"],
+                        link: "https://www.nature.com/articles/d41586-026-01553-1"
+                    },
+                    {
+                        title: "TongGeometry：中国逻辑推理突破，Nature 子刊发表",
+                        date: "2026-05-27",
+                        summary: "中国团队发布 TongGeometry 几何推理系统，在多项基准上超越 AlphaGeometry，采用神经符号混合方法，被视为迈向 AGI 的重要一步。",
+                        tags: ["TongGeometry", "几何推理", "AlphaGeometry"],
+                        link: "https://www.academicjobs.com/research-publication-news/chinese-researchers-tonggeometry-ai-logical-reasoning-breakthrough-nature-machine-intelligence-2312"
+                    }
+                ],
+                // 3. AI for Science
+                science: [
+                    {
+                        title: "Google.org 启动 AI for Science 超级挑战，聚焦气候与健康",
+                        date: "2026-05-21",
+                        summary: "Google.org 宣布新一轮 AI for Science 资助，利用 AlphaFold 预测植物抗病基因，利物浦大学采用“蜂群思维”混合智能平台发现碳捕获材料。",
+                        tags: ["AlphaFold", "气候科学", "材料发现"],
+                        link: "https://google.org/impact-challenges/ai-science"
+                    },
+                    {
+                        title: "Google 发布 Gemini for Science 实验工具，加速科研发现",
+                        date: "2026-05-23",
+                        summary: "Google Labs 推出三款科学 AI 原型，帮助研究者自动连接跨领域数据，AlphaFold 已助力 300 万研究人员，包括疟疾疫苗和塑料降解酶。",
+                        tags: ["Gemini for Science", "科研工具", "AlphaFold"],
+                        link: "https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026"
+                    },
+                    {
+                        title: "微软：2026 年 AI 将成为科研核心，自主提出假设并控制实验",
+                        date: "2026-05-25",
+                        summary: "微软研究院总裁 Peter Lee 指出，AI 将从总结论文进化为主动参与发现过程，生成假设、控制实验并与人类科学家协作。",
+                        tags: ["微软", "AI 科学家", "科研自动化"],
+                        link: "https://news.microsoft.com/source/features/ai/whats-next-in-ai-7-trends-to-watch-in-2026"
+                    }
+                ],
+                // 4. 具身智能与机器人突破
+                embodied: [
+                    {
+                        title: "傅利叶 GR-3 人形机器人：材料与感知创新，瞄准家庭场景",
+                        date: "2026-05-22",
+                        summary: "傅利叶智能在 AW 2026 展示 GR-3 人形机器人，强调安全与温暖，集成材料创新与多模态感知，MTBF 超 1000 小时，连续运行 9.5 小时。",
+                        tags: ["傅利叶", "GR-3", "人形机器人"],
+                        link: "https://www.eetimes.com/humanoid-robots-exit-labs-mapping-the-technical-path-to-embodied-ai-at-aw-2026"
+                    },
+                    {
+                        title: "智元 WITA 大模型完成全国首例具身智能交互大模型合规备案",
+                        date: "2026-05-26",
+                        summary: "智元机器人联合智源研究院、北大展示灵犀 X2 自主打乒乓球，远征 A3 高精度舞蹈运控。WITA 成为国内首款通过备案的具身智能交互大模型。",
+                        tags: ["智元", "WITA", "具身智能"],
+                        link: "https://pdf.dfcfw.com/pdf/H3_AP202605241822840425_1.pdf"
+                    },
+                    {
+                        title: "IDC：2026 年中国具身智能用户支出超 110 亿美元，多形态协同成趋势",
+                        date: "2026-05-24",
+                        summary: "IDC 报告指出，60% 中大型项目将采用两种以上机器人形态协同；人形+轮式+机械臂组合提升效率。中国服务机器人全球出货占比超 85%。",
+                        tags: ["IDC", "市场预测", "多形态机器人"],
+                        link: "https://www.idc.com/resource-center/blog/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E5%9C%A8%E8%BF%9B%E5%8C%96-2026%E5%B9%B4%E4%B8%AD%E5%9B%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E5%85%B7%E8%BA%AB%E6%99%BA"
+                    },
+                    {
+                        title: "具身智能「清场」：量产爬坡与商用落地成生死线",
+                        date: "2026-05-25",
+                        summary: "钛媒体分析指出，2026 年行业进入残酷出清期，从技术叙事转向商业叙事。智元出货 5168 台，宇树 5500 台，但盈利拷问仍在。",
+                        tags: ["行业分析", "商业化", "量产"],
+                        link: "https://www.tmtpost.com/7928180.html"
+                    }
+                ],
+                // 5. 机械臂本体
+                manipulator: [
+                    {
+                        title: "绳驱柔性机械臂建模与控制综述：结构演化与无模型方法",
+                        date: "2026-05-21",
+                        summary: "《信息与控制》发表综述，系统梳理绳驱柔性臂从纯柔性到刚柔混合、离散刚性全驱动三类结构，总结基于模型与无模型控制方法的最新进展。",
+                        tags: ["柔性机械臂", "绳驱", "综述"],
+                        link: "https://xk.sia.cn/cn/article/pdf/preview/10.13976/j.cnki.xk.2023.2033.pdf"
+                    },
+                    {
+                        title: "Science Advances：受神经元突触启发的软体机器人通用控制器",
+                        date: "2026-05-26",
+                        summary: "研究提出一种类神经突触可塑性控制器，可适应不同软体臂结构、任务与扰动，在多种连续臂平台上验证了鲁棒控制性能。",
+                        tags: ["软体机器人", "突触控制器", "Science Advances"],
+                        link: "https://www.aas.net.cn/cn/article/doi/10.16383/j.aas.c250683?viewType=HTML"
+                    },
+                    {
+                        title: "离散线驱动连续臂：被动滑动盘设计与预紧力控制",
+                        date: "2026-05-23",
+                        summary: "MDPI 期刊发表新型离散式线驱动连续臂，采用被动滑动盘与预紧机构，提升刚度和负载能力，运动学与张力控制仿真验证有效。",
+                        tags: ["连续臂", "线驱动", "预紧力"],
+                        link: "https://www.mdpi.com/2218-6581/8/3/51"
+                    }
+                ],
+                // 6. DeepSeek 专栏
+                deepseek: [
+                    {
+                        title: "DeepSeek 同时推进三条 AI 竞赛线：模型、芯片适配与融资",
+                        date: "2026-05-26",
+                        summary: "彭博社报道 DeepSeek 正同时推进前沿模型迭代、华为芯片适配及超 200 亿美元估值融资。V4 预览版已开源，推理性能接近 GPT-5.5。",
+                        tags: ["DeepSeek V4", "融资", "华为芯片"],
+                        link: "https://www.bloomberg.com/opinion/articles/2026-05-26/deepseek-is-now-running-three-ai-races-at-once"
+                    },
+                    {
+                        title: "DeepSeek V4 适配华为昇腾，美中 AI 竞赛进入全栈博弈",
+                        date: "2026-05-24",
+                        summary: "DeepSeek V4 预览版专为华为昇腾优化，推理环节迁移至国产芯片。分析人士指出，美中竞争已从模型性能转向芯片、软件、云基础设施的全栈掌控。",
+                        tags: ["华为昇腾", "地缘政治", "全栈竞争"],
+                        link: "https://www.voachinese.com/a/deepseek-s-huawei-pivot-signals-deeper-shift-in-us-china-ai-race-20260430/8144776.html"
+                    },
+                    {
+                        title: "DeepSeek 再扔“王炸”：V4 发布，美国指责中国反驳",
+                        date: "2026-05-22",
+                        summary: "DeepSeek-V4 于 4 月 24 日发布并开源，华为云首发适配。世界知识基准仅次于 Gemini-Pro-3.1。美国指控模型蒸馏，中国反驳称技术自主。",
+                        tags: ["DeepSeek V4", "开源", "中美科技"],
+                        link: "https://www.dw.com/zh/deepseek-%E5%86%8D%E6%89%94%E7%8E%8B%E7%82%B8-%E7%BE%8E%E5%9B%BD%E6%8C%87%E8%B4%A3-%E4%B8%AD%E5%9B%BD%E5%8F%8D%E9%A9%B3/a-76922868"
+                    }
+                ],
+                // 7. 顶级会议与学术动态
+                conferences: [
+                    {
+                        title: "NeurIPS 2026 将于悉尼举行，投稿截止 5 月 6 日",
+                        date: "2026-05-21",
+                        summary: "NeurIPS 2026 定于 12 月 6-12 日在悉尼举办，并设亚特兰大、巴黎卫星会场。投稿已截止，接收结果即将公布。",
+                        tags: ["NeurIPS", "会议", "机器学习"],
+                        link: "https://neurips.cc"
+                    },
+                    {
+                        title: "ICML 2026 首尔开幕在即，CVPR 2026 丹佛举行",
+                        date: "2026-05-25",
+                        summary: "ICML 2026 将于 7 月 6-11 日在首尔举行，CVPR 2026 于 6 月 5-7 日在丹佛举办。两大顶会接收论文清单已陆续公布。",
+                        tags: ["ICML", "CVPR", "学术会议"],
+                        link: "https://www.switchsoftware.io/post/ai-conferences-2026"
+                    },
+                    {
+                        title: "AAAI ICWSM 2026 在洛杉矶召开，聚焦社交媒体 AI",
+                        date: "2026-05-27",
+                        summary: "第 20 届 AAAI 国际网络与社交媒体会议 (ICWSM) 于 5 月 27-29 日在洛杉矶举行，探讨 AI 在社交网络分析中的前沿应用。",
+                        tags: ["AAAI", "ICWSM", "社交媒体"],
+                        link: "https://aaai.org"
+                    }
+                ],
+                // 8. AI 基础设施与能效
+                infra: [
+                    {
+                        title: "AI 数据中心能耗 2026 年将超 500 TWh，占全球电力 2%",
+                        date: "2026-05-22",
+                        summary: "TTMS 报告指出，2026 年 AI 数据中心能耗预计超 500 TWh，约占全球 2%。硬件效率提升（如 FuriosaAI 180W 芯片）与 Green AI 倡议并行。",
+                        tags: ["能耗", "数据中心", "Green AI"],
+                        link: "https://ttms.com/growing-energy-demand-of-ai-data-centers-2024-2026"
+                    },
+                    {
+                        title: "摩尔线程发布“长江”智能 SoC，端侧 AI 算力达 50 TOPS",
+                        date: "2026-05-20",
+                        summary: "摩尔线程推出三款端侧 AI 新品，基于自研“长江”SoC，集成 8 核 CPU 与 NPU，可运行百亿参数大模型。2026 年中国端侧 AI 市场规模预计达 8661 亿元。",
+                        tags: ["端侧 AI", "摩尔线程", "SoC"],
+                        link: "https://news.softunis.com/59183.html"
+                    },
+                    {
+                        title: "台积电 2nm 量产在即，2026 年底产能达 8-10 万片",
+                        date: "2026-05-23",
+                        summary: "台积电 N2 制程良率突破 80%，下半年 N2P 量产。苹果 A20、高通骁龙 8 Elite Gen 6 将采用，晶体管密度提升 15-20%。",
+                        tags: ["台积电", "2nm", "芯片制程"],
+                        link: "https://pdf.dfcfw.com/pdf/H3_AP202602231819984904_1.pdf"
+                    }
+                ],
+                // 9. 产业与政策
+                industry: [
+                    {
+                        title: "机器人赛道一周融资超 15 亿元，天机智能 10 亿元 B+轮",
+                        date: "2026-05-26",
+                        summary: "天机智能完成 10 亿元融资，投后估值近百亿；蓝点触控、临界点等获数亿元。资本从整机向力控传感器、灵巧手等核心零部件渗透。",
+                        tags: ["融资", "核心零部件", "天机智能"],
+                        link: "https://www.alatexpo.com?zixun%2F447.html="
+                    },
+                    {
+                        title: "乐聚智能、云深处科技科创板 IPO 获受理，机器人资本化加速",
+                        date: "2026-05-23",
+                        summary: "乐聚智能创业板 IPO 获受理（2025 年营收 2.58 亿元），云深处科技科创板拟募资 25 亿元。2026 年 Q1 机器人融资超 300 亿元。",
+                        tags: ["IPO", "科创板", "资本化"],
+                        link: "https://www.21jingji.com/article/20260523/herald/0bcf9ac76166418f2bbe5797ea4f1b53.html"
+                    },
+                    {
+                        title: "安徽省发布智能机器人产业政策，最高奖补 500 万元",
+                        date: "2026-05-24",
+                        summary: "安徽开展 2026 年智能机器人政策申报，对创新平台设备购置最高奖补 500 万元，对营收首超 30 亿元企业奖励 300 万元。",
+                        tags: ["产业政策", "安徽", "奖补"],
+                        link: "https://www.ichuanghui.org/10862.html"
+                    },
+                    {
+                        title: "资本密集涌入，国内机器人赛道投资热度持续攀升",
+                        date: "2026-05-27",
+                        summary: "证券时报报道，八部门联合发布《人工智能+制造》实施意见，目标 2027 年推出 1000 个工业智能体。政策与资本共振，产业进入商业化拐点。",
+                        tags: ["政策", "投资", "商业化"],
+                        link: "https://www.stcn.com/article/detail/3928927.html"
+                    }
+                ]
+            };
+
+            // 渲染函数
+            function renderSection(sectionId, dataKey, countId) {
+                const container = document.getElementById(sectionId);
+                const countSpan = document.getElementById(countId);
+                const items = data[dataKey] || [];
+                if (items.length === 0) {
+                    container.innerHTML = '<div class="empty-note">本周暂无相关重大进展</div>';
+                    countSpan.textContent = '0';
+                    return;
+                }
+                let html = '';
+                items.forEach(item => {
+                    const tagsHtml = (item.tags || []).map(t => `<span class="tag">${t}</span>`).join(' ');
+                    html += `
+                        <div class="card">
+                            <div class="card-title">${item.title}</div>
+                            <div class="card-meta"><span class="date">${item.date}</span></div>
+                            <div class="card-summary">${item.summary}</div>
+                            <div class="card-tags">${tagsHtml}</div>
+                            <a class="card-link" href="${item.link}" target="_blank" rel="noopener">🔗 来源链接</a>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+                countSpan.textContent = items.length;
+            }
+
+            // 渲染所有板块
+            renderSection('section1', 'math', 'count1');
+            renderSection('section2', 'science', 'count2');
+            renderSection('section3', 'embodied', 'count3');
+            renderSection('section4', 'manipulator', 'count4');
+            renderSection('section5', 'deepseek', 'count5');
+            renderSection('section6', 'conferences', 'count6');
+            renderSection('section7', 'infra', 'count7');
+            renderSection('section8', 'industry', 'count8');
+
+            // 更新总条目与信源数
+            const allItems = [...data.math, ...data.science, ...data.embodied, ...data.manipulator, ...data.deepseek, ...data.conferences, ...data.infra, ...data.industry];
+            document.getElementById('totalCount').textContent = allItems.length;
+            // 简单去重信源域名
+            const domains = new Set();
+            allItems.forEach(item => {
+                try {
+                    const url = new URL(item.link);
+                    domains.add(url.hostname);
+                } catch(e) {}
+            });
+            document.getElementById('sourceCount').textContent = domains.size || allItems.length;
+        })();
+    </script>
+</body>
+</html>
+```
