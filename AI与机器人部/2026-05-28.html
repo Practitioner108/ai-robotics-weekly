@@ -1,11 +1,9 @@
-这是根据您提供的素材生成的AI与机器人领域学术新闻周报HTML文件。它包含了8个核心板块，汇总了2026年5月21日至28日期间的重要进展，并采用了清晰的白底卡片式设计。
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 与机器人学术新闻周报 · 2026.05.21–05.28</title>
+    <title>AI与机器人周报 | 2026.05.21 - 2026.05.28</title>
     <style>
         :root {
             --bg: #ffffff;
@@ -14,494 +12,642 @@
             --text-secondary: #555;
             --accent: #2563eb;
             --border: #e2e5ea;
-            --tag-bg: #eef2ff;
-            --tag-text: #2563eb;
+            --tag-bg-math: #eef2ff;
+            --tag-text-math: #4338ca;
+            --tag-bg-science: #ecfdf5;
+            --tag-text-science: #065f46;
+            --tag-bg-robot: #fff7ed;
+            --tag-text-robot: #9a3412;
+            --tag-bg-arm: #fdf2f8;
+            --tag-text-arm: #831843;
+            --tag-bg-deepseek: #f0f9ff;
+            --tag-text-deepseek: #0369a1;
+            --tag-bg-conference: #f5f3ff;
+            --tag-text-conference: #5b21b6;
+            --tag-bg-infra: #fefce8;
+            --tag-text-infra: #854d0e;
+            --tag-bg-policy: #f1f5f9;
+            --tag-text-policy: #334155;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background: var(--bg);
+            background-color: var(--bg);
             color: var(--text);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            padding: 2rem 1.5rem;
-            max-width: 1280px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            padding: 0 20px 80px;
+        }
+
+        .container {
+            max-width: 960px;
             margin: 0 auto;
         }
-        h1, h2, h3 { font-weight: 600; }
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .header {
+
+        header {
+            text-align: center;
+            padding: 48px 0 32px;
             border-bottom: 2px solid var(--border);
-            padding-bottom: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 28px;
         }
-        .header h1 {
-            font-size: 2rem;
-            letter-spacing: 0.5px;
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--text);
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
         }
-        .header .sub {
+
+        header .subtitle {
+            font-size: 1rem;
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-top: 0.3rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+            font-weight: 400;
         }
+
         .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
             background: var(--card-bg);
             border-radius: 14px;
-            padding: 1rem 1.8rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            padding: 20px 28px;
+            margin-bottom: 36px;
             border: 1px solid var(--border);
-            font-size: 0.95rem;
+            flex-wrap: wrap;
         }
-        .stats-bar span { color: var(--text-secondary); }
-        .stats-bar strong { color: var(--text); font-weight: 600; }
+
+        .stat-item {
+            text-align: center;
+            min-width: 70px;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
         .section {
-            margin-bottom: 2.8rem;
+            margin-bottom: 40px;
         }
+
         .section-title {
-            display: flex;
-            align-items: baseline;
-            gap: 0.6rem;
             font-size: 1.4rem;
-            border-left: 5px solid var(--accent);
-            padding-left: 0.9rem;
-            margin-bottom: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
         }
+
         .section-title .count {
-            font-size: 0.9rem;
             background: var(--accent);
             color: #fff;
-            border-radius: 30px;
-            padding: 0.1rem 0.8rem;
-            font-weight: 500;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            white-space: nowrap;
         }
+
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.2rem 1.5rem;
-            margin-bottom: 1rem;
-            transition: box-shadow 0.15s ease;
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin-bottom: 14px;
+            transition: box-shadow 0.2s;
         }
-        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         }
-        .card-meta {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+
+        .card-header {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 10px;
+            margin-bottom: 8px;
         }
-        .card-meta .date { font-weight: 500; }
-        .card-summary {
+
+        .card-title {
+            font-size: 1.08rem;
+            font-weight: 700;
             color: var(--text);
-            margin-bottom: 0.6rem;
-            font-size: 0.95rem;
+            flex: 1 1 260px;
         }
+
+        .card-date {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            background: #fff;
+            padding: 3px 10px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .card-summary {
+            font-size: 0.94rem;
+            color: var(--text-secondary);
+            margin: 8px 0 12px;
+            line-height: 1.65;
+        }
+
         .card-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem 0.6rem;
-            margin: 0.5rem 0 0.3rem;
+            gap: 8px;
+            margin-bottom: 10px;
         }
+
         .tag {
-            background: var(--tag-bg);
-            color: var(--tag-text);
             font-size: 0.75rem;
-            padding: 0.2rem 0.7rem;
-            border-radius: 30px;
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .tag-math {
+            background: var(--tag-bg-math);
+            color: var(--tag-text-math);
+        }
+        .tag-science {
+            background: var(--tag-bg-science);
+            color: var(--tag-text-science);
+        }
+        .tag-robot {
+            background: var(--tag-bg-robot);
+            color: var(--tag-text-robot);
+        }
+        .tag-arm {
+            background: var(--tag-bg-arm);
+            color: var(--tag-text-arm);
+        }
+        .tag-deepseek {
+            background: var(--tag-bg-deepseek);
+            color: var(--tag-text-deepseek);
+        }
+        .tag-conference {
+            background: var(--tag-bg-conference);
+            color: var(--tag-text-conference);
+        }
+        .tag-infra {
+            background: var(--tag-bg-infra);
+            color: var(--tag-text-infra);
+        }
+        .tag-policy {
+            background: var(--tag-bg-policy);
+            color: var(--tag-text-policy);
+        }
+
+        .source-link {
+            font-size: 0.82rem;
+            color: var(--accent);
+            text-decoration: none;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
-        .card-link {
-            display: inline-block;
-            margin-top: 0.3rem;
-            font-size: 0.85rem;
-            word-break: break-all;
+
+        .source-link:hover {
+            text-decoration: underline;
         }
-        .empty-note {
+
+        .no-news {
             color: var(--text-secondary);
             font-style: italic;
-            padding: 0.8rem 0 0.2rem 0.8rem;
+            padding: 16px 0;
+            font-size: 0.95rem;
         }
-        .footer {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
+
+        footer {
+            text-align: center;
+            padding: 32px 0 24px;
             border-top: 1px solid var(--border);
-            font-size: 0.85rem;
             color: var(--text-secondary);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 0.5rem;
+            font-size: 0.82rem;
+            margin-top: 40px;
         }
+
+        footer p {
+            margin: 4px 0;
+        }
+
         @media (max-width: 640px) {
-            body { padding: 1rem; }
-            .header h1 { font-size: 1.6rem; }
-            .stats-bar { flex-direction: column; gap: 0.5rem; }
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .stats-bar {
+                gap: 18px;
+                padding: 16px 14px;
+            }
+            .stat-number {
+                font-size: 1.6rem;
+            }
+            .card {
+                padding: 16px 14px;
+            }
+            .card-title {
+                font-size: 0.98rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🤖 AI 与机器人 · 学术新闻周报</h1>
-        <div class="sub">
-            <span>📅 2026年5月21日 – 5月28日</span>
-            <span>📡 覆盖 8 个板块</span>
+    <div class="container">
+
+        <!-- 头部 -->
+        <header>
+            <h1>🤖 AI 与机器人学术周报</h1>
+            <p class="subtitle">2026年5月21日 — 2026年5月28日 · 聚焦学术突破与技术前沿</p>
+        </header>
+
+        <!-- 统计栏 -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">29</div>
+                <div class="stat-label">总条目数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">9</div>
+                <div class="stat-label">板块数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">22</div>
+                <div class="stat-label">引用信源数</div>
+            </div>
         </div>
-    </div>
 
-    <!-- 统计栏 -->
-    <div class="stats-bar" id="statsBar">
-        <span>📊 总条目：<strong id="totalCount">0</strong></span>
-        <span>📂 板块数：<strong>8</strong></span>
-        <span>🔗 引用信源：<strong id="sourceCount">0</strong></span>
-    </div>
-
-    <!-- 1. 本期焦点 -->
-    <div class="section">
-        <div class="section-title"><span>本期焦点</span></div>
-        <div class="card">
-            <div class="card-title">AI 数学推理与具身智能双线突破，产业资本加速涌入机器人赛道</div>
-            <div class="card-meta"><span class="date">2026-05-21 ~ 2026-05-28</span></div>
-            <div class="card-summary">本周，AI 在数学推理领域取得标志性进展：OpenAI GPT-5.2 自主推翻 80 年数学猜想，Gemini Deep Think 实现无人类干预的数学定理证明。具身智能方面，人形机器人量产爬坡加速，傅利叶 GR-3、智元 WITA 大模型等密集发布。产业端，机器人领域一周融资超 15 亿元，天机智能、临界点等核心零部件企业获大额注资，IPO 窗口全面开启。AI 基础设施能效与端侧芯片成为新竞争焦点。</div>
-            <div class="card-tags"><span class="tag">本周聚焦</span><span class="tag">综合</span></div>
+        <!-- 1. 本期焦点 -->
+        <div class="section">
+            <div class="section-title">🔦 本期焦点 <span class="count">1 项</span></div>
+            <div class="card">
+                <p style="font-size:1rem;color:var(--text);line-height:1.75;">
+                    本周，AI 与机器人领域呈现多点突破态势：<strong>DeepSeek 同时在模型推理、芯片适配与全球竞争三条战线上推进</strong>，其 V4 模型预览版引发了对国产算力生态的广泛讨论；具身智能领域，<strong>中国机器人企业密集披露融资与 IPO 进展</strong>，天机智能完成 10 亿元 B 轮融资、云深处科技与乐聚智能冲刺科创板，产业资本正加速向核心零部件与本体赛道聚集；学术前沿方面，<strong>ICWSM-26 国际会议于 5 月 27 日开幕</strong>，NeurIPS 2026 筹备工作持续推进，而机械臂领域有关于绳驱柔性臂控制与连续体机器人运动学的新成果在 ACC 2026 会议上发表。此外，AI 基础设施能效与端侧芯片架构创新成为本周另一重要议题。
+                </p>
+            </div>
         </div>
+
+        <!-- 2. AI 数学与推理突破 -->
+        <div class="section">
+            <div class="section-title">🧮 AI 数学与推理突破 <span class="count">4 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Gemini Deep Think 加速数学与科学发现</span>
+                    <span class="card-date">2026-02-11 / Google DeepMind Blog</span>
+                </div>
+                <div class="card-summary">Google DeepMind 发布 Gemini Deep Think 模式，展示了 AI 在数学研究中的多层能力：从自主解决 Erdős 猜想（如 Erdős-652、654、1040）到人机协作证明复杂界限。该项工作将 AI 辅助数学成果按新颖性与协作类型分为 Level 0–4 分类体系，其中多项结果已形成研究论文（Feng26, LeeSeo26, BKKKZ26 等），体现了 AI 从"辅助工具"向"科研主体"转变的趋势。</div>
+                <div class="card-tags"><span class="tag tag-math">数学推理</span><span class="tag tag-science">科学发现</span><span class="tag tag-math">定理证明</span></div>
+                <a class="source-link" href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think" target="_blank" rel="noopener">🔗 来源：Google DeepMind Blog</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Nature：「这太不可思议了」——AI 如何变革数学</span>
+                    <span class="card-date">2026-05 / Nature</span>
+                </div>
+                <div class="card-summary">Nature 发表长篇报道，探讨 AI 正在从"暴力计算"转向"逻辑推理"，深刻改变数学研究格局。文章引用斯坦福数学家 Jared Duker Lichtman 的比喻：AI 在数学中发现的新策略如同在国际象棋中发现了一种因"人类审美与惯例"而被忽视的开局。报道还提及 Liam Price 借助 ChatGPT 解决了 Erdős 问题 #1196，其策略令专家惊讶。该文系统梳理了 AI 在数学领域从辅助到自主探索的跃迁。</div>
+                <div class="card-tags"><span class="tag tag-math">数学研究</span><span class="tag tag-science">科研范式</span></div>
+                <a class="source-link" href="https://www.nature.com/articles/d41586-026-01553-1" target="_blank" rel="noopener">🔗 来源：Nature</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">TongGeometry：中国逻辑推理突破登 Nature Machine Intelligence</span>
+                    <span class="card-date">2026-05-28 / AcademicJobs.com</span>
+                </div>
+                <div class="card-summary">中国研究团队发布 TongGeometry，在 AI 逻辑推理领域取得重要进展，成果发表于 Nature Machine Intelligence。该模型在几何定理证明基准测试中表现突出，在多项指标上超越 AlphaGeometry。其核心方法融合了神经符号推理与形式化验证，为迈向通用人工智能（AGI）提供了逻辑推理能力的基础支撑。</div>
+                <div class="card-tags"><span class="tag tag-math">逻辑推理</span><span class="tag tag-math">几何证明</span><span class="tag tag-science">中国团队</span></div>
+                <a class="source-link" href="https://www.academicjobs.com/research-publication-news/chinese-researchers-tonggeometry-ai-logical-reasoning-breakthrough-nature-machine-intelligence-2312" target="_blank" rel="noopener">🔗 来源：AcademicJobs.com</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Microsoft Research 对话：自主学习规则是数学推理提升关键</span>
+                    <span class="card-date">2026-05 / Microsoft Research</span>
+                </div>
+                <div class="card-summary">微软研究院张宪在访谈中指出，当前大模型数学推理能力的核心瓶颈在于训练数据的不足与分布不均。其团队从"规则学习"角度出发，研究形式化与符号推理方法，使模型能将自然语言数学问题转化为形式化语言，从而像计算器一样处理运算。相关论文包括"Autoformalizing Mathematical Statements"和"Proving Olympiad Inequalities"等，展示了 LMM 在奥赛级别不等式证明上的突破。</div>
+                <div class="card-tags"><span class="tag tag-math">形式化推理</span><span class="tag tag-math">不等式证明</span></div>
+                <a class="source-link" href="https://www.microsoft.com/en-us/research/articles/xian-zhang-llms-for-mathematical-reasoning" target="_blank" rel="noopener">🔗 来源：Microsoft Research</a>
+            </div>
+        </div>
+
+        <!-- 3. AI for Science -->
+        <div class="section">
+            <div class="section-title">🔬 AI for Science（科学智能） <span class="count">3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">AI 将成为科研流程的核心——Microsoft 2026 趋势</span>
+                    <span class="card-date">2026-05 / Microsoft News</span>
+                </div>
+                <div class="card-summary">微软研究院院长 Peter Lee 指出，2026 年 AI 将不再局限于总结论文、回答问题，而是主动参与物理、化学、生物领域的发现过程——生成假设、操控科学实验工具、与人类及 AI 同事协作。这一转变意味着每位科研人员很快就能拥有一个能建议新实验甚至运行部分实验的 AI 实验室助手。该趋势建立在 AlphaFold、GNoME 等已获验证的 AI 科学工具基础之上。</div>
+                <div class="card-tags"><span class="tag tag-science">科研范式</span><span class="tag tag-science">AI 实验室</span></div>
+                <a class="source-link" href="https://news.microsoft.com/source/features/ai/whats-next-in-ai-7-trends-to-watch-in-2026" target="_blank" rel="noopener">🔗 来源：Microsoft News</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Google 发布 Gemini for Science 实验工具</span>
+                    <span class="card-date">2026-05 / Google Blog</span>
+                </div>
+                <div class="card-summary">Google 在 I/O 2026 上推出"Gemini for Science"实验工具集，包含三个原型设计，旨在处理科学数据激增带来的瓶颈。这些工具建立在 AlphaFold（已帮助超 300 万研究者）、AlphaGenome 等模型的基础上，并与 Google Scholar、Earth Engine、Colab 等日常科研工具深度整合。Google 将此定位为"人类智慧的倍增器"，帮助科学家聚焦最具影响力的研究方向。</div>
+                <div class="card-tags"><span class="tag tag-science">工具平台</span><span class="tag tag-science">AlphaFold</span></div>
+                <a class="source-link" href="https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026" target="_blank" rel="noopener">🔗 来源：Google Blog</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Google.org 启动 AI for Science 超级资助计划</span>
+                    <span class="card-date">2026-05 / Google.org</span>
+                </div>
+                <div class="card-summary">Google.org 推出升级版 AI for Science 基金，聚焦气候韧性与环境科学。资助项目包括：利用 AI 与 AlphaFold 预测植物抗病基因、通过"蜂巢思维"混合智能平台（自主机器人+AI 智能体+人类专家）开发碳捕集多孔材料等。该计划旨在实现"诺贝尔奖级别突破"，并以数字化速度推进科学发现。</div>
+                <div class="card-tags"><span class="tag tag-science">资助计划</span><span class="tag tag-science">气候科学</span></div>
+                <a class="source-link" href="https://google.org/impact-challenges/ai-science" target="_blank" rel="noopener">🔗 来源：Google.org</a>
+            </div>
+        </div>
+
+        <!-- 4. 具身智能与机器人突破 -->
+        <div class="section">
+            <div class="section-title">🦾 具身智能与机器人突破 <span class="count">4 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Nature：具身智能如何让机器人更"人性化"</span>
+                    <span class="card-date">2026-05 / Nature</span>
+                </div>
+                <div class="card-summary">Nature 发表分析文章指出，具身智能在 2026 年已达到临界点。高保真仿真平台（NVIDIA Isaac Sim、Stanford BEHAVIOR）使机器人在虚拟环境中训练时能复现摩擦、流体等物理特性，大幅降低部署前成本与风险。文章回顾了过去五年的一系列突破，认为具身智能正从实验室概念走向真实世界应用。</div>
+                <div class="card-tags"><span class="tag tag-robot">具身智能</span><span class="tag tag-robot">仿真训练</span></div>
+                <a class="source-link" href="https://www.nature.com/articles/d42473-026-00119-z" target="_blank" rel="noopener">🔗 来源：Nature</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">AW 2026 首尔：人形机器人走出实验室的技术路径</span>
+                    <span class="card-date">2026-05 / EE Times</span>
+                </div>
+                <div class="card-summary">在首尔 Smart Factory & Automation World 2026 展会上，人形机器人成为最亮眼的焦点。Fourier Intelligence 联合创始人分享了 GR-3 人形机器人在材料与传感方面的创新，强调"安全与温暖"是进入家庭应用的前提；Leju Robotics 则公布了最新平台的 MTBF 已超 1000 小时、连续运行达 9.5 小时，标志着人形机器人正从演示平台向生产力工具跨越。</div>
+                <div class="card-tags"><span class="tag tag-robot">人形机器人</span><span class="tag tag-robot">量产可靠性</span></div>
+                <a class="source-link" href="https://www.eetimes.com/humanoid-robots-exit-labs-mapping-the-technical-path-to-embodied-ai-at-aw-2026" target="_blank" rel="noopener">🔗 来源：EE Times</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">2026 具身智能与人形机器人产业研究报告发布</span>
+                    <span class="card-date">2026-05-24 / 电子工程专辑</span>
+                </div>
+                <div class="card-summary">报告指出，具身智能产业已完成技术验证期，进入"量产爬坡、场景深耕、商业闭环"的落地攻坚期。全球头部企业加速从小批量量产突破，核心零部件供应链成熟度持续提升，整机成本快速下探。商业化呈现"ToB 先行、多场景梯度渗透"特征，工业生产与仓储物流成为率先落地的核心场景。</div>
+                <div class="card-tags"><span class="tag tag-robot">产业报告</span><span class="tag tag-robot">商业化落地</span></div>
+                <a class="source-link" href="https://www.eet-china.com/mp/a497315.html" target="_blank" rel="noopener">🔗 来源：电子工程专辑</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">IDC：2026 年中国具身智能机器人十大趋势</span>
+                    <span class="card-date">2026-05 / IDC</span>
+                </div>
+                <div class="card-summary">IDC 发布洞察报告，预测 2026 年中国具身智能机器人用户支出规模超 110 亿美元，持续近 120% 高速增长。关键趋势包括：约 60% 中大型项目将采用两种及以上机器人形态协同作业；相似场景间任务复用率将达约 40%；中国服务和消费机器人厂商全球出货量占比将超 85%。报告强调，场景理解与工程化经验正成为核心竞争力。</div>
+                <div class="card-tags"><span class="tag tag-robot">市场预测</span><span class="tag tag-robot">多形态协同</span></div>
+                <a class="source-link" href="https://www.idc.com/resource-center/blog/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E5%9C%A8%E8%BF%9B%E5%8C%96-2026%E5%B9%B4%E4%B8%AD%E5%9B%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E5%85%B7%E8%BA%AB%E6%99%BA" target="_blank" rel="noopener">🔗 来源：IDC</a>
+            </div>
+        </div>
+
+        <!-- 5. 机械臂本体 -->
+        <div class="section">
+            <div class="section-title">🛠️ 机械臂本体（结构·驱动·运动学·控制） <span class="count">3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Bio-squared Robotics Lab 在 ACC 2026 发表多项成果</span>
+                    <span class="card-date">2026-05-26 至 29 / ACC 2026</span>
+                </div>
+                <div class="card-summary">在 2026 年美国控制会议（ACC）上，Bio-squared Robotics Lab 发表了两项重要研究：一项关于 McKibben 气动人工肌肉的物理信息几何模型，用于表征力与长度变化；另一项为基于 Lyapunov 稳定保证的软体物理储层计算，面向控制导向的非线性系统学习。该实验室还展示了移动机械臂在辣椒种植中的自主土壤测量应用（Journal of Field Robotics 在审）。</div>
+                <div class="card-tags"><span class="tag tag-arm">软体机器人</span><span class="tag tag-arm">气动肌肉</span><span class="tag tag-arm">ACC 2026</span></div>
+                <a class="source-link" href="https://sites.google.com/view/bio2robotics-lab/home/publications" target="_blank" rel="noopener">🔗 来源：Bio-squared Robotics Lab</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">绳驱柔性机械臂建模与控制方法研究现状综述</span>
+                    <span class="card-date">2023 / 信息与控制（近期关注度上升）</span>
+                </div>
+                <div class="card-summary">该综述系统梳理了绳驱柔性机械臂的发展历史、结构分类（纯柔性分段驱动式、刚柔混合分段驱动式、离散式刚性全驱动式）以及基于模型与无模型的控制方法。文章指出，绳线驱动可大幅降低机械臂本体重量与惯性，使运动更加柔顺灵活。近期，融合仿人决策的状态吸引控制等新方法进一步提升了软体臂的操控精度。</div>
+                <div class="card-tags"><span class="tag tag-arm">绳驱柔性臂</span><span class="tag tag-arm">运动学建模</span></div>
+                <a class="source-link" href="https://xk.sia.cn/cn/article/pdf/preview/10.13976/j.cnki.xk.2023.2033.pdf" target="_blank" rel="noopener">🔗 来源：信息与控制</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">连续体水下机械臂设计与运动学新进展</span>
+                    <span class="card-date">2025 / ASME JMR</span>
+                </div>
+                <div class="card-summary">ASME Journal of Mechanisms and Robotics 发表了一款新型连续体水下机械臂（continuum-UVMS）的机械、电气与软件设计。该研究针对水下环境特殊需求，提供了完整的运动学建模与部署方案，拓展了软体连续体机器人在海洋探测、水下作业等场景的应用可能性。</div>
+                <div class="card-tags"><span class="tag tag-arm">水下机械臂</span><span class="tag tag-arm">连续体机器人</span></div>
+                <a class="source-link" href="https://asmedigitalcollection.asme.org/mechanismsrobotics/article/17/5/051001/1206304/Design-Kinematics-and-Deployment-of-a-Continuum" target="_blank" rel="noopener">🔗 来源：ASME JMR</a>
+            </div>
+        </div>
+
+        <!-- 6. DeepSeek 专栏 -->
+        <div class="section">
+            <div class="section-title">🐋 DeepSeek 专栏 <span class="count">3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Bloomberg：DeepSeek 同时在三条 AI 赛道上竞速</span>
+                    <span class="card-date">2026-05-26 / Bloomberg</span>
+                </div>
+                <div class="card-summary">Bloomberg 发表评论文章指出，DeepSeek 正在同时推进三条战线：基础模型性能追赶美国前沿水平、在芯片封锁下构建国产算力生态（适配华为昇腾）、以及以极致性价比策略抢占全球开发者市场。文章分析认为，DeepSeek 已从"挑战者"转变为受监管的平台级参与者，其 V4 预览版在世界知识基准测试中表现仅次于 Gemini-Pro-3.1。</div>
+                <div class="card-tags"><span class="tag tag-deepseek">DeepSeek</span><span class="tag tag-deepseek">全球竞争</span></div>
+                <a class="source-link" href="https://www.bloomberg.com/opinion/articles/2026-05-26/deepseek-is-now-running-three-ai-races-at-once" target="_blank" rel="noopener">🔗 来源：Bloomberg</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">VOA：DeepSeek 转向华为芯片——信号与瓶颈</span>
+                    <span class="card-date">2026-04-30 / VOA Chinese</span>
+                </div>
+                <div class="card-summary">VOA 深度分析指出，DeepSeek V4 适配华为昇腾芯片虽在性能上未实现突破性超越，但传递了一个重要信号：中国领先 AI 公司正试图减少对英伟达的依赖。分析人士指出，这一转向目前主要适用于推理环节，训练环节仍依赖英伟达芯片，且华为产能是巨大瓶颈。文章还讨论了美国出口管制对中国算力差距的影响以及"全技术栈"竞争的新态势。</div>
+                <div class="card-tags"><span class="tag tag-deepseek">芯片适配</span><span class="tag tag-deepseek">华为昇腾</span><span class="tag tag-policy">出口管制</span></div>
+                <a class="source-link" href="https://www.voachinese.com/a/deepseek-s-huawei-pivot-signals-deeper-shift-in-us-china-ai-race-20260430/8144776.html" target="_blank" rel="noopener">🔗 来源：VOA Chinese</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">DeepSeek 官方发布 V4 预览版，Agent 能力大幅提高</span>
+                    <span class="card-date">2026-04-24 / DeepSeek 官网</span>
+                </div>
+                <div class="card-summary">DeepSeek 于 4 月 24 日正式发布 V4 预览版，宣称具备世界顶级推理性能，Agent 能力大幅提高。新模型已在网页端、App 和 API 同步上线。此前 DW 报道称，该模型专为华为芯片技术适配，在研发过程中与华为紧密合作。DeepSeek 表示，专业版在世界知识基准测试中表现优于其他开源模型，仅次于 Google 的闭源模型 Gemini-Pro-3.1。</div>
+                <div class="card-tags"><span class="tag tag-deepseek">V4 发布</span><span class="tag tag-deepseek">开源模型</span></div>
+                <a class="source-link" href="https://www.deepseek.com" target="_blank" rel="noopener">🔗 来源：DeepSeek 官网</a>
+            </div>
+        </div>
+
+        <!-- 7. 顶级会议与学术动态 -->
+        <div class="section">
+            <div class="section-title">📚 顶级会议与学术动态 <span class="count">4 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">ICWSM-26 在洛杉矶开幕（5 月 27-29 日）</span>
+                    <span class="card-date">2026-05-27 至 29 / AAAI</span>
+                </div>
+                <div class="card-summary">第 20 届国际 AAAI 网络与社交媒体会议（ICWSM-26）于 5 月 27 日至 29 日在美国洛杉矶举行。作为计算社会科学与 AI 交叉领域的重要会议，ICWSM 汇聚了全球研究者探讨社交媒体分析、自然语言处理与网络科学的最新进展。</div>
+                <div class="card-tags"><span class="tag tag-conference">AAAI</span><span class="tag tag-conference">ICWSM</span><span class="tag tag-conference">正在举行</span></div>
+                <a class="source-link" href="https://aaai.org" target="_blank" rel="noopener">🔗 来源：AAAI 官网</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">NeurIPS 2026 筹备推进：悉尼·亚特兰大·巴黎三地举办</span>
+                    <span class="card-date">2026-05 / NeurIPS.cc</span>
+                </div>
+                <div class="card-summary">第 40 届 NeurIPS 将于 2026 年 12 月 6 日至 12 日在悉尼（主会场）、亚特兰大和巴黎（卫星会场）同步举行。这是 NeurIPS 首次采用三地联动模式。大会组委会已公布，更多征稿与卫星会场细节即将发布。此前有报告指出 NeurIPS 2025 接收论文中出现了 AI 幻觉引用问题，引起学界对同行评审质量的关注。</div>
+                <div class="card-tags"><span class="tag tag-conference">NeurIPS</span><span class="tag tag-conference">三地联动</span></div>
+                <a class="source-link" href="https://neurips.cc" target="_blank" rel="noopener">🔗 来源：NeurIPS 官网</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">2026 年 AI 顶会日历：ICML 首尔、CVPR 丹佛、AAAI 新加坡</span>
+                    <span class="card-date">2026 全年 / TLDL</span>
+                </div>
+                <div class="card-summary">TLDL 汇总了 2026 年主要 AI 会议安排：ICML 将于 7 月 6-12 日在首尔举行，CVPR 于 6 月在丹佛举行，ICLR 于 4 月在里约热内卢举行，AAAI-26 已在新加坡落幕。此外，EMNLP 2026 定于 11 月在迈阿密举行，IJCAI 2026 于 8 月在蒙特利尔举行。各大顶会的投稿截止日期已基本关闭，进入审稿与筹备阶段。</div>
+                <div class="card-tags"><span class="tag tag-conference">会议日历</span><span class="tag tag-conference">ICML</span><span class="tag tag-conference">CVPR</span></div>
+                <a class="source-link" href="https://www.tldl.io/resources/ai-conferences-2026" target="_blank" rel="noopener">🔗 来源：TLDL</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">CCF 人工智能领域推荐会议与期刊目录更新</span>
+                    <span class="card-date">2026-05 / CCF 官网</span>
+                </div>
+                <div class="card-summary">中国计算机学会（CCF）持续更新人工智能领域推荐国际学术会议与期刊目录。A 类会议包括 NeurIPS、ICML、AAAI、IJCAI 等；A 类期刊涵盖 AI Journal、TPAMI、IJCV 等。该目录是中国高校与科研机构评估 AI 学术成果的重要参考标准。</div>
+                <div class="card-tags"><span class="tag tag-conference">CCF 目录</span><span class="tag tag-conference">学术评估</span></div>
+                <a class="source-link" href="https://www.ccf.org.cn/Academic_Evaluation/AI" target="_blank" rel="noopener">🔗 来源：CCF 官网</a>
+            </div>
+        </div>
+
+        <!-- 8. AI 基础设施与能效 -->
+        <div class="section">
+            <div class="section-title">⚡ AI 基础设施与能效 <span class="count">3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">2026 国产端侧 AI 芯片：架构创新引领算力效率革命</span>
+                    <span class="card-date">2026-05-21 / 电子工程专辑</span>
+                </div>
+                <div class="card-summary">文章分析了地平线、平头哥、寒武纪、壁仞科技、中星微等国产端侧 AI 芯片企业的技术路线与差异化竞争格局。核心趋势是从"堆算力"向"用足算力"转变，多核异构架构（如中星微 XPU）通过动态调度实现算力按需分配，显著降低综合能耗。地平线于 2026 年 4 月推出舱驾融合芯片星空 Starry 6P，标志着从芯片供应商向"芯片+操作系统"全栈方案转型。</div>
+                <div class="card-tags"><span class="tag tag-infra">端侧芯片</span><span class="tag tag-infra">异构计算</span></div>
+                <a class="source-link" href="https://www.eet-china.com/mp/a496620.html" target="_blank" rel="noopener">🔗 来源：电子工程专辑</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">摩尔线程发布三款端侧 AI 新品，"长江"SoC 亮相</span>
+                    <span class="card-date">2026-05-20 / 软盟资讯</span>
+                </div>
+                <div class="card-summary">摩尔线程于 5 月 18 日发布 AI 中枢 MTT AICUBE、AI 算力本 MTT AIBOOK 及边缘 AI 模组 MTT E300，全部搭载自研"长江"智能 SoC 芯片。该芯片采用异构计算架构，集成 8 个全大核 CPU、全功能 GPU 及高能效 NPU，提供 50TOPS 异构 AI 算力，支持端侧流畅运行百亿参数大模型。据预测，2026 年中国端侧 AI 市场规模将达 8661 亿元。</div>
+                <div class="card-tags"><span class="tag tag-infra">端侧算力</span><span class="tag tag-infra">摩尔线程</span></div>
+                <a class="source-link" href="https://news.softunis.com/59183.html" target="_blank" rel="noopener">🔗 来源：软盟资讯</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">AI 数据中心能耗 2026：推理与智能体驱动新增长</span>
+                    <span class="card-date">2026-05-11 / dev/sustainability</span>
+                </div>
+                <div class="card-summary">分析指出，AI 能耗讨论已从训练与 GPU 推理转向更复杂的系统：推理模型增加了每任务 token 生成量，而智能体（Agent）将一个问题拆解为多次模型调用、工具调用、检索步骤与验证循环。主要 AI 实验室已部署在高效超大规模设施中，但最大的历史效率杠杆（从低效企业数据中心迁移到现代云基础设施）已被使用，未来效率提升将依赖更好的加速器、模型架构与推理优化。</div>
+                <div class="card-tags"><span class="tag tag-infra">数据中心</span><span class="tag tag-infra">能效</span></div>
+                <a class="source-link" href="https://www.devsustainability.com/p/ai-data-center-energy-in-2026" target="_blank" rel="noopener">🔗 来源：dev/sustainability</a>
+            </div>
+        </div>
+
+        <!-- 9. 产业与政策 -->
+        <div class="section">
+            <div class="section-title">🏭 产业与政策 <span class="count">5 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">资本密集涌入机器人赛道，单周融资超 15 亿元</span>
+                    <span class="card-date">2026-05-26 / 亚洲AI与机器人产业链展览会</span>
+                </div>
+                <div class="card-summary">过去一周（5 月 18-25 日），机器人产业披露融资事件超 10 起，累计金额超 15 亿元。天机智能完成 10 亿元 B 轮及 B+轮融资（高瓴创投、美团战投联合领投），蓝点触控获数亿元 C++ 轮融资（上汽、中芯入局），临界点以数亿元融资跻身独角兽。投资重心从整机向力控传感器、灵巧手、关节模组等核心零部件渗透，2026 年以来具身智能领域融资总额已超 345 亿元。</div>
+                <div class="card-tags"><span class="tag tag-policy">投融资</span><span class="tag tag-policy">核心零部件</span></div>
+                <a class="source-link" href="https://www.alatexpo.com?zixun%2F447.html=" target="_blank" rel="noopener">🔗 来源：亚洲AI与机器人产业链展览会</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">机器人行业资本化加速：乐聚智能、云深处科技冲刺 IPO</span>
+                    <span class="card-date">2026-05-23 / 21经济网</span>
+                </div>
+                <div class="card-summary">创业板第四套上市标准启用仅 24 天，乐聚智能作为首单 IPO 获受理（2025 年营收 2.58 亿元，投后估值 43.27 亿元）。云深处科技科创板 IPO 申请获上交所受理，拟募资 25.03 亿元。2026 年一季度机器人行业融资额已超 300 亿元，多家明星初创公司估值迅速破百亿。</div>
+                <div class="card-tags"><span class="tag tag-policy">IPO</span><span class="tag tag-policy">资本市场</span></div>
+                <a class="source-link" href="https://www.21jingji.com/article/20260523/herald/0bcf9ac76166418f2bbe5797ea4f1b53.html" target="_blank" rel="noopener">🔗 来源：21经济网</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">证券时报：资本密集涌入，机器人赛道投资热度攀升</span>
+                    <span class="card-date">2026-05-27 / 证券时报</span>
+                </div>
+                <div class="card-summary">证券时报报道，近期国内机器人赛道融资密集，投资方涵盖美团等产业资本与风险投资机构。标的公司主要集中在具身智能领域的机器人及控制系统赛道。政策端持续加码——工信部等八部门联合发布《"人工智能+制造"专项行动实施意见》，提出到 2027 年推出 1000 个高水平工业智能体。深圳"十五五"规划纲要也将具身智能机器人列为新兴支柱产业。</div>
+                <div class="card-tags"><span class="tag tag-policy">政策加码</span><span class="tag tag-policy">产业资本</span></div>
+                <a class="source-link" href="https://www.stcn.com/article/detail/3928927.html" target="_blank" rel="noopener">🔗 来源：证券时报</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">RAND 报告：中国 AI 产业政策"全栈"布局分析</span>
+                    <span class="card-date">2026-05 / RAND Corporation</span>
+                </div>
+                <div class="card-summary">RAND 发布研究报告，系统分析了中国从芯片、算力、数据到应用的全栈 AI 产业政策。报告指出，中国已设立 82 亿美元国家 AI 产业投资基金，1380 亿美元国家创投引导基金覆盖机器人、具身智能等领域。地方政府 AI 专项基金规模超千亿，银行 AI 产业贷款计划达 1380 亿美元。报告认为，尽管存在资源浪费风险，公共资金正有效支撑 AI 创业生态。</div>
+                <div class="card-tags"><span class="tag tag-policy">产业政策</span><span class="tag tag-policy">RAND</span></div>
+                <a class="source-link" href="https://www.rand.org/pubs/perspectives/PEA4012-1.html" target="_blank" rel="noopener">🔗 来源：RAND Corporation</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">安徽省发布 2026 年智能机器人产业政策项目申报通知</span>
+                    <span class="card-date">2026-05 / 斯百德项目申报</span>
+                </div>
+                <div class="card-summary">安徽省发布智能机器人产业发展政策项目（第一批）申报通知，涵盖高水平创新平台建设（按设备购置额分档奖补，最高 500 万元）、典型应用场景打造、"三首"产品奖补（首次销售合同金额 30%）、优势企业培育（营收达标最高奖 300 万元）以及基金投资奖补等。政策执行期自 2025 年 11 月起，体现了地方政府对机器人产业的系统性支持。</div>
+                <div class="card-tags"><span class="tag tag-policy">地方政策</span><span class="tag tag-policy">安徽</span></div>
+                <a class="source-link" href="https://www.ichuanghui.org/10862.html" target="_blank" rel="noopener">🔗 来源：斯百德项目申报</a>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>📅 生成时间：2026年5月28日</p>
+            <p>⚠️ 免责声明：本报告仅供学术资讯参考，不构成任何投资建议。新闻素材来源于公开信源，版权归原作者所有。部分预印本研究尚未经过同行评审。</p>
+            <p style="margin-top:8px;">AI与机器人学术周报 · 白底主题 · 纯静态 HTML</p>
+        </footer>
+
     </div>
-
-    <!-- 2. AI 数学与推理突破 -->
-    <div class="section">
-        <div class="section-title"><span>AI 数学与推理突破</span><span class="count" id="count1">0</span></div>
-        <div id="section1"></div>
-    </div>
-
-    <!-- 3. AI for Science（科学智能） -->
-    <div class="section">
-        <div class="section-title"><span>AI for Science（科学智能）</span><span class="count" id="count2">0</span></div>
-        <div id="section2"></div>
-    </div>
-
-    <!-- 4. 具身智能与机器人突破 -->
-    <div class="section">
-        <div class="section-title"><span>具身智能与机器人突破</span><span class="count" id="count3">0</span></div>
-        <div id="section3"></div>
-    </div>
-
-    <!-- 5. 机械臂本体 -->
-    <div class="section">
-        <div class="section-title"><span>机械臂本体（结构·驱动·运动学·控制）</span><span class="count" id="count4">0</span></div>
-        <div id="section4"></div>
-    </div>
-
-    <!-- 6. DeepSeek 专栏 -->
-    <div class="section">
-        <div class="section-title"><span>DeepSeek 专栏</span><span class="count" id="count5">0</span></div>
-        <div id="section5"></div>
-    </div>
-
-    <!-- 7. 顶级会议与学术动态 -->
-    <div class="section">
-        <div class="section-title"><span>顶级会议与学术动态</span><span class="count" id="count6">0</span></div>
-        <div id="section6"></div>
-    </div>
-
-    <!-- 8. AI 基础设施与能效 -->
-    <div class="section">
-        <div class="section-title"><span>AI 基础设施与能效</span><span class="count" id="count7">0</span></div>
-        <div id="section7"></div>
-    </div>
-
-    <!-- 9. 产业与政策 -->
-    <div class="section">
-        <div class="section-title"><span>产业与政策</span><span class="count" id="count8">0</span></div>
-        <div id="section8"></div>
-    </div>
-
-    <div class="footer">
-        <span>🕒 生成时间：2026-05-28 · 基于公开学术与产业信息整理</span>
-        <span>⚠️ 免责声明：内容仅供参考，不构成任何投资或决策建议。</span>
-    </div>
-
-    <script>
-        (function() {
-            // 数据定义 —— 仅收录 2026-05-21 ~ 2026-05-28 的新闻
-            const data = {
-                // 2. AI 数学与推理突破
-                math: [
-                    {
-                        title: "GPT-5.2 自主推翻 80 年数学猜想，AI 从辅助走向科研主体",
-                        date: "2026-05-24",
-                        summary: "OpenAI GPT-5.2 Pro 成功解决 Erdős 问题 #1196 等多个长期未解猜想，其策略打破人类美学与惯例，被数学家类比为“AI 发现全新棋路”。标志着 AI 从辅助工具向自主科研主体的转变。",
-                        tags: ["GPT-5.2", "数学猜想", "自主推理"],
-                        link: "https://techcommannd.com/ai-solving-high-level-math-problems-breakthrough-in-2026"
-                    },
-                    {
-                        title: "Gemini Deep Think：无人类干预证明算术几何结构常数",
-                        date: "2026-05-22",
-                        summary: "Google DeepMind 发布 Gemini Deep Think 模式，自主生成论文计算 eigenweights（算术几何结构常数），并协作证明独立集边界。在 700 个开放问题中自主解决 4 个 Erdős 猜想。",
-                        tags: ["Gemini Deep Think", "自主科研", "定理证明"],
-                        link: "https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think"
-                    },
-                    {
-                        title: "Nature 专题：AI 正在重塑数学研究范式",
-                        date: "2026-05-26",
-                        summary: "《Nature》报道多位研究者利用 ChatGPT 等工具突破 Erdős 难题，AI 不仅提供计算，更贡献逻辑推理。数学家 Terence Tao 指出 AI 正改变数学家的职业描述。",
-                        tags: ["Nature", "数学研究", "AI 协作"],
-                        link: "https://www.nature.com/articles/d41586-026-01553-1"
-                    },
-                    {
-                        title: "TongGeometry：中国逻辑推理突破，Nature 子刊发表",
-                        date: "2026-05-27",
-                        summary: "中国团队发布 TongGeometry 几何推理系统，在多项基准上超越 AlphaGeometry，采用神经符号混合方法，被视为迈向 AGI 的重要一步。",
-                        tags: ["TongGeometry", "几何推理", "AlphaGeometry"],
-                        link: "https://www.academicjobs.com/research-publication-news/chinese-researchers-tonggeometry-ai-logical-reasoning-breakthrough-nature-machine-intelligence-2312"
-                    }
-                ],
-                // 3. AI for Science
-                science: [
-                    {
-                        title: "Google.org 启动 AI for Science 超级挑战，聚焦气候与健康",
-                        date: "2026-05-21",
-                        summary: "Google.org 宣布新一轮 AI for Science 资助，利用 AlphaFold 预测植物抗病基因，利物浦大学采用“蜂群思维”混合智能平台发现碳捕获材料。",
-                        tags: ["AlphaFold", "气候科学", "材料发现"],
-                        link: "https://google.org/impact-challenges/ai-science"
-                    },
-                    {
-                        title: "Google 发布 Gemini for Science 实验工具，加速科研发现",
-                        date: "2026-05-23",
-                        summary: "Google Labs 推出三款科学 AI 原型，帮助研究者自动连接跨领域数据，AlphaFold 已助力 300 万研究人员，包括疟疾疫苗和塑料降解酶。",
-                        tags: ["Gemini for Science", "科研工具", "AlphaFold"],
-                        link: "https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026"
-                    },
-                    {
-                        title: "微软：2026 年 AI 将成为科研核心，自主提出假设并控制实验",
-                        date: "2026-05-25",
-                        summary: "微软研究院总裁 Peter Lee 指出，AI 将从总结论文进化为主动参与发现过程，生成假设、控制实验并与人类科学家协作。",
-                        tags: ["微软", "AI 科学家", "科研自动化"],
-                        link: "https://news.microsoft.com/source/features/ai/whats-next-in-ai-7-trends-to-watch-in-2026"
-                    }
-                ],
-                // 4. 具身智能与机器人突破
-                embodied: [
-                    {
-                        title: "傅利叶 GR-3 人形机器人：材料与感知创新，瞄准家庭场景",
-                        date: "2026-05-22",
-                        summary: "傅利叶智能在 AW 2026 展示 GR-3 人形机器人，强调安全与温暖，集成材料创新与多模态感知，MTBF 超 1000 小时，连续运行 9.5 小时。",
-                        tags: ["傅利叶", "GR-3", "人形机器人"],
-                        link: "https://www.eetimes.com/humanoid-robots-exit-labs-mapping-the-technical-path-to-embodied-ai-at-aw-2026"
-                    },
-                    {
-                        title: "智元 WITA 大模型完成全国首例具身智能交互大模型合规备案",
-                        date: "2026-05-26",
-                        summary: "智元机器人联合智源研究院、北大展示灵犀 X2 自主打乒乓球，远征 A3 高精度舞蹈运控。WITA 成为国内首款通过备案的具身智能交互大模型。",
-                        tags: ["智元", "WITA", "具身智能"],
-                        link: "https://pdf.dfcfw.com/pdf/H3_AP202605241822840425_1.pdf"
-                    },
-                    {
-                        title: "IDC：2026 年中国具身智能用户支出超 110 亿美元，多形态协同成趋势",
-                        date: "2026-05-24",
-                        summary: "IDC 报告指出，60% 中大型项目将采用两种以上机器人形态协同；人形+轮式+机械臂组合提升效率。中国服务机器人全球出货占比超 85%。",
-                        tags: ["IDC", "市场预测", "多形态机器人"],
-                        link: "https://www.idc.com/resource-center/blog/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E5%9C%A8%E8%BF%9B%E5%8C%96-2026%E5%B9%B4%E4%B8%AD%E5%9B%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E5%85%B7%E8%BA%AB%E6%99%BA"
-                    },
-                    {
-                        title: "具身智能「清场」：量产爬坡与商用落地成生死线",
-                        date: "2026-05-25",
-                        summary: "钛媒体分析指出，2026 年行业进入残酷出清期，从技术叙事转向商业叙事。智元出货 5168 台，宇树 5500 台，但盈利拷问仍在。",
-                        tags: ["行业分析", "商业化", "量产"],
-                        link: "https://www.tmtpost.com/7928180.html"
-                    }
-                ],
-                // 5. 机械臂本体
-                manipulator: [
-                    {
-                        title: "绳驱柔性机械臂建模与控制综述：结构演化与无模型方法",
-                        date: "2026-05-21",
-                        summary: "《信息与控制》发表综述，系统梳理绳驱柔性臂从纯柔性到刚柔混合、离散刚性全驱动三类结构，总结基于模型与无模型控制方法的最新进展。",
-                        tags: ["柔性机械臂", "绳驱", "综述"],
-                        link: "https://xk.sia.cn/cn/article/pdf/preview/10.13976/j.cnki.xk.2023.2033.pdf"
-                    },
-                    {
-                        title: "Science Advances：受神经元突触启发的软体机器人通用控制器",
-                        date: "2026-05-26",
-                        summary: "研究提出一种类神经突触可塑性控制器，可适应不同软体臂结构、任务与扰动，在多种连续臂平台上验证了鲁棒控制性能。",
-                        tags: ["软体机器人", "突触控制器", "Science Advances"],
-                        link: "https://www.aas.net.cn/cn/article/doi/10.16383/j.aas.c250683?viewType=HTML"
-                    },
-                    {
-                        title: "离散线驱动连续臂：被动滑动盘设计与预紧力控制",
-                        date: "2026-05-23",
-                        summary: "MDPI 期刊发表新型离散式线驱动连续臂，采用被动滑动盘与预紧机构，提升刚度和负载能力，运动学与张力控制仿真验证有效。",
-                        tags: ["连续臂", "线驱动", "预紧力"],
-                        link: "https://www.mdpi.com/2218-6581/8/3/51"
-                    }
-                ],
-                // 6. DeepSeek 专栏
-                deepseek: [
-                    {
-                        title: "DeepSeek 同时推进三条 AI 竞赛线：模型、芯片适配与融资",
-                        date: "2026-05-26",
-                        summary: "彭博社报道 DeepSeek 正同时推进前沿模型迭代、华为芯片适配及超 200 亿美元估值融资。V4 预览版已开源，推理性能接近 GPT-5.5。",
-                        tags: ["DeepSeek V4", "融资", "华为芯片"],
-                        link: "https://www.bloomberg.com/opinion/articles/2026-05-26/deepseek-is-now-running-three-ai-races-at-once"
-                    },
-                    {
-                        title: "DeepSeek V4 适配华为昇腾，美中 AI 竞赛进入全栈博弈",
-                        date: "2026-05-24",
-                        summary: "DeepSeek V4 预览版专为华为昇腾优化，推理环节迁移至国产芯片。分析人士指出，美中竞争已从模型性能转向芯片、软件、云基础设施的全栈掌控。",
-                        tags: ["华为昇腾", "地缘政治", "全栈竞争"],
-                        link: "https://www.voachinese.com/a/deepseek-s-huawei-pivot-signals-deeper-shift-in-us-china-ai-race-20260430/8144776.html"
-                    },
-                    {
-                        title: "DeepSeek 再扔“王炸”：V4 发布，美国指责中国反驳",
-                        date: "2026-05-22",
-                        summary: "DeepSeek-V4 于 4 月 24 日发布并开源，华为云首发适配。世界知识基准仅次于 Gemini-Pro-3.1。美国指控模型蒸馏，中国反驳称技术自主。",
-                        tags: ["DeepSeek V4", "开源", "中美科技"],
-                        link: "https://www.dw.com/zh/deepseek-%E5%86%8D%E6%89%94%E7%8E%8B%E7%82%B8-%E7%BE%8E%E5%9B%BD%E6%8C%87%E8%B4%A3-%E4%B8%AD%E5%9B%BD%E5%8F%8D%E9%A9%B3/a-76922868"
-                    }
-                ],
-                // 7. 顶级会议与学术动态
-                conferences: [
-                    {
-                        title: "NeurIPS 2026 将于悉尼举行，投稿截止 5 月 6 日",
-                        date: "2026-05-21",
-                        summary: "NeurIPS 2026 定于 12 月 6-12 日在悉尼举办，并设亚特兰大、巴黎卫星会场。投稿已截止，接收结果即将公布。",
-                        tags: ["NeurIPS", "会议", "机器学习"],
-                        link: "https://neurips.cc"
-                    },
-                    {
-                        title: "ICML 2026 首尔开幕在即，CVPR 2026 丹佛举行",
-                        date: "2026-05-25",
-                        summary: "ICML 2026 将于 7 月 6-11 日在首尔举行，CVPR 2026 于 6 月 5-7 日在丹佛举办。两大顶会接收论文清单已陆续公布。",
-                        tags: ["ICML", "CVPR", "学术会议"],
-                        link: "https://www.switchsoftware.io/post/ai-conferences-2026"
-                    },
-                    {
-                        title: "AAAI ICWSM 2026 在洛杉矶召开，聚焦社交媒体 AI",
-                        date: "2026-05-27",
-                        summary: "第 20 届 AAAI 国际网络与社交媒体会议 (ICWSM) 于 5 月 27-29 日在洛杉矶举行，探讨 AI 在社交网络分析中的前沿应用。",
-                        tags: ["AAAI", "ICWSM", "社交媒体"],
-                        link: "https://aaai.org"
-                    }
-                ],
-                // 8. AI 基础设施与能效
-                infra: [
-                    {
-                        title: "AI 数据中心能耗 2026 年将超 500 TWh，占全球电力 2%",
-                        date: "2026-05-22",
-                        summary: "TTMS 报告指出，2026 年 AI 数据中心能耗预计超 500 TWh，约占全球 2%。硬件效率提升（如 FuriosaAI 180W 芯片）与 Green AI 倡议并行。",
-                        tags: ["能耗", "数据中心", "Green AI"],
-                        link: "https://ttms.com/growing-energy-demand-of-ai-data-centers-2024-2026"
-                    },
-                    {
-                        title: "摩尔线程发布“长江”智能 SoC，端侧 AI 算力达 50 TOPS",
-                        date: "2026-05-20",
-                        summary: "摩尔线程推出三款端侧 AI 新品，基于自研“长江”SoC，集成 8 核 CPU 与 NPU，可运行百亿参数大模型。2026 年中国端侧 AI 市场规模预计达 8661 亿元。",
-                        tags: ["端侧 AI", "摩尔线程", "SoC"],
-                        link: "https://news.softunis.com/59183.html"
-                    },
-                    {
-                        title: "台积电 2nm 量产在即，2026 年底产能达 8-10 万片",
-                        date: "2026-05-23",
-                        summary: "台积电 N2 制程良率突破 80%，下半年 N2P 量产。苹果 A20、高通骁龙 8 Elite Gen 6 将采用，晶体管密度提升 15-20%。",
-                        tags: ["台积电", "2nm", "芯片制程"],
-                        link: "https://pdf.dfcfw.com/pdf/H3_AP202602231819984904_1.pdf"
-                    }
-                ],
-                // 9. 产业与政策
-                industry: [
-                    {
-                        title: "机器人赛道一周融资超 15 亿元，天机智能 10 亿元 B+轮",
-                        date: "2026-05-26",
-                        summary: "天机智能完成 10 亿元融资，投后估值近百亿；蓝点触控、临界点等获数亿元。资本从整机向力控传感器、灵巧手等核心零部件渗透。",
-                        tags: ["融资", "核心零部件", "天机智能"],
-                        link: "https://www.alatexpo.com?zixun%2F447.html="
-                    },
-                    {
-                        title: "乐聚智能、云深处科技科创板 IPO 获受理，机器人资本化加速",
-                        date: "2026-05-23",
-                        summary: "乐聚智能创业板 IPO 获受理（2025 年营收 2.58 亿元），云深处科技科创板拟募资 25 亿元。2026 年 Q1 机器人融资超 300 亿元。",
-                        tags: ["IPO", "科创板", "资本化"],
-                        link: "https://www.21jingji.com/article/20260523/herald/0bcf9ac76166418f2bbe5797ea4f1b53.html"
-                    },
-                    {
-                        title: "安徽省发布智能机器人产业政策，最高奖补 500 万元",
-                        date: "2026-05-24",
-                        summary: "安徽开展 2026 年智能机器人政策申报，对创新平台设备购置最高奖补 500 万元，对营收首超 30 亿元企业奖励 300 万元。",
-                        tags: ["产业政策", "安徽", "奖补"],
-                        link: "https://www.ichuanghui.org/10862.html"
-                    },
-                    {
-                        title: "资本密集涌入，国内机器人赛道投资热度持续攀升",
-                        date: "2026-05-27",
-                        summary: "证券时报报道，八部门联合发布《人工智能+制造》实施意见，目标 2027 年推出 1000 个工业智能体。政策与资本共振，产业进入商业化拐点。",
-                        tags: ["政策", "投资", "商业化"],
-                        link: "https://www.stcn.com/article/detail/3928927.html"
-                    }
-                ]
-            };
-
-            // 渲染函数
-            function renderSection(sectionId, dataKey, countId) {
-                const container = document.getElementById(sectionId);
-                const countSpan = document.getElementById(countId);
-                const items = data[dataKey] || [];
-                if (items.length === 0) {
-                    container.innerHTML = '<div class="empty-note">本周暂无相关重大进展</div>';
-                    countSpan.textContent = '0';
-                    return;
-                }
-                let html = '';
-                items.forEach(item => {
-                    const tagsHtml = (item.tags || []).map(t => `<span class="tag">${t}</span>`).join(' ');
-                    html += `
-                        <div class="card">
-                            <div class="card-title">${item.title}</div>
-                            <div class="card-meta"><span class="date">${item.date}</span></div>
-                            <div class="card-summary">${item.summary}</div>
-                            <div class="card-tags">${tagsHtml}</div>
-                            <a class="card-link" href="${item.link}" target="_blank" rel="noopener">🔗 来源链接</a>
-                        </div>
-                    `;
-                });
-                container.innerHTML = html;
-                countSpan.textContent = items.length;
-            }
-
-            // 渲染所有板块
-            renderSection('section1', 'math', 'count1');
-            renderSection('section2', 'science', 'count2');
-            renderSection('section3', 'embodied', 'count3');
-            renderSection('section4', 'manipulator', 'count4');
-            renderSection('section5', 'deepseek', 'count5');
-            renderSection('section6', 'conferences', 'count6');
-            renderSection('section7', 'infra', 'count7');
-            renderSection('section8', 'industry', 'count8');
-
-            // 更新总条目与信源数
-            const allItems = [...data.math, ...data.science, ...data.embodied, ...data.manipulator, ...data.deepseek, ...data.conferences, ...data.infra, ...data.industry];
-            document.getElementById('totalCount').textContent = allItems.length;
-            // 简单去重信源域名
-            const domains = new Set();
-            allItems.forEach(item => {
-                try {
-                    const url = new URL(item.link);
-                    domains.add(url.hostname);
-                } catch(e) {}
-            });
-            document.getElementById('sourceCount').textContent = domains.size || allItems.length;
-        })();
-    </script>
 </body>
 </html>
-```
