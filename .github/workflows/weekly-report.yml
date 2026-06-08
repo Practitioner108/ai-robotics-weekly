@@ -2,7 +2,7 @@ name: Weekly AI & Robotics Report
 
 on:
   schedule:
-    # Every Monday 1:00 AM UTC = 9:00 AM Beijing (UTC+8)
+    # 每周一 UTC 01:00（北京时间 09:00）
     - cron: '0 1 * * 1'
   workflow_dispatch:
 
@@ -12,6 +12,8 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15                    # 防止 API 卡死无限等待
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,23 +21,52 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: pip install -r requirements.txt
 
-      - name: Generate weekly report
+      - name: 生成周报 + 更新首页
+        id: generate
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
         run: python generate_weekly.py
 
-      - name: Commit and push report
+      - name: 验证产出文件
+        run: |
+          REPORT_DATE="${{ steps.generate.outputs.report_date }}"
+          EXPECTED="AI与机器人部/${REPORT_DATE}.html"
+
+          echo "报告日期: ${REPORT_DATE}"
+          echo "期望路径: ${EXPECTED}"
+
+          if [ -f "${EXPECTED}" ]; then
+            echo "✅ 周报文件已生成"
+          else
+            echo "❌ 错误: 预期的周报文件不存在: ${EXPECTED}"
+            echo "当前目录内容:"
+            ls -la AI与机器人部/ || echo "  (目录不存在)"
+            exit 1
+          fi
+
+          if git diff --quiet -- index.html; then
+            echo "⚠️  警告: index.html 未发生变化，静态化可能失败"
+          else
+            echo "✅ index.html 已更新"
+          fi
+
+      - name: 提交并推送
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add AI与机器人部/
+
+          # 同时提交周报文件和 index.html
+          git add "AI与机器人部/" index.html
+
           if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Weekly report: $(date +%Y-%m-%d)"
-            git push
+            echo "❌ 错误: 没有变更需要提交。本周可能未生成新内容。"
+            exit 1
           fi
+
+          REPORT_DATE="${{ steps.generate.outputs.report_date }}"
+          git commit -m "Weekly report: ${REPORT_DATE}"
+          git push

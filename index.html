@@ -36,6 +36,7 @@
     vertical-align: middle;
   }
   .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); }
+  .footer a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -43,36 +44,19 @@
   <h1>AI 与机器人<span>周报</span></h1>
   <p>每周一 9:00（北京时间）自动生成 · 学术论文与技术突破 · 中英双源</p>
 </div>
-<ul class="report-list" id="reports">
-  <li><a href="#">加载中...</a></li>
+<ul class="report-list">
+    <li><a href="AI与机器人部/2026-06-01.html">
+      <span class="date">2026-06-01</span><span class="latest-badge">最新</span>
+      <span class="label"> · 点击查看</span>
+    </a></li>
+    <li><a href="AI与机器人部/2026-05-28.html">
+      <span class="date">2026-05-28</span>
+      <span class="label"> · 点击查看</span>
+    </a></li>
 </ul>
 <div class="footer">
-  <p>由 GitHub Actions 自动生成 · <a href="https://github.com/Practitioner108/ai-robotics-weekly" style="color: var(--accent);">查看仓库</a></p>
+  <p>由 GitHub Actions 自动生成 · <a href="https://github.com/Practitioner108/ai-robotics-weekly">查看仓库</a></p>
+  <p style="margin-top:4px;">最后更新: 2026-06-01 05:57 UTC</p>
 </div>
-<script>
-(async () => {
-  try {
-    const resp = await fetch('https://api.github.com/repos/Practitioner108/ai-robotics-weekly/contents/AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8');
-    const files = await resp.json();
-    if (!Array.isArray(files)) throw new Error('not a dir');
-    const htmls = files
-      .filter(f => f.name.endsWith('.html'))
-      .sort((a, b) => b.name.localeCompare(a.name));
-    if (htmls.length === 0) {
-      document.getElementById('reports').innerHTML = '<li style="color:var(--text-secondary);text-align:center;padding:20px;">暂无报告</li>';
-      return;
-    }
-    document.getElementById('reports').innerHTML = htmls.map((f, i) => {
-      const d = f.name.replace('.html', '');
-      return `<li><a href="AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%83%A8/${encodeURIComponent(f.name)}">
-        <span class="date">${d}</span>${i === 0 ? '<span class="latest-badge">最新</span>' : ''}
-        <span class="label"> · 点击查看</span>
-      </a></li>`;
-    }).join('');
-  } catch {
-    document.getElementById('reports').innerHTML = '<li style="color:var(--text-secondary);text-align:center;padding:20px;">加载失败，请直接访问仓库</li>';
-  }
-})();
-</script>
 </body>
 </html>
