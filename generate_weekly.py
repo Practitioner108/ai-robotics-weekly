@@ -9,6 +9,7 @@ AI 与机器人周报生成器
 """
 
 import os
+import re
 import sys
 from datetime import datetime, timedelta, timezone
 from typing import Optional
@@ -187,8 +188,12 @@ def build_user_prompt(results_text: str, dr: dict) -> str:
 
 ## 要求
 
-### 时间范围
-仅收录 **{dr['range_cn']}** 这 7 天内的新闻。超过 7 天的、明显过时的新闻请筛掉。
+### ⚠️ 时间范围（最高优先级硬约束）
+- **仅收录 {dr['range_cn']} 这 7 天内的新闻。**
+- 严禁收录任何早于 {dr['week_ago'].strftime('%Y-%m-%d')} 的内容。
+- 素材中混入的旧新闻、旧论文、旧公告——无论多重要——必须全部丢弃。
+- 如果你不确定某条新闻的日期，宁可丢弃也不要收录。
+- 每条新闻卡片的日期标注必须是这 7 天内的具体某一天。
 
 ### 版面结构（9 个板块，必须全部出现）
 1. 本期焦点（一段话概括本周最重要进展）
@@ -228,11 +233,19 @@ SYSTEM_PROMPT = """你是一个专业的 AI 与机器人领域学术新闻编辑
 你的任务是根据搜索素材生成完整的 HTML 周报。
 
 核心原则：
-1. 只保留 7 天内的新闻（即使用户素材中混入了更早的，也要筛掉）
+1. 【最高优先级】只保留 7 天内的新闻。这是硬性约束，不可妥协。
+   素材中混入的任何超过 7 天的旧闻、旧论文、旧公告，必须全部丢弃，
+   哪怕内容再精彩也不得收录。
 2. 优先学术论文和技术突破，产业政策为辅
 3. 所有内容翻译为简体中文，保留原始 URL
 4. 严格输出纯 HTML（从 <!DOCTYPE html> 开始），不要 markdown 代码块包裹
 5. 绝对不要使用任何 JavaScript——所有内容都必须是静态 HTML 标签
+
+日期筛除细则：
+- 每条新闻必须标注明确的发布日期，且该日期必须在给定的 7 天窗口内
+- 对于素材中无法确认具体日期的条目，宁可丢弃也不要猜测
+- "发布于上周""近期""日前"等模糊时间描述视为不合格——必须丢弃
+- 历史回顾、年度总结等题材一律排除，本期只报道本周新进展
 
 HTML 要求：
 - 内嵌 <style>，白底主题
@@ -392,6 +405,56 @@ def update_index_html(dr: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
+# 陈年旧闻检测
+# ---------------------------------------------------------------------------
+
+# 匹配 YYYY-MM-DD 格式的日期（常见于发布日期、来源日期）
+_RE_ISO_DATE = re.compile(r"\b(20\d{2}-\d{2}-\d{2})\b")
+# 匹配中文日期：2025年3月16日
+_RE_CN_DATE = re.compile(r"(20\d{2})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日")
+
+# 允许 1 天缓冲（时区边界容错），超过即判为陈旧
+_STALE_BUFFER_DAYS = 1
+
+
+def _find_stale_dates(html: str, cutoff: datetime) -> list[tuple[str, str]]:
+    """扫描 HTML 文本中的日期，返回所有早于 cutoff 的 (日期串, 上下文) 列表。"""
+    # 去掉 HTML 标签，在纯文本中搜索
+    text = re.sub(r"<[^>]+>", " ", html)
+
+    stale: list[tuple[str, str]] = []
+
+    # ISO 格式：YYYY-MM-DD
+    for m in _RE_ISO_DATE.finditer(text):
+        date_str = m.group(1)
+        try:
+            dt = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        if dt < cutoff:
+            start = max(0, m.start() - 40)
+            end = min(len(text), m.end() + 40)
+            ctx = text[start:end].strip()
+            stale.append((date_str, ctx))
+
+    # 中文格式：YYYY年M月D日
+    for m in _RE_CN_DATE.finditer(text):
+        y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        date_str = f"{y}-{mo:02d}-{d:02d}"
+        try:
+            dt = datetime(y, mo, d, tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        if dt < cutoff:
+            start = max(0, m.start() - 40)
+            end = min(len(text), m.end() + 40)
+            ctx = text[start:end].strip()
+            stale.append((date_str, ctx))
+
+    return stale
+
+
+# ---------------------------------------------------------------------------
 # 主流程
 # ---------------------------------------------------------------------------
 
@@ -453,6 +516,24 @@ def main() -> None:
         print(f"⚠️  警告: 仅检测到 {section_count} 个板块，内容可能偏少（非致命）", flush=True)
     if card_count < 3:
         print(f"⚠️  警告: 仅检测到 {card_count} 条新闻卡片，本周可能是淡周（非致命）", flush=True)
+
+    # 陈年旧闻检测（硬门禁）
+    cutoff = dr["week_ago"] - timedelta(days=_STALE_BUFFER_DAYS)
+    stale = _find_stale_dates(html, cutoff)
+    if stale:
+        print(f"\n❌ 错误: 检测到 {len(stale)} 处超出 7 天窗口的陈旧日期:", file=sys.stderr)
+        for date_str, ctx in stale[:10]:  # 最多显示 10 条
+            print(f"    • {date_str}  →  {ctx}", file=sys.stderr)
+        if len(stale) > 10:
+            print(f"    ... 还有 {len(stale) - 10} 处，省略", file=sys.stderr)
+        print(
+            f"\n时间窗口: {dr['range_cn']}，允许缓冲 {_STALE_BUFFER_DAYS} 天。"
+            f"请检查 LLM prompt 或搜索素材，重新运行。",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+    else:
+        print(f"✅ 日期检查通过：未发现超出窗口的陈旧条目", flush=True)
 
     print()
 
