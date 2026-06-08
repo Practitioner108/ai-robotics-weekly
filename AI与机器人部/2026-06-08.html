@@ -1,675 +1,583 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI与机器人领域学术周报 | 2026年6月1日—6月8日</title>
-    <style>
-        :root {
-            --bg: #ffffff;
-            --card-bg: #f8f9fb;
-            --text: #1a1a2e;
-            --text-secondary: #555;
-            --accent: #2563eb;
-            --accent-light: #eef2ff;
-            --border: #e2e5ea;
-            --tag-bg: #f0f3f8;
-            --tag-text: #4a5568;
-            --tag-accent-bg: #eef2ff;
-            --tag-accent-text: #2563eb;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-            --radius: 10px;
-            --radius-sm: 6px;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI与机器人周报 | 2026年6月1日 - 6月8日</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card-bg: #f8f9fb;
+      --text: #1a1a2e;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --border: #e2e5ea;
+      --tag-bg-blue: #eef2ff;
+      --tag-text-blue: #2563eb;
+      --tag-bg-green: #ecfdf5;
+      --tag-text-green: #059669;
+      --tag-bg-purple: #f5f3ff;
+      --tag-text-purple: #6d28d9;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #f5f6f8;
-            color: var(--text);
-            font-family: var(--font-stack);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
 
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 32px 24px 60px;
-        }
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding: 24px 0;
+      border-bottom: 2px solid var(--border);
+    }
 
-        /* 头部 */
-        .header {
-            text-align: center;
-            padding: 40px 32px 32px;
-            background: var(--bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 28px;
-            border: 1px solid var(--border);
-        }
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text);
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
-        }
-        .header .subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-        .header .date-range {
-            display: inline-block;
-            margin-top: 8px;
-            background: var(--accent-light);
-            color: var(--accent);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.88rem;
-            font-weight: 500;
-        }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
 
-        /* 统计栏 */
-        .stats-bar {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            background: var(--bg);
-            border-radius: var(--radius);
-            padding: 20px 32px;
-            margin-bottom: 28px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1.2;
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 2px;
-        }
+    header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
 
-        /* 板块 */
-        .section {
-            background: var(--bg);
-            border-radius: var(--radius);
-            padding: 28px 28px 22px;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-        .section-header {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 14px;
-        }
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text);
-            letter-spacing: -0.01em;
-        }
-        .section-count {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            background: var(--tag-bg);
-            padding: 3px 12px;
-            border-radius: 14px;
-            font-weight: 500;
-        }
+    .stats-bar {
+      display: flex;
+      justify-content: space-around;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 32px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
 
-        /* 卡片 */
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius-sm);
-            padding: 18px 20px;
-            margin-bottom: 14px;
-            border: 1px solid var(--border);
-            transition: box-shadow 0.2s;
-        }
-        .card:hover {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-        .card:last-child {
-            margin-bottom: 0;
-        }
-        .card-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 4px;
-            line-height: 1.5;
-        }
-        .card-meta {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-        .card-date {
-            background: var(--tag-bg);
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-weight: 500;
-            font-size: 0.8rem;
-        }
-        .card-abstract {
-            font-size: 0.93rem;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-            line-height: 1.65;
-        }
-        .card-comment {
-            font-size: 0.87rem;
-            color: #3b5998;
-            background: #f0f4ff;
-            padding: 8px 14px;
-            border-radius: 6px;
-            border-left: 3px solid var(--accent);
-            margin-bottom: 10px;
-            line-height: 1.55;
-        }
-        .card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 8px;
-        }
-        .tag {
-            font-size: 0.78rem;
-            padding: 3px 10px;
-            border-radius: 14px;
-            background: var(--tag-bg);
-            color: var(--tag-text);
-            font-weight: 500;
-        }
-        .tag.accent {
-            background: var(--tag-accent-bg);
-            color: var(--tag-accent-text);
-        }
-        .card-source {
-            font-size: 0.8rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            word-break: break-all;
-        }
-        .card-source:hover {
-            text-decoration: underline;
-        }
+    .stat-item {
+      flex: 1;
+    }
 
-        /* 无内容提示 */
-        .no-content {
-            text-align: center;
-            color: #999;
-            font-size: 0.93rem;
-            padding: 20px;
-            font-style: italic;
-        }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
 
-        /* 本期焦点 */
-        .focus-text {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text);
-            background: #fafbfd;
-            padding: 18px 22px;
-            border-radius: 8px;
-            border: 1px dashed var(--border);
-        }
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
 
-        /* 页脚 */
-        .footer {
-            text-align: center;
-            font-size: 0.82rem;
-            color: #999;
-            padding: 24px 20px;
-            margin-top: 12px;
-        }
-        .footer p {
-            margin-bottom: 4px;
-        }
+    .section {
+      margin-bottom: 36px;
+    }
 
-        /* 响应式 */
-        @media (max-width: 640px) {
-            .container {
-                padding: 16px 12px 40px;
-            }
-            .header {
-                padding: 28px 16px 22px;
-            }
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            .stats-bar {
-                gap: 20px;
-                padding: 16px 20px;
-            }
-            .stat-number {
-                font-size: 1.5rem;
-            }
-            .section {
-                padding: 20px 16px 16px;
-            }
-            .card {
-                padding: 14px 15px;
-            }
-        }
-    </style>
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section-count {
+      background: var(--accent);
+      color: white;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-date {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .card-summary {
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .card-insight {
+      background: white;
+      border-left: 4px solid var(--accent);
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: #1e293b;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .tag-blue {
+      background: var(--tag-bg-blue);
+      color: var(--tag-text-blue);
+    }
+
+    .tag-green {
+      background: var(--tag-bg-green);
+      color: var(--tag-text-green);
+    }
+
+    .tag-purple {
+      background: var(--tag-bg-purple);
+      color: var(--tag-text-purple);
+    }
+
+    .source-link {
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+
+    .source-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+
+    .no-news {
+      color: var(--text-secondary);
+      font-style: italic;
+      padding: 16px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      border: 1px dashed var(--border);
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    footer p {
+      margin-bottom: 4px;
+    }
+
+    .focus-text {
+      font-size: 1.05rem;
+      color: #1e293b;
+      background: #f0f4ff;
+      padding: 16px;
+      border-radius: 8px;
+      line-height: 1.7;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
+  <header>
+    <h1>🤖 AI 与机器人学术产业周报</h1>
+    <p>2026年6月1日 — 2026年6月8日</p>
+  </header>
 
-        <!-- 头部 -->
-        <div class="header">
-            <h1>AI 与机器人领域学术周报</h1>
-            <p class="subtitle">聚焦前沿突破 · 追踪学术动态 · 洞察产业趋势</p>
-            <span class="date-range">2026年6月1日 — 2026年6月8日</span>
-        </div>
-
-        <!-- 统计栏 -->
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number">28</div>
-                <div class="stat-label">总条目数</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">9</div>
-                <div class="stat-label">板块数</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">19</div>
-                <div class="stat-label">引用信源数</div>
-            </div>
-        </div>
-
-        <!-- 1. 本期焦点 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">🔬 本期焦点</span>
-                <span class="section-count">1 项</span>
-            </div>
-            <div class="focus-text">
-                <strong>本周最重磅事件：OpenAI 通用推理模型破解 80 年数学悬案。</strong>2026 年 6 月 1 日，多家权威媒体报道 OpenAI 旗下通用推理模型成功否定了与 Paul Erdős 平面单位距离问题相关的核心猜想——找到了一族无限点集配置，显著优于长期被认为是最优的方形网格构造。外部数学家已验证该证明，有学者称其为"AI 数学的里程碑"。这一突破标志着 AI 从辅助工具向真正科研协作者的转变，数学因其结果可逐行验证的特性，正成为检验 AI 推理能力的"黄金试炼场"。与此同时，DeepSeek V4 预览版持续发酵、具身智能机器人百亿估值俱乐部扩容、美国白宫发布 AI 创新与安全行政令，共同勾勒出本周 AI 领域的多维图景。
-            </div>
-        </div>
-
-        <!-- 2. AI 数学与推理突破 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">🧮 AI 数学与推理突破</span>
-                <span class="section-count">4 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">OpenAI 推理模型破解 80 年数学难题：否定 Erdős 平面单位距离问题核心猜想</div>
-                <div class="card-meta"><span class="card-date">2026-06-01</span> · 来源：Coaio / Ars Technica 分析</div>
-                <div class="card-abstract">OpenAI 宣布其通用推理模型成功否定了离散几何中与 Paul Erdős 1946 年提出的平面单位距离问题相关的长期猜想。模型找到了一族无限点集配置，其单位距离对数显著优于传统方形网格构造。外部数学家已验证该证明，研究者称其为"AI 数学的里程碑"。</div>
-                <div class="card-comment">💡 意义点评：这是通用推理模型首次在开放数学猜想上取得可验证的实质性突破。数学领域因其结果可逐行检验，成为 AI 推理能力最理想的"证明场"，为 AI 在物理、生物等需要实验验证的学科中发挥作用铺平了道路。</div>
-                <div class="card-tags"><span class="tag accent">数学推理</span><span class="tag">离散几何</span><span class="tag">定理证明</span><span class="tag">OpenAI</span></div>
-                <a class="card-source" href="https://coaio.com/news/2026/06/openai-cracks-legendary-80-year-math-mystery-a-new-era-for-ai-problem-2s4c" target="_blank" rel="noopener noreferrer">查看来源 → coaio.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">大模型推理的未来：从"链式思考"到"树状思考"——范式转变深度解析</div>
-                <div class="card-meta"><span class="card-date">2026-06-04</span> · 来源：53AI 知识库</div>
-                <div class="card-abstract">文章系统梳理了从 Chain-of-Thought（CoT）到 Tree-of-Thoughts（ToT）的推理范式演进。ToT 通过多路径探索与剪枝评估，在 Omni-MATH 等基准上显著提升准确率，同时优化了计算效率。文章指出，o3-mini 的成功不在于"思考更长"而在于"思考更深"，并展望了与强化学习深度融合、外部知识库整合、神经符号推理等未来方向。</div>
-                <div class="card-comment">💡 意义点评：ToT 范式为复杂多步推理提供了更灵活的搜索框架，有望在数学证明、科学发现等领域释放更大潜力。强化学习与树搜索的深度融合将成为下一代推理模型的关键技术路线。</div>
-                <div class="card-tags"><span class="tag accent">推理范式</span><span class="tag">Tree-of-Thoughts</span><span class="tag">思维链</span></div>
-                <a class="card-source" href="https://www.53ai.com/news/LargeLanguageModel/2025031632960.html" target="_blank" rel="noopener noreferrer">查看来源 → 53ai.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">DeepMath-103K 数据集发布：103K 高难度数学题推动大模型推理瓶颈突破</div>
-                <div class="card-meta"><span class="card-date">近期</span> · 来源：腾讯云开发者社区 / 机器之心</div>
-                <div class="card-abstract">DeepMath-103K 包含约 103K 个高难度数学问题（95K 难度等级 5-10），数据来自 Math StackExchange 等多样化来源。通过严格四阶段去污染流程（与 MATH、AIME 等 17 个基准去重）和两阶段答案验证，确保数据新颖性与纯净度。DeepMath 系列模型在 GPQA-Diamond 等科学基准上展现了从数学到科学的泛化推理能力。</div>
-                <div class="card-comment">💡 意义点评：该数据集解决了数学推理领域高质量训练数据稀缺的痛点，其严格的去污染流程为 RL 训练提供了可靠基础，展示了"强数学推理是通用科学推理基础"的假设。</div>
-                <div class="card-tags"><span class="tag accent">数据集</span><span class="tag">数学推理</span><span class="tag">强化学习</span></div>
-                <a class="card-source" href="https://cloud.tencent.com/developer/article/2530804" target="_blank" rel="noopener noreferrer">查看来源 → cloud.tencent.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">2026 大模型推荐排行：商汤日日新 SenseNova 多模态深度推理能力领跑</div>
-                <div class="card-meta"><span class="card-date">2026-06-01</span> · 来源：东方财富网 / 极欧测评</div>
-                <div class="card-abstract">基于 IDC 报告的硬核评测显示，商汤日日新大模型（SenseNova V6.5 / U1）采用 MoE 混合专家系统与 NEO-unify 原生多模态架构，纯文本推理对标 GPT-4.5，多模态推理对标 OpenAI o1。其 SenseNova V6 Omni 在数学解题、点读翻译、文旅讲解等场景实现高准确率，且推出了 Token Plan 免费服务降低使用门槛。</div>
-                <div class="card-comment">💡 意义点评：国产多模态推理模型在实用场景中已具备与国际一流模型对标的能力，开源策略和成本优势将加速推理能力的应用落地。</div>
-                <div class="card-tags"><span class="tag accent">多模态推理</span><span class="tag">国产大模型</span><span class="tag">商汤</span></div>
-                <a class="card-source" href="https://caifuhao.eastmoney.com/news/20260601165457953769240" target="_blank" rel="noopener noreferrer">查看来源 → eastmoney.com</a>
-            </div>
-        </div>
-
-        <!-- 3. AI for Science（科学智能） -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">🔬 AI for Science（科学智能）</span>
-                <span class="section-count">3 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">DARPA 启动 AI Forge 计划：加速国家安全领域 AI 突破</div>
-                <div class="card-meta"><span class="card-date">2026-06-01</span> · 来源：DARPA 官方公告</div>
-                <div class="card-abstract">美国国防高级研究计划局（DARPA）正式发布 AI Forge 计划，旨在弥合商业 AI 创新与国家安全独特需求之间的鸿沟。该计划聚焦商业应用尚未覆盖的关键 AI 挑战，寻求在对抗性环境下的可靠推理、小样本学习、安全关键型决策等方面的突破。RFI 截止日期为 2026 年 6 月 22 日。</div>
-                <div class="card-comment">💡 意义点评：AI Forge 的启动表明 AI for Science 正从学术研究向国家安全等战略领域纵深拓展，强调可靠性与可解释性，将为 AI 在极端条件下的应用设立新标杆。</div>
-                <div class="card-tags"><span class="tag accent">DARPA</span><span class="tag">国家安全</span><span class="tag">AI基础设施</span></div>
-                <a class="card-source" href="https://www.darpa.mil/news/2026/ai-forge-accelerating-ai-breakthroughs-national-security" target="_blank" rel="noopener noreferrer">查看来源 → darpa.mil</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">AI4Science 2026 国际会议：10 月深圳举办，聚焦科学发现中的 AI 基础与前沿</div>
-                <div class="card-meta"><span class="card-date">2026-06 月上旬</span> · 来源：AI4Science 2026 官网</div>
-                <div class="card-abstract">2026 国际人工智能赋能科学发现与创新会议（AI4Science 2026）将于 10 月 23-25 日在深圳召开，由南昌大学主办，香港城市大学等支持。会议涵盖科学机器学习、物理信息 AI、科学基础模型、AI 驱动材料发现、蛋白质结构预测、气候科学 AI 等主题，并设有博士论坛、可重复性与开源倡议。</div>
-                <div class="card-comment">💡 意义点评：该会议是国内 AI4Science 领域的重要学术平台，"双向影响"主题（AI→科学发现，科学原理→新一代 AI）反映了该领域从单点突破走向系统融合的趋势。</div>
-                <div class="card-tags"><span class="tag accent">学术会议</span><span class="tag">AI4Science</span><span class="tag">跨学科</span></div>
-                <a class="card-source" href="https://www.ic-ai4science.org" target="_blank" rel="noopener noreferrer">查看来源 → ic-ai4science.org</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">日本文科省发布《AI for Science 动向 2026》报告：AX 时代科学研究变革</div>
-                <div class="card-meta"><span class="card-date">2026 年</span> · 来源：日本文部科学省</div>
-                <div class="card-abstract">报告系统阐述了 AI Transformation（AX）在科学研究中的渗透路径，指出日本已将 AI for Science 列为国家战略，2025 年度补充预算中"AI for Science 科学研究革新计划"拨款 370 亿日元，同时推进科研用 AI 基盘模型开发、云实验室建设和次世代旗舰计算系统"岳"的后续开发。</div>
-                <div class="card-comment">💡 意义点评：日本在国家层面系统布局 AI for Science 基础设施，从算力、模型到数据平台形成完整闭环，其"四梁 N 柱"框架为其他国家提供了参考模板。</div>
-                <div class="card-tags"><span class="tag accent">政策</span><span class="tag">日本</span><span class="tag">AI4Science</span></div>
-                <a class="card-source" href="https://www.mext.go.jp/content/20260114-mxt_jyohoka01-000046711_4.pdf" target="_blank" rel="noopener noreferrer">查看来源 → mext.go.jp</a>
-            </div>
-        </div>
-
-        <!-- 4. 具身智能与机器人突破 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">🤖 具身智能与机器人突破</span>
-                <span class="section-count">4 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">IDC 发布 2026 中国机器人与具身智能市场十大趋势：人形机器人进入价值验证关键期</div>
-                <div class="card-meta"><span class="card-date">2026-06 月上旬</span> · 来源：IDC 官方博客</div>
-                <div class="card-abstract">IDC 预测，2026 年中国具身智能机器人用户支出规模超 110 亿美元，年增长近 120%。约 60% 的中大型项目将采用"人形+轮式+多足+机械臂"多形态协同作业体系。市场从演示试点转向以效率提升、成本优化和 ROI 为核心的价值验证阶段，任务复用率预计达 40%。</div>
-                <div class="card-comment">💡 意义点评：IDC 的数据表明中国具身智能正从"概念验证"加速迈向"规模化落地"，多形态协同与局部任务闭环成为务实路径，为产业参与者提供了清晰的方向指引。</div>
-                <div class="card-tags"><span class="tag accent">IDC报告</span><span class="tag">市场趋势</span><span class="tag">多形态协同</span></div>
-                <a class="card-source" href="https://www.idc.com/resource-center/blog/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%AD%A3%E5%9C%A8%E8%BF%9B%E5%8C%96-2026%E5%B9%B4%E4%B8%AD%E5%9B%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8E%E5%85%B7%E8%BA%AB%E6%99%BA" target="_blank" rel="noopener noreferrer">查看来源 → idc.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">AW 2026 具身智能技术路径图：从实验室走向大规模应用</div>
-                <div class="card-meta"><span class="card-date">2026-06 月上旬</span> · 来源：EE Times</div>
-                <div class="card-abstract">首届"中国人形机器人大会"上，专家指出具身智能正从以算法为中心的研究领域，转变为能在真实环境中完成感知-决策-执行闭环的工程系统。波士顿动力 Atlas 非商用版首次在中国亮相，AGIBOT X2/G2、宇树 G1、乐聚 Kuavo 4 Pro 等平台展示了从基础运动控制到多模态传感器融合的完整技术谱系。</div>
-                <div class="card-comment">💡 意义点评：工程化能力成为具身智能的下一个分水岭——硬件标准化、软件生态化、数据闭环化三者缺一不可，Atlas 的亮相也标志着全球顶尖人形机器人技术向中国市场的加速渗透。</div>
-                <div class="card-tags"><span class="tag accent">AW2026</span><span class="tag">人形机器人</span><span class="tag">工程化</span></div>
-                <a class="card-source" href="https://www.eetimes.com/humanoid-robots-exit-labs-mapping-the-technical-path-to-embodied-ai-at-aw-2026" target="_blank" rel="noopener noreferrer">查看来源 → eetimes.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">2026 人形机器人产业展望：10 万级量产将至，商业化元年正式开启</div>
-                <div class="card-meta"><span class="card-date">2026-06 月上旬</span> · 来源：新华网</div>
-                <div class="card-abstract">高工机器人产业研究所数据显示，2026 年国内人形机器人出货量有望达 6.25 万台，专家预测产量将突破 10 万台。优必选 Walker 系列成本同比下降 25%，行星滚柱丝杠、伺服驱动器等核心零部件国产化率持续攀升。VLA（视觉语言动作模型）技术路径被视为技能操作水平突破的关键。</div>
-                <div class="card-comment">💡 意义点评：10 万台级量产是产业从"样品"到"商品"的关键拐点，成本下行与 AI 大脑进化（VLA 模型）的双轮驱动将加速人形机器人在工业和服务领域的渗透。</div>
-                <div class="card-tags"><span class="tag accent">量产拐点</span><span class="tag">人形机器人</span><span class="tag">VLA模型</span></div>
-                <a class="card-source" href="https://www.news.cn/tech/20260108/46b1220e159d4f80bc6a4240eb3b47b5/c.html" target="_blank" rel="noopener noreferrer">查看来源 → news.cn</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">从机器人到具身智能：北京人大专题研究阐述"具身化"演进路径</div>
-                <div class="card-meta"><span class="card-date">2026-06-05</span> · 来源：北京市人大常委会网站</div>
-                <div class="card-abstract">文章系统梳理了机器人从工业机械臂到具身智能的 70 年演进历程，指出大语言模型的突破正推动具身智能成为新研究范式。北京已形成从清华柔性触觉传感器、中科院 Q 系列人形机器人到优必选 Walker X 商业应用的完整产业链，全球首个人形机器人半马比赛中"天工"机器人夺冠。</div>
-                <div class="card-comment">💡 意义点评：北京的实践表明，具身智能的发展需要"科研机构攻关核心技术+企业规模化应用+政策生态支撑"的三螺旋结构，法律与伦理挑战也提上了议程。</div>
-                <div class="card-tags"><span class="tag accent">产业生态</span><span class="tag">北京</span><span class="tag">具身智能演进</span></div>
-                <a class="card-source" href="https://www.bjrd.gov.cn/fwhd/bjrdzz/2025n/bjrdzz202509q/yjyts202509/202509/t20250930_4214986.html" target="_blank" rel="noopener noreferrer">查看来源 → bjrd.gov.cn</a>
-            </div>
-        </div>
-
-        <!-- 5. 机械臂本体 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">🦾 机械臂本体（结构·驱动·运动学·控制）</span>
-                <span class="section-count">1 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">ASME 会议论文：双连杆平面机械臂非线性控制技术基准对比研究</div>
-                <div class="card-meta"><span class="card-date">2026-06 月提交</span> · 来源：ASME IMECE 2026 投稿平台</div>
-                <div class="card-abstract">该研究以经典双连杆平面机械臂为基础，深入对比了多种非线性控制设计技术（包括计算力矩、逆动力学、前馈控制等）在运动规划与轨迹跟踪中的表现。关节配备电机、编码器和测速计，通过逆运动学将任务空间运动映射到关节空间，为更复杂的串联机械臂和人形机器人控制提供了基准参考。</div>
-                <div class="card-comment">💡 意义点评：基础性控制理论的持续优化是机械臂向高精度、高动态方向发展的基石，该基准研究有助于行业建立统一的性能评估框架。</div>
-                <div class="card-tags"><span class="tag">运动学</span><span class="tag">非线性控制</span><span class="tag">ASME</span></div>
-                <a class="card-source" href="https://imece.secure-platform.com/a/solicitations/182/sessiongallery/11899/application/95524" target="_blank" rel="noopener noreferrer">查看来源 → imece.secure-platform.com</a>
-            </div>
-            <p class="no-content">📝 本周机械臂本体领域暂无其他重大突破性新闻。产业界关注重点仍集中在人形机器人整机量产与核心零部件国产化，基础运动学与控制研究稳步推进。</p>
-        </div>
-
-        <!-- 6. DeepSeek 专栏 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">🐋 DeepSeek 专栏</span>
-                <span class="section-count">5 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">DeepSeek V4 预览版正式上线：1T 参数 MoE，100 万 Token 上下文，Apache 2.0 开源</div>
-                <div class="card-meta"><span class="card-date">2026-06 月持续更新</span> · 来源：DeepSeek 官网 / NxCode 技术分析</div>
-                <div class="card-abstract">DeepSeek V4 预览版已在网页端、APP 和 API 上线。据技术分析，该模型总参数约 1 万亿（MoE 架构），活跃参数约 370 亿，上下文窗口扩展至 100 万 token。其核心创新 Engram 模块通过哈希 N-gram 嵌入实现 O(1) 确定性知识查找。SWE-bench 编码基准达 81%，计划以 Apache 2.0 许可证开源。</div>
-                <div class="card-comment">💡 意义点评：DeepSeek V4 的百万级上下文窗口和 Engram 记忆机制直指长文本理解痛点，Apache 2.0 开源策略将对闭源模型形成持续压力，进一步降低 AI 应用门槛。</div>
-                <div class="card-tags"><span class="tag accent">DeepSeek V4</span><span class="tag">MoE</span><span class="tag">开源</span><span class="tag">Engram</span></div>
-                <a class="card-source" href="https://www.deepseek.com" target="_blank" rel="noopener noreferrer">查看来源 → deepseek.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">DeepSeek 估值飙升至 450 亿美元，V4 架构革新揭示全球 AI 竞争新格局</div>
-                <div class="card-meta"><span class="card-date">2026-05-06</span> · 来源：钜亨网</div>
-                <div class="card-abstract">DeepSeek 估值在数周内从 100 亿美元暴涨至约 450 亿美元，此轮融资由国家集成电路产业投资基金领投，腾讯、阿里等参与。NIST 旗下 CAISI 评测报告显示，DeepSeek V4 Pro 综合能力落后美国领先模型约 8 个月，但在成本效率上具有压倒性优势，部分基准比美国参考模型便宜 53%。</div>
-                <div class="card-comment">💡 意义点评：DeepSeek 的估值跃升反映了资本市场对"效率至上"路线的认可，其与华为昇腾的深度适配预示着一条平行于美国的 AI 基础设施生态链正在成形。</div>
-                <div class="card-tags"><span class="tag accent">估值</span><span class="tag">国产替代</span><span class="tag">昇腾</span></div>
-                <a class="card-source" href="https://news.cnyes.com/news/id/6444754" target="_blank" rel="noopener noreferrer">查看来源 → cnyes.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">微软 Azure Foundry 公布 DeepSeek 模型退役时间表：V3 系列 7 月退役，V3.2 保持 GA</div>
-                <div class="card-meta"><span class="card-date">2026-06 月上旬</span> · 来源：Microsoft Learn</div>
-                <div class="card-abstract">微软 Azure Foundry 更新模型生命周期表，DeepSeek-R1、R1-0528、V3-0324、V3.1 等旧版本将于 2026 年 7-8 月陆续退役，取代方案为 DeepSeek-V4-Flash 和 V4-Pro。DeepSeek-V3.2 及 V3.2-Speciale 保持 GA（正式可用）状态。</div>
-                <div class="card-comment">💡 意义点评：云平台对 DeepSeek 模型的快速迭代支持表明，DeepSeek 已成为全球 AI 基础设施的重要组成部分，模型退役节奏也反映了行业技术更新的加速。</div>
-                <div class="card-tags"><span class="tag accent">Azure</span><span class="tag">模型生命周期</span><span class="tag">云服务</span></div>
-                <a class="card-source" href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-retirement-schedule" target="_blank" rel="noopener noreferrer">查看来源 → learn.microsoft.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">DeepSeek-R1 发布一周年：中国主导开源 AI 格局，R1 仍为 Hugging Face 最受欢迎模型</div>
-                <div class="card-meta"><span class="card-date">2026-06 月上旬</span> · 来源：CAPMAD / CNN Business</div>
-                <div class="card-abstract">R1 发布一年后，仍保持 Hugging Face 最受欢迎开源模型地位。中国实验室（DeepSeek、月之暗面 Kimi k1.5）在推理、编码和实际任务中持续缩小与闭源模型的差距。DeepSeek V3 以低 30 倍成本匹配 GPT-4o 质量，推动了企业级 AI 采用热潮。CNN 报道指出，V4 对华为昇腾平台的深度适配使其影响力可能超越 R1。</div>
-                <div class="card-comment">💡 意义点评："DeepSeek 时刻"的长尾效应持续发酵，中国开源模型生态已从追赶进入引领阶段，成本优势和硬件适配能力成为核心竞争力。</div>
-                <div class="card-tags"><span class="tag accent">开源生态</span><span class="tag">R1周年</span><span class="tag">国产替代</span></div>
-                <a class="card-source" href="https://www.capmad.com/technology-en/deepseek-r1-one-year-later-china-dominates-open-source-ai-in-2026" target="_blank" rel="noopener noreferrer">查看来源 → capmad.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">DeepSeek 国产化部署实践：昇腾平台适配降低 20% 训练耗时</div>
-                <div class="card-meta"><span class="card-date">2026-06 月</span> · 来源：CSDN 昇腾开源生态专区</div>
-                <div class="card-abstract">技术文章详细介绍了 DeepSeek 在昇腾 910B 平台上的适配流程，包括混合精度优化、自定义算子重写（如 LayerNorm 反向传播 CUDA 核函数）和分层适配策略。通过三级异构架构和通信优化技术，通信开销降低 62%。预测 2026 年国产 AI 芯片 FP16 算力将达 1200 TFLOPS，能效比提升 258%。</div>
-                <div class="card-comment">💡 意义点评：DeepSeek 的国产化适配实践为全栈自主可控提供了可行路径，混合精度训练和算子优化是突破硬件瓶颈的关键手段。</div>
-                <div class="card-tags"><span class="tag accent">昇腾</span><span class="tag">国产适配</span><span class="tag">混合精度</span></div>
-                <a class="card-source" href="https://ascendai.csdn.net/69dcb55372111d255bf89e94.html" target="_blank" rel="noopener noreferrer">查看来源 → ascendai.csdn.net</a>
-            </div>
-        </div>
-
-        <!-- 7. 顶级会议与学术动态 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">📅 顶级会议与学术动态</span>
-                <span class="section-count">4 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">NeurIPS 2026：12 月悉尼举办，征文即将启动</div>
-                <div class="card-meta"><span class="card-date">2026-06 月</span> · 来源：NeurIPS 官网</div>
-                <div class="card-abstract">第 40 届神经信息处理系统大会（NeurIPS 2026）将于 2026 年 12 月 6-12 日在澳大利亚悉尼举办，同时在亚特兰大和巴黎设置卫星会场。大会涵盖深度学习、生成式 AI、核心机器学习、神经科学、计算机视觉、NLP 等跨学科领域，征文通知即将发布。</div>
-                <div class="card-comment">💡 意义点评：NeurIPS 作为 AI 领域最顶级的学术会议之一，三地同步举办的模式将进一步扩大其全球影响力。</div>
-                <div class="card-tags"><span class="tag accent">NeurIPS</span><span class="tag">学术会议</span><span class="tag">深度学习</span></div>
-                <a class="card-source" href="https://neurips.cc" target="_blank" rel="noopener noreferrer">查看来源 → neurips.cc</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">ICML 2026：7 月首尔举办，大会注册已售罄</div>
-                <div class="card-meta"><span class="card-date">2026-06 月</span> · 来源：ICML 官网</div>
-                <div class="card-abstract">第 43 届国际机器学习大会（ICML 2026）将于 2026 年 7 月 6-11 日在韩国首尔 COEX 会展中心举办。大会已宣布 Tutorial 和主会注册售罄，研讨会注册仍开放。ICML 发布了 LLM 在评审中使用的政策声明，强调学术诚信。</div>
-                <div class="card-comment">💡 意义点评：ICML 注册售罄反映了机器学习领域的持续火爆，LLM 评审政策的出台也标志着学术界对 AI 工具使用的规范化管理。</div>
-                <div class="card-tags"><span class="tag accent">ICML</span><span class="tag">机器学习</span><span class="tag">首尔</span></div>
-                <a class="card-source" href="https://icml.cc" target="_blank" rel="noopener noreferrer">查看来源 → icml.cc</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">第二届人工智能与基础模型国际会议（AIFM 2026）：6 月 26-28 日乌鲁木齐举办</div>
-                <div class="card-meta"><span class="card-date">2026-06 月</span> · 来源：AIFM 2026 官网</div>
-                <div class="card-abstract">AIFM 2026 将于 6 月 26-28 日在乌鲁木齐召开，涵盖基础模型理论、模型安全与大规模智能、嵌入式智能与机器人等核心议题。会议推荐优秀论文至 Human-Centric Intelligent Systems（HCIN）期刊发表，该期刊目前免收版面费并设有最佳论文奖。</div>
-                <div class="card-comment">💡 意义点评：AIFM 2026 是国内基础模型领域的重要学术交流平台，覆盖从理论到应用的完整链条，对推动基础模型研究具有积极作用。</div>
-                <div class="card-tags"><span class="tag accent">AIFM2026</span><span class="tag">基础模型</span><span class="tag">学术会议</span></div>
-                <a class="card-source" href="https://www.icaifm.org/chinese" target="_blank" rel="noopener noreferrer">查看来源 → icaifm.org</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">ArXiv 论文：当前 AI 会议模式不可持续——中心化 AI 会议的危机诊断</div>
-                <div class="card-meta"><span class="card-date">2026-06 月更新</span> · 来源：arXiv / NeurIPS 博客</div>
-                <div class="card-abstract">该立场论文系统诊断了 NeurIPS、ICML、ICLR 等顶级会议面临的结构性问题：投稿量激增导致审稿质量下降、参会成本高企、知识传播效率降低。论文提出了四大核心使命（科学使命、知识传播、社区建设、社会契约），并呼吁探索去中心化、滚动审稿等替代方案。</div>
-                <div class="card-comment">💡 意义点评：该论文触发了学术界对会议模式的深刻反思，在 AI 领域高速扩容的背景下，改革传统会议机制已成为广泛共识。</div>
-                <div class="card-tags"><span class="tag accent">学术治理</span><span class="tag">会议改革</span><span class="tag">arXiv</span></div>
-                <a class="card-source" href="https://arxiv.org/html/2508.04586v4" target="_blank" rel="noopener noreferrer">查看来源 → arxiv.org</a>
-            </div>
-        </div>
-
-        <!-- 8. AI 基础设施与能效 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">⚡ AI 基础设施与能效</span>
-                <span class="section-count">5 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">2026 年 AI 资本支出将达 6900 亿美元：基础设施工厂竞赛白热化</div>
-                <div class="card-meta"><span class="card-date">2026-06-05</span> · 来源：The Futurum Group</div>
-                <div class="card-abstract">报告指出，2026 年全球 AI 资本支出预计达 6900 亿美元，同比增长约 36%，其中约 75% 投向 AI 基础设施。电力正取代算力芯片成为新的瓶颈：美国数据中心电力需求预计到 2028 年翻倍至 150 吉瓦，单个数据中心园区正逼近 1 吉瓦规模。Marvell Teralynx T100 交换机芯片以功耗效率为核心，应对超大规模 AI 集群的网络挑战。</div>
-                <div class="card-comment">💡 意义点评：AI 基础设施的军备竞赛已从"拼芯片"转向"拼电力"，电力获取能力正成为决定 AI 竞争力的战略资源。</div>
-                <div class="card-tags"><span class="tag accent">资本支出</span><span class="tag">电力瓶颈</span><span class="tag">数据中心</span></div>
-                <a class="card-source" href="https://futurumgroup.com/insights/ai-capex-2026-the-690b-infrastructure-sprint" target="_blank" rel="noopener noreferrer">查看来源 → futurumgroup.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">AI 基础设施简报：2026 年能源成为 AI 终极限制因素</div>
-                <div class="card-meta"><span class="card-date">2026-06-02</span> · 来源：YouTube / Pipeline & Protocols</div>
-                <div class="card-abstract">简报指出，约 79% 的企业已采用 AI 代理，但仅约 11% 在生产环境中运行。模型价格年内下降 30-60%，60-80% 的企业查询可由小型路由模型处理。超大规模云服务商将在基础设施上投入 6000 亿美元以上。欧盟 AI 法案的数据治理规则于 8 月生效，治理能力正成为比模型能力更关键的竞争优势。</div>
-                <div class="card-comment">💡 意义点评：AI 部署中"能力与治理的鸿沟"正成为核心矛盾，模型商品化趋势下，数据治理和系统编排能力才是真正的护城河。</div>
-                <div class="card-tags"><span class="tag accent">AI治理</span><span class="tag">能源</span><span class="tag">欧盟法案</span></div>
-                <a class="card-source" href="https://www.youtube.com/watch?v=yqS7vn4DW8U" target="_blank" rel="noopener noreferrer">查看来源 → youtube.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">AI 数据中心能源 2026：电网旁路革命——自建电厂成为新趋势</div>
-                <div class="card-meta"><span class="card-date">2026-06 月</span> · 来源：Enki AI</div>
-                <div class="card-abstract">由于公共电网无法满足吉瓦级电力需求和快速部署时间线，AI 数据中心正从依赖电网转向自建现场发电设施（天然气电厂、SMR 微堆等）。电网连接排队可能需要数年，而自建方案可在 12-18 个月内投产。选址逻辑已从靠近互联网枢纽转向靠近可行电源。</div>
-                <div class="card-comment">💡 意义点评：电网旁路趋势将彻底改变数据中心的选址和运营模式，核能（特别是 SMR）和天然气正成为 AI 能源的新宠。</div>
-                <div class="card-tags"><span class="tag accent">能源</span><span class="tag">数据中心</span><span class="tag">现场发电</span></div>
-                <a class="card-source" href="https://enkiai.com/data-centers/ai-data-center-energy-2026-the-grid-bypass-revolution" target="_blank" rel="noopener noreferrer">查看来源 → enkiai.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">AI 芯片赛道景气度持续抬升：台积电 2nm 即将落地，1nm 规划曝光</div>
-                <div class="card-meta"><span class="card-date">2026-06-01</span> · 来源：中华网</div>
-                <div class="card-abstract">台积电首批 2nm 芯片组将于 2026 年下半年落地，1nm 制程生产规划已正式启动，同步筹建 12 座新晶圆厂。三星则在 2nm 节点停留更长时间以稳固代工质量。AMD 与英伟达的战略调整为新兴芯片企业打开了市场空间，全球半导体行业景气度持续上行。</div>
-                <div class="card-comment">💡 意义点评：先进制程的持续推进是 AI 算力增长的物质基础，台积电的激进扩产计划反映了 AI 驱动的半导体需求仍处于爆发期。</div>
-                <div class="card-tags"><span class="tag accent">半导体</span><span class="tag">台积电</span><span class="tag">2nm</span></div>
-                <a class="card-source" href="https://hea.china.com/articles/20260601/202606011883365.html" target="_blank" rel="noopener noreferrer">查看来源 → china.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">墨芯人工智能再获近十亿元 C 轮融资：稀疏计算架构引领绿色算力</div>
-                <div class="card-meta"><span class="card-date">2026-06-01</span> · 来源：新华报业网</div>
-                <div class="card-abstract">墨芯人工智能完成近十亿元 C 轮融资，已在全国四大区域落地多个千卡级算力集群。其稀疏计算原生架构在推理场景中具有显著能效优势，精度无损且成本更低。公司采用"芯片+算力集群+行业解决方案"模式，与电信运营商深度绑定，商业化落地进程明显加快。</div>
-                <div class="card-comment">💡 意义点评：稀疏计算作为差异化技术路线，有望在 AI 推理这一高增长赛道中成为"绿色算力中国方案"的代表，符合双碳战略方向。</div>
-                <div class="card-tags"><span class="tag accent">稀疏计算</span><span class="tag">AI芯片</span><span class="tag">绿色算力</span></div>
-                <a class="card-source" href="https://www.xhby.net/content/s6a1cfb4fe4b010b7fda1f4ba.html" target="_blank" rel="noopener noreferrer">查看来源 → xhby.net</a>
-            </div>
-        </div>
-
-        <!-- 9. 产业与政策 -->
-        <div class="section">
-            <div class="section-header">
-                <span class="section-title">🏛️ 产业与政策</span>
-                <span class="section-count">5 条</span>
-            </div>
-
-            <div class="card">
-                <div class="card-title">美国白宫发布行政令：促进先进人工智能创新与安全</div>
-                <div class="card-meta"><span class="card-date">2026-06-02</span> · 来源：白宫官网 Presidential Actions</div>
-                <div class="card-abstract">特朗普总统签署行政令，强调通过削减监管约束来释放 AI 创新潜力。行政令明确提出鼓励 AI 创新、加速政府与产业界负责任 AI 采用，并要求相关部门在预算和立法提案中优先考虑 AI 发展。白宫同时发布了配套的事实清单，概述了该行政令的核心要点。</div>
-                <div class="card-comment">💡 意义点评：该行政令标志着美国 AI 政策继续向"轻监管、重创新"方向倾斜，与欧盟的审慎监管路径形成鲜明对比，将深刻影响全球 AI 治理格局。</div>
-                <div class="card-tags"><span class="tag accent">美国政策</span><span class="tag">行政令</span><span class="tag">AI治理</span></div>
-                <a class="card-source" href="https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security" target="_blank" rel="noopener noreferrer">查看来源 → whitehouse.gov</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">机器人百亿估值俱乐部扩容：行业估值逻辑从概念转向落地</div>
-                <div class="card-meta"><span class="card-date">2026-06-01</span> · 来源：经济参考报 / 新华网</div>
-                <div class="card-abstract">普渡科技获近 10 亿元融资跻身百亿估值，银河通用估值超 200 亿元，星海图估值约 200 亿元。截至 5 月 26 日，国内机器人领域一级市场融资 434 起，金额达 746 亿元（去年同期为 235 起、220.9 亿元）。宇树科技 6 月 1 日科创板上会，云深处、乐聚智能 IPO 申请获受理，2026 年有望成为主机厂 IPO 元年。</div>
-                <div class="card-comment">💡 意义点评：资本正从"概念炒作"转向"订单落地+规模化量产"驱动的理性估值，产业资本深度参与和 IPO 提速标志着机器人行业进入资本化新阶段。</div>
-                <div class="card-tags"><span class="tag accent">融资</span><span class="tag">机器人</span><span class="tag">IPO</span><span class="tag">百亿估值</span></div>
-                <a class="card-source" href="http://jjckb.xinhuanet.com/20260601/b1b1b4db1f7a4d4e92818b182e0ad7d5/c.html" target="_blank" rel="noopener noreferrer">查看来源 → xinhuanet.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">深圳加码 AI 与机器人产业：23 项政策最高资助 5000 万元</div>
-                <div class="card-meta"><span class="card-date">2026-06 月</span> · 来源：深科信政策平台</div>
-                <div class="card-abstract">深圳市及 9 个区发布 AI 与机器人产业系列政策：每年发放最高 5 亿元"训力券"，AI 终端产业规模目标达 8000 亿-1 万亿元，到 2027 年具身智能机器人产业集群规模超 1000 亿元。算力服务建设主体最高可获 2000 万元支持，企业购买算力服务最高可获 200 万元补贴。</div>
-                <div class="card-comment">💡 意义点评：深圳以"真金白银"构建从算力到应用的全链条政策支持体系，"训力券"机制为中小企业和初创公司提供了普惠算力保障，具有很强的示范效应。</div>
-                <div class="card-tags"><span class="tag accent">深圳政策</span><span class="tag">训力券</span><span class="tag">产业扶持</span></div>
-                <a class="card-source" href="https://m.shenkexin.com/news/info-skill-13522.html" target="_blank" rel="noopener noreferrer">查看来源 → shenkexin.com</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">多地密集出台 AI 与机器人产业政策：四川、天津、南京、湖北等齐发力</div>
-                <div class="card-meta"><span class="card-date">2026-06-01 / 06-02</span> · 来源：投资界政策汇总</div>
-                <div class="card-abstract">本周政策密集发布：四川省印发成都产业创新方案，设直投子基金布局七大赛道；天津提出到 2030 年形成超 100 亿脑机接口产业基金群；南京全面实施"人工智能+"行动并加快培育未来产业；湖北支持人工智能 OPC；海南省印发支持人工智能 OPC 创新发展若干措施。</div>
-                <div class="card-comment">💡 意义点评：地方政策从"单点突破"走向"系统布局"，AI 与机器人已成为各省争夺未来产业制高点的核心赛道，政策密度和力度均显著加大。</div>
-                <div class="card-tags"><span class="tag accent">地方政策</span><span class="tag">产业基金</span><span class="tag">人工智能+</span></div>
-                <a class="card-source" href="https://www.pedaily.cn/s1081" target="_blank" rel="noopener noreferrer">查看来源 → pedaily.cn</a>
-            </div>
-
-            <div class="card">
-                <div class="card-title">英飞凌 2026 创业挑战赛聚焦人形机器人，加入 NVIDIA MGX AI 工厂生态</div>
-                <div class="card-meta"><span class="card-date">2026-05-29 / 06 月</span> · 来源：Infineon 投资者页面</div>
-                <div class="card-abstract">英飞凌宣布启动 2026 创业挑战赛，将人形机器人作为重点关注领域。同时，英飞凌加入 NVIDIA MGX AI 工厂生态系统，为下一代 AI 服务器机架提供电源架构转型方案。公司还上调了全年业绩指引，AI 热潮持续强化其增长前景。</div>
-                <div class="card-comment">💡 意义点评：传统半导体巨头正积极布局 AI 基础设施和机器人赛道，与 NVIDIA 的生态合作将加速 AI 服务器电源管理的技术创新。</div>
-                <div class="card-tags"><span class="tag accent">英飞凌</span><span class="tag">人形机器人</span><span class="tag">NVIDIA</span></div>
-                <a class="card-source" href="https://www.infineon.com/about/investor" target="_blank" rel="noopener noreferrer">查看来源 → infineon.com</a>
-            </div>
-        </div>
-
-        <!-- 页脚 -->
-        <div class="footer">
-            <p>📅 生成时间：2026 年 6 月 8 日</p>
-            <p>⚠️ 免责声明：本报告基于公开学术与产业信息整理，仅供研究参考，不构成任何投资或决策建议。所有原始来源链接均保留以供查证。</p>
-            <p style="margin-top:8px;">AI 与机器人领域学术周报 · 2026 年第 23 期</p>
-        </div>
-
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">16</div>
+      <div class="stat-label">收录条目</div>
     </div>
+    <div class="stat-item">
+      <div class="stat-number">9</div>
+      <div class="stat-label">覆盖板块</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">12</div>
+      <div class="stat-label">引用信源</div>
+    </div>
+  </div>
+
+  <!-- 1. 本期焦点 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🔍 本期焦点</h2>
+    </div>
+    <div class="focus-text">
+      本周AI界迎来一系列里程碑式突破。在基础理论方面，<strong>OpenAI成功利用大模型破解了困扰数学界80年的Erdős猜想</strong>，实现了AI在顶级数学推理中的颠覆性应用。在硬件基础设施层，<strong>英特尔正式发布基于18A工艺的至强6+处理器</strong>，最高集成288个能效核，全面重塑数据中心算力格局；同时，软银宣布750亿欧元的法国AI基础设施大单。产业资本层面，<strong>机器人赛道百亿估值俱乐部持续扩容</strong>，普渡科技与银河通用分别完成重磅融资，宇树科技于6月1日正式在科创板上会。此外，<strong>CVPR 2026华人学者Top 20榜单正式揭晓</strong>，中国学者在计算机视觉顶会中的统治力再度引发热议。
+    </div>
+  </div>
+
+  <!-- 2. AI 数学与推理突破 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🧮 AI 数学与推理突破</h2>
+      <span class="section-count">2 条</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">OpenAI破解80年数学未解之谜：AI证明Erdős离散几何猜想</div>
+      <div class="card-summary">
+        OpenAI发布公告称，其通用推理模型成功推翻了与传奇数学家Paul Erdős相关的平面单位距离问题中的一个核心猜想。该问题自1946年提出以来，一直困扰着全球数学家。OpenAI的模型发现了一组无限的点排列，其性能远超传统的方形网格直觉，并由外部数学家完成了验证。
+      </div>
+      <div class="card-insight">💡 意义：这标志着AI在基础科学领域不再仅是辅助工具，而是成为能够提出并证明复杂定理的“协作者”，数学因其可验证性成为检验AI推理能力的黄金试金石。</div>
+      <div class="tags">
+        <span class="tag tag-blue">数学推理</span>
+        <span class="tag tag-purple">AGI里程碑</span>
+        <span class="tag tag-green">离散几何</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://coaio.com/news/2026/06/openai-cracks-legendary-80-year-math-mystery-a-new-era-for-ai-problem-2s4c" target="_blank">COAIO / Ars Technica</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月5日</div>
+      <div class="card-title">OpenAI上线全新记忆架构Dreaming V3：ChatGPT获得真正的长期记忆</div>
+      <div class="card-summary">
+        OpenAI于美东时间6月4日凌晨悄悄上线了全新的ChatGPT记忆架构Dreaming V3。该架构突破了AI记忆领域的核心技术难点，实现了约5倍的推理算力压缩，能够自动整理并更新用户跨多年的对话历史，大幅提升了事实回忆与偏好遵循等任务的准确率。目前该功能已向美区Plus和Pro用户开放。
+      </div>
+      <div class="card-insight">💡 意义：Memory主权被视为2026下半年AI行业的最大新战场。Dreaming的发布彻底重写了AI Memory赛道的格局，让AI从无状态的“对话工具”进化为有连贯认知的“数字助手”。</div>
+      <div class="tags">
+        <span class="tag tag-blue">长期记忆</span>
+        <span class="tag tag-purple">架构革新</span>
+        <span class="tag tag-green">推理效率</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.53ai.com/keyword/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95" target="_blank">53AI</a></div>
+    </div>
+  </div>
+
+  <!-- 3. AI for Science（科学智能） -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🔬 AI for Science（科学智能）</h2>
+      <span class="section-count">1 条</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">DARPA启动“AI Forge”计划：加速AI在国家安全领域的科学突破</div>
+      <div class="card-summary">
+        美国国防高级研究计划局（DARPA）发布了“AI Forge”计划，旨在弥合商业AI创新与国家安全独特需求之间的鸿沟。该计划指出，许多对国家安全至关重要的AI挑战因缺乏直接商业应用而未被充分探索，急需通过全新机制加速AI在战略领域的科学突破与应用落地。
+      </div>
+      <div class="card-insight">💡 意义：科学智能正在从论文和实验室走向军事与战略前沿，各国政府正试图通过顶层设计，抢占“AI驱动科学发现”的战略高地。</div>
+      <div class="tags">
+        <span class="tag tag-blue">科学推理</span>
+        <span class="tag tag-purple">国家安全</span>
+        <span class="tag tag-green">政策推进</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.darpa.mil/news/2026/ai-forge-accelerating-ai-breakthroughs-national-security" target="_blank">DARPA</a></div>
+    </div>
+  </div>
+
+  <!-- 4. 具身智能与机器人突破 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🦾 具身智能与机器人突破</h2>
+      <span class="section-count">1 条</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-date">📅 2026年6月5日</div>
+      <div class="card-title">深度洞察：从机器人到具身智能，人工智能的“具身化”演进</div>
+      <div class="card-summary">
+        北京人大平台发表深度长文，系统梳理了机器人技术70年的发展历程。文章指出，随着大语言模型的突破，具身智能（Embodied AI）正通过物理实体与真实世界连接，从单一的“执行工具”进化为能够自主学习并适应环境的智能体。技术重点正从环境的感知与移动，转向复杂的灵巧操作与多模态交互。
+      </div>
+      <div class="card-insight">💡 意义：行业已从单纯的机械臂/机器狗本体研发，转向强调“大脑-小脑-肢体”深度融合的通用具身智能体系。</div>
+      <div class="tags">
+        <span class="tag tag-blue">具身智能</span>
+        <span class="tag tag-purple">技术综述</span>
+        <span class="tag tag-green">人机交互</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.bjrd.gov.cn/fwhd/bjrdzz/2025n/bjrdzz202509q/yjyts202509/202509/t20250930_4214986.html" target="_blank">北京人大</a></div>
+    </div>
+  </div>
+
+  <!-- 5. 机械臂本体 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🛠️ 机械臂本体（结构·驱动·运动学·控制）</h2>
+      <span class="section-count">0 条</span>
+    </div>
+    <div class="no-news">
+      🔕 本周暂无相关重大进展
+    </div>
+  </div>
+
+  <!-- 6. DeepSeek 专栏 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🐳 DeepSeek 专栏</h2>
+      <span class="section-count">2 条</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">DeepSeek V4 Pro宣布降价75%变永久方案，中国企业开启效率竞争新时代</div>
+      <div class="card-summary">
+        新华社与多家媒体撰文指出，DeepSeek于5月底宣布将V4 Pro模型API永久降价75%，每百万词元输入收费低至0.025元，创全球主流大模型价格新低。该模型全面适配华为昇腾芯片，标志着中国大模型首次在国产芯片上完成从训练到推理的全栈部署，并向全球展示了极致性价比的竞争逻辑。
+      </div>
+      <div class="card-insight">💡 意义：这不仅是价格的调整，更象征着国产AI供应链的自主可控与“降本增效”路线对国际巨头发起的有力挑战。</div>
+      <div class="tags">
+        <span class="tag tag-blue">V4 Pro</span>
+        <span class="tag tag-green">华为昇腾</span>
+        <span class="tag tag-purple">成本优势</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://xinwen.bjd.com.cn/content/s6a1d10d0e4b0e45f3fd25add.html" target="_blank">北京日报 / 新华社</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月（官网持续更新）</div>
+      <div class="card-title">DeepSeek-V4 预览版持续开放，Agent能力大幅提升</div>
+      <div class="card-summary">
+        根据DeepSeek官网显示，DeepSeek-V4预览版本已在网页端、APP和API全面上线。该模型具备世界顶级推理性能，且在Agent（智能体）能力上大幅提高。深度求索表示，该版本旨在通过开源和持续迭代，构建更智能的AI助手生态。
+      </div>
+      <div class="card-insight">💡 意义：在宣布降价的同时持续迭代模型核心能力，DeepSeek正在通过“开源+低成本+高性能”的三板斧重构AI产业的价值链。</div>
+      <div class="tags">
+        <span class="tag tag-blue">Agent框架</span>
+        <span class="tag tag-green">开源模型</span>
+        <span class="tag tag-purple">预览发布</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.deepseek.com" target="_blank">DeepSeek 官网</a></div>
+    </div>
+  </div>
+
+  <!-- 7. 顶级会议与学术动态 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🎓 顶级会议与学术动态</h2>
+      <span class="section-count">3 条</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">CVPR 2026华人学者Top 20榜单出炉：西湖大学张弛豪揽11篇问鼎</div>
+      <div class="card-summary">
+        雷峰网基于CVPR 2026接收论文数据，发布以通讯作者维度统计的华人学者Top 20榜单。西湖大学张弛以11篇论文高居榜首，新加坡国立大学王鑫超以10篇紧随其后。榜单显示，中国学者在计算机视觉领域的主导地位日益巩固，且扩散模型与多模态成为绝对高频研究方向。
+      </div>
+      <div class="card-insight">💡 意义：华人学者群体已成为全球计算机视觉研究的绝对主力，且研究热点高度集中在AIGC与多模态大模型，预示着未来视觉AI将朝着生成式与跨模态融合的方向加速演进。</div>
+      <div class="tags">
+        <span class="tag tag-blue">CVPR 2026</span>
+        <span class="tag tag-purple">学术榜单</span>
+        <span class="tag tag-green">华人力量</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.leiphone.com/category/ai/3UE9jEq9VJb6clqY.html" target="_blank">雷峰网</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月（持续征稿中）</div>
+      <div class="card-title">NeurIPS 2026征稿进行时：12月相约悉尼</div>
+      <div class="card-summary">
+        第40届神经信息处理系统大会（NeurIPS 2026）已发布征稿启事，主会议将于12月1日至6日在澳大利亚悉尼举行，并在亚特兰大和巴黎设有卫星会场。会议诚邀深度学习、生成式AI、神经科学、社会科学等交叉学科的原创研究投稿。
+      </div>
+      <div class="card-insight">💡 意义：作为全球最负盛名的AI学术会议，NeurIPS 2026的跨学科征稿反映了AI正加速渗透到基础科学与社会科学的各个环节。</div>
+      <div class="tags">
+        <span class="tag tag-blue">NeurIPS</span>
+        <span class="tag tag-purple">顶会动态</span>
+        <span class="tag tag-green">学术交流</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://neurips.cc/Conferences/2026/CallForPapers" target="_blank">NeurIPS 2026</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月（会议筹备中）</div>
+      <div class="card-title">第二届人工智能与基础模型国际学术会议（AIFM 2026）将于乌鲁木齐召开</div>
+      <div class="card-summary">
+        第二届人工智能与基础模型国际学术会议定于6月26日至28日在新疆乌鲁木齐举办。会议将围绕大模型框架、模型安全、多模态融合、具身智能机器人等核心议题展开，旨在为全球研究者搭建高水平学术交流平台。
+      </div>
+      <div class="card-insight">💡 意义：国内地方性的顶会如雨后春笋般涌现，为西部地区AI学术生态建设注入了强劲动力。</div>
+      <div class="tags">
+        <span class="tag tag-blue">AIFM 2026</span>
+        <span class="tag tag-purple">基础模型</span>
+        <span class="tag tag-green">学术会议</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.icaifm.org/chinese" target="_blank">AIFM 2026 官网</a></div>
+    </div>
+  </div>
+
+  <!-- 8. AI 基础设施与能效 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">⚡ AI 基础设施与能效</h2>
+      <span class="section-count">5 条</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">英特尔发布至强6+处理器：18A工艺、288核重塑数据中心能效标杆</div>
+      <div class="card-summary">
+        英特尔正式发布代号Clearwater Forest的至强6+处理器，采用Intel 18A制程工艺与Foveros Direct 3D封装技术，最高集成288个能效核。该处理器在性能密度与每瓦性能上实现代际飞跃，并配套发布了专为AI推理优化的GPU“Crescent Island”及新一代以太网控制器E835，构建智能体AI时代的全栈算力底座。
+      </div>
+      <div class="card-insight">💡 意义：这是英特尔在数据中心芯片领域的重磅反击，标志着英特尔试图通过压倒性的能效比与核心密度，打破英伟达在AI基础设施领域的绝对主导权。</div>
+      <div class="tags">
+        <span class="tag tag-blue">Intel 18A</span>
+        <span class="tag tag-purple">服务器芯片</span>
+        <span class="tag tag-green">能效比</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://finance.sina.com.cn/roll/2026-06-01/doc-inhzwisx2633629.shtml" target="_blank">新浪财经 (ZOL)</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">软银宣布750亿欧元重注法国AI基础设施：5GW级超大规模数据中心</div>
+      <div class="card-summary">
+        软银集团承诺在法国投资高达750亿欧元，用于建设5GW的AI基础设施项目。该项目包含一个位于敦刻尔克的核心枢纽，首期3.1GW阶段计划于2031年投入运营。此举被视作AI算力竞争与地缘战略深度捆绑的标志性事件。
+      </div>
+      <div class="card-insight">💡 意义：AI领导力不再仅仅取决于算法模型，更取决于电力、土地和主权基础设施的掌控力。全球AI基建已进入“烧钱比拼算力”的白热化阶段。</div>
+      <div class="tags">
+        <span class="tag tag-blue">软银</span>
+        <span class="tag tag-purple">欧洲算力</span>
+        <span class="tag tag-green">能源基建</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://techstartups.com/2026/06/01/top-tech-news-today-june-1-2026" target="_blank">Tech Startups / FT</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">美国近半数据中心面临延期或取消：电力与电网制约成AI最大软肋</div>
+      <div class="card-summary">
+        据分析报告显示，美国计划于2026年上线的约140个数据中心（总规划容量16GW）中，30%至50%可能因变压器、电池组、电网接入等电力基础设施的多年来严重滞后而延期或直接取消。目前仅有少数项目处于活跃施工状态。
+      </div>
+      <div class="card-insight">💡 意义：AI发展的最大瓶颈正从“算力卡”变为“电力卡”，物理世界的基础设施供给速度正在追不上数字世界的算力爆发需求。</div>
+      <div class="tags">
+        <span class="tag tag-blue">电网瓶颈</span>
+        <span class="tag tag-purple">数据中心</span>
+        <span class="tag tag-green">能源滞后</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://techstartups.com/2026/06/01/top-tech-news-today-june-1-2026" target="_blank">Tech Startups / Bloomberg</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">墨芯人工智能完成近十亿元C轮融资，稀疏计算成AI推理赛道新贵</div>
+      <div class="card-summary">
+        墨芯人工智能宣布完成近十亿元C轮融资，背靠顶尖研发团队与技术深耕，公司已在全国四大区域落地多个千卡级算力集群。凭借完全自主的稀疏计算原生架构，墨芯正以高性价比和高能效比的推理方案，打破传统GPU的垄断地位，成为资本市场追捧的硬科技标的。
+      </div>
+      <div class="card-insight">💡 意义：在“绿色算力”和“降本增效”的大背景下，主打能效比和差异化架构的国产AI芯片正在加速商业化落地，成为补位英伟达之外的“必选项”。</div>
+      <div class="tags">
+        <span class="tag tag-blue">稀疏计算</span>
+        <span class="tag tag-purple">AI推理芯片</span>
+        <span class="tag tag-green">国产算力</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.xhby.net/content/s6a1cfb4fe4b010b7fda1f4ba.html" target="_blank">新华报业</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月2日</div>
+      <div class="card-title">AI基础设施简报：企业级AI治理缺口达79%，算力基建年耗或超6000亿美元</div>
+      <div class="card-summary">
+        一份最新的AI基础设施简报指出，尽管约79%的企业已采用AI智能体，但仅有11%将其投入生产环境，且具备成熟AI治理能力的企业仅占21%。与此同时，超大规模云服务商本年度总资本支出预计超过6000亿美元，其中约75%用于AI基础设施，算力成本与投入产出比面临巨大压力。
+      </div>
+      <div class="card-insight">💡 意义：模型的构建能力并非企业间的护城河，数据治理、编排调度以及AI系统的合规化与可控化才是真正的核心竞争力所在。</div>
+      <div class="tags">
+        <span class="tag tag-blue">AI治理</span>
+        <span class="tag tag-purple">资本算力</span>
+        <span class="tag tag-green">行业数据</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.youtube.com/watch?v=yqS7vn4DW8U" target="_blank">Pipeline & Protocols (YouTube)</a></div>
+    </div>
+  </div>
+
+  <!-- 9. 产业与政策 -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">🏛️ 产业与政策</h2>
+      <span class="section-count">2 条</span>
+    </div>
+    
+    <div class="card">
+      <div class="card-date">📅 2026年6月1日</div>
+      <div class="card-title">中国机器人百亿阵营扩容：普渡、银河通用领衔，行业估值逻辑生变</div>
+      <div class="card-summary">
+        进入2026年以来，国内机器人领域融资延续高速增长势头。商用服务机器人企业普渡科技斩获近10亿元融资跻身百亿估值；银河通用完成25亿元融资，估值超200亿元；星海图完成近20亿元B+轮融资。投资重心从概念炒作转向看订单、看落地、看规模化量产。同时，宇树科技于6月1日正式在科创板上会，2026年有望成为机器人主机厂IPO元年。
+      </div>
+      <div class="card-insight">💡 意义：中国具身智能与机器人产业正在经历从“讲故事”到“拼量产”的关键转折，资本、技术与产业链的协同正深度绑定，全面开启商业化验证与规模化交付的冲刺阶段。</div>
+      <div class="tags">
+        <span class="tag tag-blue">企业融资</span>
+        <span class="tag tag-purple">估值逻辑</span>
+        <span class="tag tag-green">科创板上会</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.stcn.com/article/detail/3936066.html" target="_blank">证券时报 / 经济参考报</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-date">📅 2026年6月5日</div>
+      <div class="card-title">腾讯汤道生对话姚顺雨：回应外界“腾讯AI偏慢”质疑，坚定端到端布局</div>
+      <div class="card-summary">
+        在腾讯云AI产业应用大会上，腾讯集团高级执行副总裁汤道生与首席AI科学家姚顺雨展开深度对话。姚顺雨分享了加入腾讯的核心原因，并针对外界对腾讯AI发展节奏偏慢的看法做出回应，阐述了腾讯在AI底层技术与产业落地方面的长线布局与战略耐心。
+      </div>
+      <div class="card-insight">💡 意义：互联网巨头在AI下半场的竞争策略逐渐清晰，不再唯速度论，而是强调结合产业场景的深度打磨与长期技术壁垒的构建。</div>
+      <div class="tags">
+        <span class="tag tag-blue">腾讯AI</span>
+        <span class="tag tag-purple">产业应用</span>
+        <span class="tag tag-green">科技巨头</span>
+      </div>
+      <div class="source-link">🔗 来源：<a href="https://www.53ai.com/keyword/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95" target="_blank">53AI</a></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>🤖 AI与机器人学术产业周报 | 第2期 | 2026年6月8日</p>
+    <p style="font-size: 0.8rem; color: #999;">本刊旨在聚合本周内（2026.06.01-06.08）人工智能与机器人领域的学术论文、技术突破与产业政策动态。</p>
+    <p style="font-size: 0.8rem; color: #999;">内容仅为信息传播之用，不构成任何投资建议。</p>
+  </footer>
 
 </body>
 </html>
