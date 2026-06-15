@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI与机器人周报 | 2026年6月8日 — 6月15日</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card-bg: #f8f9fb;
+            --text: #1a1a2e;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e2e5ea;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 24px 16px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 32px 0 24px;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 32px;
+        }
+        header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 8px; }
+        header p { color: var(--text-secondary); font-size: 1rem; }
+        .stats-bar {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .stats-bar div { text-align: center; }
+        .stats-bar strong { display: block; font-size: 1.4rem; color: var(--accent); }
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.35rem;
+            color: var(--text);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .section-title .count {
+            font-size: 0.85rem;
+            color: var(--accent);
+            background: #eef2ff;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 16px;
+        }
+        .card h3 { font-size: 1.08rem; margin-bottom: 4px; color: var(--text); }
+        .card .meta {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        .card .summary { margin-bottom: 10px; }
+        .card .significance {
+            font-size: 0.88rem;
+            color: var(--accent);
+            background: #eef2ff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+        .card .tags { margin-bottom: 6px; }
+        .card .tags span {
+            display: inline-block;
+            background: #e8ecf1;
+            color: #333;
+            font-size: 0.78rem;
+            padding: 2px 10px;
+            border-radius: 12px;
+            margin-right: 6px;
+        }
+        .card .source { font-size: 0.82rem; }
+        .card .source a { color: var(--accent); text-decoration: none; }
+        .card .source a:hover { text-decoration: underline; }
+        .no-news {
+            text-align: center;
+            color: #999;
+            padding: 24px;
+            font-style: italic;
+        }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.82rem;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>AI 与机器人学术周报</h1>
+        <p>覆盖时间：2026年6月8日 — 2026年6月15日</p>
+    </header>
+
+    <div class="stats-bar">
+        <div><strong>11</strong>总条目数</div>
+        <div><strong>8</strong>板块数</div>
+        <div><strong>9</strong>引用信源</div>
+    </div>
+
+    <!-- 1. 本期焦点 -->
+    <div class="section">
+        <div class="section-title">🔍 本期焦点</div>
+        <div class="card">
+            <p>本周，AI 的高考数学实战评测成为社会热点，6 款国内主流大模型挑战新高考 I 卷，最高得分 148 分，引发对“推理过程严谨性”的深入讨论。同时，中国工信部与国资委联合启动人形机器人与具身智能实景实训专项行动，明确 2026 年底前实现万台级常态化部署目标。在 AI 基础设施领域，金山云因算力成本上涨宣布 AI 服务提价 15%-50%，标志着 AI 算力供需矛盾已传导至定价体系。此外，TongGeometry 几何推理模型被报道在 Nature Machine Intelligence 上发表，展示了中国在 AI 数学推理领域的突破。</p>
+        </div>
+    </div>
+
+    <!-- 2. AI 数学与推理突破 -->
+    <div class="section">
+        <div class="section-title">🧮 AI 数学与推理突破 <span class="count">2 条</span></div>
+
+        <div class="card">
+            <h3>6 款主流 AI 大模型挑战高考数学：DeepSeek 等拿下 148 分，压轴题成分水岭</h3>
+            <div class="meta">2026年6月8日 | 新浪新闻</div>
+            <div class="summary">
+                评测选取了 2026 年新高考 I 卷数学卷，邀请了讯飞星火、DeepSeek、智谱、ChatGPT、Kimi、MiniMax 六款以推理见长的大模型“考生”进行答题，并由两位高级数学教师评分。结果显示，头部大模型总分呈现梯度分布，DeepSeek 等模型在长逻辑代数推导中表现优异，但在数形结合、几何性质分析和灵活处理特殊问题方面仍显不足。部分答卷还出现了知识运用不当、字符不规范、引用高等数学概念（如上确界、向量叉乘）等问题。
+            </div>
+            <div class="significance">💡 意义：这是首次大规模、有专家批阅的 AI 高考数学实战评测，标志着“推理能力”从基准测试走向真实教育场景验证，也暴露了当前大模型在过程严谨性上的短板。</div>
+            <div class="tags"><span>数学推理</span><span>高考评测</span><span>大模型对比</span></div>
+            <div class="source">🔗 <a href="https://news.sina.com.cn/o/2026-06-08/doc-iniaswmn5462853.shtml" target="_blank">新浪新闻原文</a></div>
+        </div>
+
+        <div class="card">
+            <h3>TongGeometry AI：中国几何推理模型在 Nature Machine Intelligence 发表</h3>
+            <div class="meta">2026年6月8日 | AcademicJobs.com</div>
+            <div class="summary">
+                报道称，中国研究团队开发的 TongGeometry 几何推理模型在《自然·机器智能》(Nature Machine Intelligence) 上发表。该模型在逻辑几何推理基准测试上展现出超越 AlphaGeometry 的性能，采用新型神经符号架构，专注于几何定理的自动证明。具体技术细节和模型架构尚未完全公开。
+            </div>
+            <div class="significance">💡 意义：若得到同行评议确认，这将是 AI 几何推理领域的重大进展，也是中国团队在数学 AI 方向的重要学术贡献，标志着符号推理与深度学习融合的新高度。</div>
+            <div class="tags"><span>几何推理</span><span>Nature MI</span><span>神经符号系统</span></div>
+            <div class="source">🔗 <a href="https://www.academicjobs.com/research-publication-news/chinese-researchers-tonggeometry-ai-logical-reasoning-breakthrough-nature-machine-intelligence-2312" target="_blank">AcademicJobs 报道</a></div>
+        </div>
+    </div>
+
+    <!-- 3. AI for Science -->
+    <div class="section">
+        <div class="section-title">🔬 AI for Science（科学智能） <span class="count">1 条</span></div>
+
+        <div class="card">
+            <h3>Stanford AI 专家 2026 预测：神经网络的“考古学”将成重点，科学界要求打开 AI 黑箱</h3>
+            <div class="meta">2026年6月8日 | Stanford HAI</div>
+            <div class="summary">
+                Stanford 人工智能研究院 (HAI) 发布专家预测文章，指出 2026 年 AI for Science 领域最值得关注的趋势是“高性能神经网络考古学”——使用稀疏自编码器等方法探寻深度网络内部驱动性能的特征。文章同时指出，科学领域对“打开 AI 黑箱”存在绝对需求，理解模型如何得出预测而非仅仅追求精度，成为推进 AI4Science 可信部署的关键。
+            </div>
+            <div class="significance">💡 意义：顶级 AI 机构的声明强化了可解释性在科学 AI 中的核心地位，引导 AI4Science 从“预测工具”向“理解工具”转型。</div>
+            <div class="tags"><span>AI4Science</span><span>可解释性</span><span>稀疏自编码器</span></div>
+            <div class="source">🔗 <a href="https://hai.stanford.edu/news/stanford-ai-experts-predict-what-will-happen-in-2026" target="_blank">Stanford HAI 原文</a></div>
+        </div>
+    </div>
+
+    <!-- 4. 具身智能与机器人突破 -->
+    <div class="section">
+        <div class="section-title">🤖 具身智能与机器人突破 <span class="count">2 条</span></div>
+
+        <div class="card">
+            <h3>AW 2026 中国首届人形机器人大会：具身智能从实验室走向工程化系统</h3>
+            <div class="meta">2026年6月8日 | EE Times</div>
+            <div class="summary">
+                在 AW 2026 期间举办的“中国首届人形机器人大会”上，学术界和工业界专家一致指出，具身智能正从以算法为中心的研究领域，转向能够在真实环境中完成感知、决策和执行任务的工程系统。包括 AGIBOT、Unitree、Fourier、Huawei 在内的多家中国企业与 Boston Dynamics 同台展示，覆盖了从底层运动控制到高层多模态传感器融合的全技术谱系。Atlas 非商业化版本首次亮相中国展会。
+            </div>
+            <div class="significance">💡 意义：这是中国具身智能企业首次集体出海对标全球头部企业，标志着中国在人形机器人全链条上已形成系统级竞争力，工程化落地进入实质性加速期。</div>
+            <div class="tags"><span>人形机器人</span><span>具身智能展会</span><span>工程化</span></div>
+            <div class="source">🔗 <a href="https://www.eetimes.com/humanoid-robots-exit-labs-mapping-the-technical-path-to-embodied-ai-at-aw-2026" target="_blank">EE Times 原文</a></div>
+        </div>
+
+        <div class="card">
+            <h3>中国工信部与国资委启动人形机器人实景实训专项行动，2026 年底进入“作业模式”</h3>
+            <div class="meta">2026年6月10日 | SCMP / 证券时报 / 经济参考报</div>
+            <div class="summary">
+                工信部、国资委联合印发通知，启动 2026 年度人形机器人与具身智能实景实训专项行动。明确要求：到 2026 年底，重点人形机器人产品须在若干代表性场景完成应用验证和常态部署，正式开启“作业模式”，并凝练百余个高价值应用场景，带动形成万台级规模落地能力。各地实施方案须在 6 月底前提交，11 月底前提交进展报告。
+            </div>
+            <div class="significance">💡 意义：这是全球首个将人形机器人规模化部署纳入政府绩效考核的政策文件，标志着人形机器人从演示阶段正式进入“真干活”的产业化元年，对供应链、算法训练和场景数据积累带来直接拉动。</div>
+            <div class="tags"><span>政策驱动</span><span>实景实训</span><span>万台规模</span></div>
+            <div class="source">🔗 <a href="https://www.scmp.com/economy/china-economy/article/3356629/china-fast-tracks-humanoid-robots-and-embodied-ai-industry-under-nationwide-programme" target="_blank">SCMP 报道</a> · <a href="https://www.stcn.com/article/detail/3957465.html" target="_blank">证券时报报道</a></div>
+        </div>
+    </div>
+
+    <!-- 5. 机械臂本体 -->
+    <div class="section">
+        <div class="section-title">🦾 机械臂本体（结构·驱动·运动学·控制） <span class="count">0 条</span></div>
+        <div class="no-news">📭 本周暂无相关重大进展。</div>
+    </div>
+
+    <!-- 6. DeepSeek 专栏 -->
+    <div class="section">
+        <div class="section-title">🔍 DeepSeek 专栏 <span class="count">1 条</span></div>
+        <div class="card">
+            <h3>知乎专栏汇总：国内外主流大模型最新版本整理（2026年6月12日更新）</h3>
+            <div class="meta">2026年6月12日 | 知乎专栏</div>
+            <div class="summary">
+                一篇系统性整理国内外主流大模型及应用的最新版本汇总帖在知乎获得高关注。其中关于 DeepSeek 的部分详细列出了 DeepSeek-V4-Pro 和 V4-Flash 的完整技术参数：总参数量 1.6T / 284B，每 token 激活 49B / 13B，上下文窗口 1M token，支持 Think High/Think Max 双档思考控制。同时汇总了 GLM-4.7、Qwen3.5、Kimi-K2.6 等多家模型的最新版本。
+            </div>
+            <div class="significance">💡 意义：该汇总为开发者提供了最新模型选型的权威参考，也反映出当前 DeepSeek V4 系列在国内技术社区的核心关注地位。</div>
+            <div class="tags"><span>DeepSeek V4</span><span>模型汇总</span><span>开源</span></div>
+            <div class="source">🔗 <a href="https://zhuanlan.zhihu.com/p/670574382" target="_blank">知乎专栏原文</a></div>
+        </div>
+    </div>
+
+    <!-- 7. 顶级会议与学术动态 -->
+    <div class="section">
+        <div class="section-title">📚 顶级会议与学术动态 <span class="count">2 条</span></div>
+
+        <div class="card">
+            <h3>ACL 2026 论文分享会定于 6 月 27 日在北京举办，展示 NLP 与 Agent 前沿</h3>
+            <div class="meta">2026年6月8日 | 新浪科技</div>
+            <div class="summary">
+                机器之心宣布将于 6 月 27 日在北京中关村举办 ACL 2026 论文分享会，设置 Keynote 演讲、论文分享、圆桌对话和 Poster 展示环节。本届 ACL 2026 共收到 12,148 篇投稿，Main Conference 录用率 19%，Findings 录用率 18%。活动重点关注 Agent 任务执行、多模态理解与生成统一、推理增强以及世界模型等前沿方向。
+            </div>
+            <div class="significance">💡 意义：ACL 作为 NLP 领域顶会，其社区活动直接反映 NLP 与大模型当前研究热点，有助于学术界与工业界对齐技术趋势。</div>
+            <div class="tags"><span>ACL 2026</span><span>论文分享</span><span>NLP</span></div>
+            <div class="source">🔗 <a href="https://finance.sina.com.cn/tech/roll/2026-06-08/doc-iniatatq3769244.shtml" target="_blank">新浪科技报道</a></div>
+        </div>
+
+        <div class="card">
+            <h3>IEEE DLCV 2026 在杭州召开，深度学习与计算机视觉前沿交汇</h3>
+            <div class="meta">2026年6月11日发布（会议 6月6-8日） | AC学术平台</div>
+            <div class="summary">
+                2026 年 IEEE 第三届深度学习与计算机视觉国际会议 (IEEE DLCV 2026) 于 6 月 6-8 日在杭州召开，由杭州电子科技大学、浙江省人工智能学院、IEEE 中国联合会主办。浙江大学沈春华教授、北京理工大学刘驰教授等做主旨报告，覆盖算法优化、视觉识别、智能系统等方向。会议已成为该领域具有较大影响力的学术交流窗口。
+            </div>
+            <div class="significance">💡 意义：该会议虽为主题性会议，但规模与学术层级持续上升，体现了深度学习与计算机视觉交叉研究的活跃度和产业化趋势。</div>
+            <div class="tags"><span>DLCV 2026</span><span>深度学习</span><span>计算机视觉</span></div>
+            <div class="source">🔗 <a href="https://www.academicenter.com" target="_blank">AC学术平台</a></div>
+        </div>
+    </div>
+
+    <!-- 8. AI 基础设施与能效 -->
+    <div class="section">
+        <div class="section-title">⚡ AI 基础设施与能效 <span class="count">2 条</span></div>
+
+        <div class="card">
+            <h3>金山云宣布 AI 算力相关产品提价 15%-50%，文件存储涨 30%-50%</h3>
+            <div class="meta">2026年6月12日 | CFM闪存市场综合</div>
+            <div class="summary">
+                金山云官方公告称，因全球 AI 算力需求攀升及硬件成本上涨，将对部分云产品进行价格调整。AI 算力相关服务价格上调约 15%-50%，文件存储产品价格上调约 30%-50%，新价格于 2026 年 7 月 12 日起生效。这是国内主要云厂商近期首次因 AI 算力紧缺而公开大幅提价。
+            </div>
+            <div class="significance">💡 意义：云服务提价是 AI 基础设施供需失衡的直接信号，预示着中小企业 AI 应用成本上升，可能加速端侧推理和自建算力需求。</div>
+            <div class="tags"><span>云服务涨价</span><span>AI 算力供需</span><span>基础设施</span></div>
+            <div class="source">🔗 <a href="https://www.chinaflashmarket.com/a/183952" target="_blank">CFM闪存市场报道</a></div>
+        </div>
+
+        <div class="card">
+            <h3>SK 海力士开始向客户出货 HBM4E 样品，业界预计最早本月发货</h3>
+            <div class="meta">2026年6月12日 | CFM闪存市场</div>
+            <div class="summary">
+                据韩媒报道，SK 海力士正准备向主要客户提供 HBM4E（高带宽内存第四代扩展版）样品，最早可能于本月内开始发货，最迟下月。HBM4E 作为 AI 训练和推理芯片的关键配套存储器，其样品供应标志着下一代 AI 内存正式进入客户验证阶段。三星电子也宣布将于 6 月 16-18 日召开全球战略会议，审议 HBM 供应状况和下半年需求展望。
+            </div>
+            <div class="significance">💡 意义：HBM4E 的送样为 NVIDIA Vera CPU 等下一代 AI 芯片的量产奠定基础，存储器能效和带宽的提升将直接决定 2026-2027 年 AI 基础设施的性能天花板。</div>
+            <div class="tags"><span>HBM4E</span><span>AI 内存</span><span>SK 海力士</span></div>
+            <div class="source">🔗 <a href="https://www.chinaflashmarket.com/a/183952" target="_blank">CFM闪存市场报道</a></div>
+        </div>
+    </div>
+
+    <!-- 9. 产业与政策 -->
+    <div class="section">
+        <div class="section-title">🏛 产业与政策 <span class="count">1 条</span></div>
+
+        <div class="card">
+            <h3>机器人产业投融资持续升温，加速进化完成近 10 亿元融资，头部企业明确“量产兑现”信号</h3>
+            <div class="meta">2026年6月12日 | 证券日报 / 证券时报 / 同花顺</div>
+            <div class="summary">
+                天眼查数据显示，截至 6 月初，年内排队 IPO 的机器人相关企业超过 39 家，覆盖整机、伺服电机、减速器等全产业链。一级市场融资已达 434 起，总金额 746 亿元。具身智能公司“加速进化”近日完成近 10 亿元融资，一季度出货量同比增长 500%。智元宣布已实现全球首个通用具身智能机器人万台交付。资本市场从“本体”向上下游细分领域延伸，高端六维力传感器企业坤维科技完成超亿元 B++ 轮融资。
+            </div>
+            <div class="significance">💡 意义：明确的量产数据和快速的融资节奏表明，人形机器人产业正从“主题炒作”转向“业绩驱动”，产业链成熟度和市场信心达到新高度。</div>
+            <div class="tags"><span>人形机器人</span><span>融资 IPO</span><span>规模化量产</span></div>
+            <div class="source">🔗 <a href="https://m.10jqka.com.cn/20260612/c677402211.shtml" target="_blank">同花顺报道</a> · <a href="https://www.stcn.com/article/detail/3957465.html" target="_blank">证券时报报道</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>生成时间：2026年6月15日 · 本报告仅为学术新闻整理，不构成投资建议 · 所有内容版权归原来源所有</p>
+    </footer>
+</div>
+</body>
+</html>
