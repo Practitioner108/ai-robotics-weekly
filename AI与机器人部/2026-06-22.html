@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 与机器人学术周报 | 2026.06.15 - 06.22</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card-bg: #f8f9fb;
+            --text: #1a1a2e;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e2e5ea;
+            --tag-bg-math: #eef2ff;
+            --tag-text-math: #1e3a8a;
+            --tag-bg-science: #ecfdf5;
+            --tag-text-science: #065f46;
+            --tag-bg-embodied: #fef3c7;
+            --tag-text-embodied: #92400e;
+            --tag-bg-arm: #fce7f3;
+            --tag-text-arm: #9d174d;
+            --tag-bg-ds: #e0e7ff;
+            --tag-text-ds: #3730a3;
+            --tag-bg-conf: #f3e8ff;
+            --tag-text-conf: #6b21a8;
+            --tag-bg-infra: #f0fdf4;
+            --tag-text-infra: #166534;
+            --tag-bg-policy: #fff7ed;
+            --tag-text-policy: #c2410c;
+            --tag-bg-focus: #dbeafe;
+            --tag-text-focus: #1e40af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 6px;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .section {
+            margin-bottom: 36px;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            padding-bottom: 8px;
+            border-bottom: 3px solid var(--accent);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .section-title .count {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1 1 70%;
+        }
+
+        .card-date {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            background: #fff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .card-summary {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .tag-math {
+            background: var(--tag-bg-math);
+            color: var(--tag-text-math);
+        }
+        .tag-science {
+            background: var(--tag-bg-science);
+            color: var(--tag-text-science);
+        }
+        .tag-embodied {
+            background: var(--tag-bg-embodied);
+            color: var(--tag-text-embodied);
+        }
+        .tag-arm {
+            background: var(--tag-bg-arm);
+            color: var(--tag-text-arm);
+        }
+        .tag-ds {
+            background: var(--tag-bg-ds);
+            color: var(--tag-text-ds);
+        }
+        .tag-conf {
+            background: var(--tag-bg-conf);
+            color: var(--tag-text-conf);
+        }
+        .tag-infra {
+            background: var(--tag-bg-infra);
+            color: var(--tag-text-infra);
+        }
+        .tag-policy {
+            background: var(--tag-bg-policy);
+            color: var(--tag-text-policy);
+        }
+        .tag-focus {
+            background: var(--tag-bg-focus);
+            color: var(--tag-text-focus);
+        }
+
+        .card-source {
+            font-size: 0.8rem;
+        }
+        .card-source a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .card-source a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+        }
+
+        .no-news {
+            font-style: italic;
+            color: var(--text-secondary);
+            padding: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .stats-bar {
+                gap: 20px;
+            }
+            .card-header {
+                flex-direction: column;
+            }
+            .card-title {
+                flex: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>AI 与机器人学术周报</h1>
+            <div class="subtitle">2026 年 6 月 15 日 — 6 月 22 日 · 纯人工编辑精选</div>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">24</div>
+                <div class="stat-label">总条目数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">9</div>
+                <div class="stat-label">板块数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">18</div>
+                <div class="stat-label">引用信源</div>
+            </div>
+        </div>
+
+        <!-- 1. 本期焦点 -->
+        <div class="section">
+            <div class="section-title">🔎 本期焦点</div>
+            <div class="card">
+                <div class="card-tags">
+                    <span class="tag tag-focus">焦点综述</span>
+                </div>
+                <p class="card-summary">
+                    本周，AI 与机器人领域呈现多线并进的态势。<strong>具身智能</strong>成为最炙手可热的赛道：智元远征 A3 人形机器人全球首次实现全尺寸双足自主打乒乓球，赛力斯人形机器人首次曝光并计划年内推出多款产品，安徽省更是拟设立百亿规模机器人产业基金群。<strong>AI 数学推理</strong>方面，北大联合 BIGAI 等机构在《Nature Machine Intelligence》发表 TongGeometry 系统，以单张消费级 GPU 在 38 分钟内解决 2000 年以来所有 IMO 几何题，标志着定理证明迈向实用化。<strong>基础设施</strong>层面，施耐德电气在 VivaTech 2026 上聚焦 AI 能耗难题，而北京人形机器人创新中心启动机器人全生命周期示范应用区，行业正从“技术验证”加速驶向“量产交付”。
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. AI 数学与推理突破 -->
+        <div class="section">
+            <div class="section-title">🧮 AI 数学与推理突破 <span class="count">· 3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">北大联合团队发布 TongGeometry：单 GPU 攻克全量 IMO 几何题，超越 AlphaGeometry</span>
+                    <span class="card-date">2026-06-16</span>
+                </div>
+                <p class="card-summary">北京大学与北京通用人工智能研究院（BIGAI）等机构在《Nature Machine Intelligence》发表 TongGeometry 系统。该系统利用创新的归一化表示技术，将搜索空间压缩数个数量级，仅需单张消费级 GPU 即可在 38 分钟内解出 2000 年以来全部 IMO 几何问题。在性能与功能多样性上全面超越 DeepMind 的 AlphaGeometry。</p>
+                <div class="card-tags">
+                    <span class="tag tag-math">定理证明</span>
+                    <span class="tag tag-math">几何推理</span>
+                    <span class="tag tag-math">消费级GPU</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.bignewsnetwork.com/news/278835773/chinese-researchers-score-breakthrough-in-general-artificial-intelligence-logical-reasoning" target="_blank" rel="noopener">Big News Network</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">小米 MiMo-V2.5-Pro UltraSpeed：万亿 MoE 推理模型实现单节点超 1000 tokens/s</span>
+                    <span class="card-date">2026-06-17</span>
+                </div>
+                <p class="card-summary">据知乎专栏《国内外知名大模型及应用》6 月更新，小米 MiMo 团队发布 MiMo-V2.5-Pro-UltraSpeed 推理模型。该模型基于万亿参数 MoE 架构，首次在通用 GPU 单节点 8 卡上突破 1000 tokens/s 解码速度（峰值约 1200 tps），大幅提升了推理效率，为端侧与高吞吐场景提供了新可能。</p>
+                <div class="card-tags">
+                    <span class="tag tag-math">推理加速</span>
+                    <span class="tag tag-math">MoE架构</span>
+                </div>
+                <div class="card-source">来源：<a href="https://zhuanlan.zhihu.com/p/670574382" target="_blank" rel="noopener">知乎专栏</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">微软亚洲研究院：形式化规则自主学习是数学推理性能提升的关键</span>
+                    <span class="card-date">2026-06-15</span>
+                </div>
+                <p class="card-summary">微软亚洲研究院高级研究员张宪分享“大语言模型数学推理”最新理念。团队通过形式化与符号化方法，让模型自主学习数学领域内在规则，并在奥林匹克级不等式证明上验证其有效性。研究进一步推广至代数、几何与数论领域，试图实现大模型在数学推理上的全面突破。</p>
+                <div class="card-tags">
+                    <span class="tag tag-math">形式化推理</span>
+                    <span class="tag tag-math">微软研究院</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.microsoft.com/en-us/research/articles/xian-zhang-llms-for-mathematical-reasoning" target="_blank" rel="noopener">Microsoft Research</a></div>
+            </div>
+
+        </div>
+
+        <!-- 3. AI for Science -->
+        <div class="section">
+            <div class="section-title">🔬 AI for Science（科学智能） <span class="count">· 2 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">斯坦福 HAI 2026 AI 指数报告发布：AI 科学论文年增 26%，但前沿模型论文复现率不足 20%</span>
+                    <span class="card-date">2026-06-15</span>
+                </div>
+                <p class="card-summary">《2026 AI Index Report》科学章节指出，2025 年自然科学领域 AI 相关出版物约 80,150 篇，同比增长 26%。AI 现已占科学产出的 5.8%–8.8%。然而，在 ReplicationBench 上，前沿模型对天体物理学论文的复现得分低于 20%；最佳 AI Agent 在 PaperArena 上的准确率仅为 38.8%，远低于博士专家的 83.5%。</p>
+                <div class="card-tags">
+                    <span class="tag tag-science">AI指数报告</span>
+                    <span class="tag tag-science">科学自动化</span>
+                </div>
+                <div class="card-source">来源：<a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/science" target="_blank" rel="noopener">Stanford HAI</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">AI4Science 2026 国际会议征稿进行中：10 月深圳召开，聚焦科学发现全流程 AI 化</span>
+                    <span class="card-date">2026-06-20</span>
+                </div>
+                <p class="card-summary">2026 年人工智能赋能科学发现与创新国际会议（AI4Science 2026）将于 10 月 23-25 日在深圳举办，由香港城市大学、深圳河套学院、南昌大学联合主办。会议征稿涵盖 AI 科学基础、基础模型、气候建模、药物发现、定理证明等 8 大方向，强调科学严谨性与可重复性。</p>
+                <div class="card-tags">
+                    <span class="tag tag-science">国际会议</span>
+                    <span class="tag tag-science">AI4Science</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.ais.cn/attendees/index/IMRYJY" target="_blank" rel="noopener">艾思科蓝</a></div>
+            </div>
+
+        </div>
+
+        <!-- 4. 具身智能与机器人突破 -->
+        <div class="section">
+            <div class="section-title">🤖 具身智能与机器人突破 <span class="count">· 5 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">智元远征 A3 人形机器人全球首次实现自主打乒乓球</span>
+                    <span class="card-date">2026-06-15</span>
+                </div>
+                <p class="card-summary">智元机器人宣布，其全尺寸双足人形机器人远征 A3 成功实现全程自主决策的乒乓球对抗，成为全球首个完成此类动态交互任务的通用人形机器人。这标志着人形机器人在实时环境感知、动态轨迹规划与身体协调控制方面取得重大突破。</p>
+                <div class="card-tags">
+                    <span class="tag tag-embodied">人形机器人</span>
+                    <span class="tag tag-embodied">动态交互</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.stcn.com/article/detail/3967457.html" target="_blank" rel="noopener">证券时报</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">赛力斯人形机器人首次亮相：年内推出双足、四足等多款具身智能机器人</span>
+                    <span class="card-date">2026-06-15</span>
+                </div>
+                <p class="card-summary">新浪科技独家获悉，赛力斯正在加速布局具身智能，其董事长张正萍携问界 M9 品牌大使参观超级工厂时，人形机器人首次公开亮相。该机器人已投入实际运营，覆盖 B 端工业制造与 C 端服务接待等场景。公司计划年内正式推出双足、四足及轮式等多款机器人。</p>
+                <div class="card-tags">
+                    <span class="tag tag-embodied">跨界入局</span>
+                    <span class="tag tag-embodied">量产信号</span>
+                </div>
+                <div class="card-source">来源：<a href="https://finance.sina.com.cn/tech/it/2026-06-15/doc-inicnpys6824576.shtml" target="_blank" rel="noopener">新浪科技</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">MIT 研究员利用 AI 将手势转化为机器人训练数据</span>
+                    <span class="card-date">2026-06-16</span>
+                </div>
+                <p class="card-summary">MIT 研究人员开发出一种新方法，通过 AI 将人类手势直接转化为机器人可用的训练数据。该技术大幅降低示教成本，有望加速机器人在精细操作与家庭服务等场景中的部署。</p>
+                <div class="card-tags">
+                    <span class="tag tag-embodied">示教数据</span>
+                    <span class="tag tag-embodied">MIT</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.humanoidhub.ai/news" target="_blank" rel="noopener">HumanoidHub</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">NVIDIA 发布开源人形机器人平台，加速机器人研究</span>
+                    <span class="card-date">2026-06-16</span>
+                </div>
+                <p class="card-summary">NVIDIA 在机器人领域持续加码，推出开源人形机器人平台，旨在为学术与产业界提供统一的硬件与仿真基础。此举与英伟达此前发布的 Isaac GR00T N1.6 及 Jetson T4000 形成协同效应，降低具身智能研发门槛。</p>
+                <div class="card-tags">
+                    <span class="tag tag-embodied">开源平台</span>
+                    <span class="tag tag-embodied">英伟达</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.humanoidhub.ai/news" target="_blank" rel="noopener">HumanoidHub</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">2026 张江具身智能供应链大会：机器人全生命周期示范应用区发布</span>
+                    <span class="card-date">2026-06-16</span>
+                </div>
+                <p class="card-summary">6 月 16 日，国家地方共建人形机器人创新中心在上海张江发布“机器人全生命周期示范应用区”。国地中心首席科学家江磊表示，行业普遍认为具身智能机器人需深耕 10-20 年，该中心力争将进程压缩至 5-8 年，下半年将开放超 1 万平方米的实体示范场地。</p>
+                <div class="card-tags">
+                    <span class="tag tag-embodied">产业生态</span>
+                    <span class="tag tag-embodied">政府示范</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.stcn.com/article/detail/3967457.html" target="_blank" rel="noopener">证券时报</a></div>
+            </div>
+
+        </div>
+
+        <!-- 5. 机械臂本体 -->
+        <div class="section">
+            <div class="section-title">🦾 机械臂本体（结构·驱动·运动学·控制） <span class="count">· 1 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Nature 子刊：基于机器学习的 6-DoF 机械臂嵌入式实时控制与物体检测</span>
+                    <span class="card-date">2026-06-20</span>
+                </div>
+                <p class="card-summary">《Scientific Reports》发表研究，成功在低成本 AMB82-Mini 微控制器上实现 6-DoF 机械臂的实时物体检测与精确操作。系统集成了量化 YOLOv7-tiny 视觉流水线、D-H 参数逆运动学求解器及伺服控制，定位误差控制在 ±3 mm 以内，验证了嵌入式 AI 在成本敏感自动化场景中的潜力。</p>
+                <div class="card-tags">
+                    <span class="tag tag-arm">嵌入式AI</span>
+                    <span class="tag tag-arm">逆运动学</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.nature.com/articles/s41598-026-35508-3" target="_blank" rel="noopener">Nature Scientific Reports</a></div>
+            </div>
+
+            <div class="no-news">※ 本周该领域其他预印本与专利文献多为历史综述或旧有专利公开，不纳入 7 天窗口内，故仅收录 1 条前沿突破。</div>
+        </div>
+
+        <!-- 6. DeepSeek 专栏 -->
+        <div class="section">
+            <div class="section-title">🐋 DeepSeek 专栏 <span class="count">· 3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">DeepSeek App 更新至 2.1.8 版本，持续优化移动端体验</span>
+                    <span class="card-date">2026-06-18</span>
+                </div>
+                <p class="card-summary">应用宝官方页面显示，DeepSeek App 于 6 月 18 日更新至 2.1.8 版本。作为由杭州深度求索公司开发的 AI 助手，该应用搭载最新旗舰模型，持续提供免费、高效的移动端 AI 体验，累计下载量已达千万级别。</p>
+                <div class="card-tags">
+                    <span class="tag tag-ds">应用更新</span>
+                    <span class="tag tag-ds">移动端</span>
+                </div>
+                <div class="card-source">来源：<a href="https://sj.qq.com/appdetail/com.deepseek.chat" target="_blank" rel="noopener">应用宝官网</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">路透社：美政府评估 DeepSeek 与中国政府关联，安全疑虑持续发酵</span>
+                    <span class="card-date">2026-06-19</span>
+                </div>
+                <p class="card-summary">据 BBC 中文网援引路透社 6 月报道，美国正评估 DeepSeek 与北京方面的连结。一名美国务院高级官员声称，DeepSeek 已自愿、并可能继续为中方军事与情报行动提供支持。DeepSeek 隐私政策确认其服务器位于中国境内。与此同时，硅谷仍不乏使用 DeepSeek 以降低成本的初创公司。</p>
+                <div class="card-tags">
+                    <span class="tag tag-ds">地缘政治</span>
+                    <span class="tag tag-ds">安全合规</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.bbc.com/zhongwen/articles/cy7ynlj4r35o/trad" target="_blank" rel="noopener">BBC 中文</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">机构分析：DeepSeek V4 主动适配国产算力，2026 年成为国产 AI 算力全线兑现元年</span>
+                    <span class="card-date">2026-06-21</span>
+                </div>
+                <p class="card-summary">东吴证券与银河证券等机构指出，DeepSeek V4 主动深度适配国产算力（如昇腾芯片），强化了“国产模型-国产算力”闭环，大幅提振市场对国产算力可用性的信心。2026 年被定义为国产 AI 算力全线兑现元年，国产芯片设计、服务器代工、液冷散热等环节将进入业绩兑现期。</p>
+                <div class="card-tags">
+                    <span class="tag tag-ds">国产算力</span>
+                    <span class="tag tag-ds">产业闭环</span>
+                </div>
+                <div class="card-source">来源：<a href="https://finance.ifeng.com/c/8stqo7nGjdA" target="_blank" rel="noopener">凤凰网财经</a></div>
+            </div>
+
+        </div>
+
+        <!-- 7. 顶级会议与学术动态 -->
+        <div class="section">
+            <div class="section-title">🎓 顶级会议与学术动态 <span class="count">· 3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">NeurIPS 2026 博客披露：Position Paper Track 中 AI 生成内容比例飙升至 28.2%</span>
+                    <span class="card-date">2026-06-18</span>
+                </div>
+                <p class="card-summary">NeurIPS 2026 Position Paper Track 主席发布分析文章，使用 Pangram AI 检测后发现，该赛道中高达 28.2% 的投稿被判定为 100% AI 生成（2025 年仅为 8.2%）。组委会因此强制要求论文主要由人类撰写，AI 仅限辅助编辑。</p>
+                <div class="card-tags">
+                    <span class="tag tag-conf">学术诚信</span>
+                    <span class="tag tag-conf">NeurIPS 2026</span>
+                </div>
+                <div class="card-source">来源：<a href="https://blog.neurips.cc/2026/06/02/ai-generated-papers-in-the-neurips-2026-position-paper-track" target="_blank" rel="noopener">NeurIPS Blog</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Databricks 数据与 AI 峰会 (Data + AI Summit) 在旧金山开幕</span>
+                    <span class="card-date">2026-06-15</span>
+                </div>
+                <p class="card-summary">为期 4 天的 Data + AI Summit 于 6 月 15 日在旧金山举行。峰会聚焦数据工程、机器学习与生成式 AI 的统一，展示企业级 AI 部署的多项真实案例，涵盖数据分析、Agent 自动化与基础设施优化等。</p>
+                <div class="card-tags">
+                    <span class="tag tag-conf">企业AI</span>
+                    <span class="tag tag-conf">Databricks</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.cvat.ai/resources/blog/ai-computer-vision-conference" target="_blank" rel="noopener">CVAT Blog</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">ICML 2026 投稿量突破 3 万篇引热议：行业“非理性繁荣”还是理性职业投资？</span>
+                    <span class="card-date">2026-06-17</span>
+                </div>
+                <p class="card-summary">前苹果研究员 Allen Roush 在 LinkedIn 发文指出，ICML 2026 投稿量已超 30,000 篇。他认为，一篇主流会议论文对职业发展的 ROI 极高（薪酬、岗位安全性可达 10-100 倍乘数效应），这是研究人员在感知到 AI 就业替代威胁下的理性决策，而非单纯的学术泡沫。</p>
+                <div class="card-tags">
+                    <span class="tag tag-conf">会议生态</span>
+                    <span class="tag tag-conf">ICML 2026</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.linkedin.com/posts/allen-roush-27721011b_icml-2026-30000-submissions-and-the-canary-activity-7421032506310778880-xmpE" target="_blank" rel="noopener">LinkedIn</a></div>
+            </div>
+
+        </div>
+
+        <!-- 8. AI 基础设施与能效 -->
+        <div class="section">
+            <div class="section-title">⚡ AI 基础设施与能效 <span class="count">· 4 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">施耐德电气在 VivaTech 2026 聚焦 AI 能耗：能源而非算力成为核心瓶颈</span>
+                    <span class="card-date">2026-06-17</span>
+                </div>
+                <p class="card-summary">施耐德电气于 6 月 17 日在巴黎 VivaTech 2026 上与 IEA、Engie 等探讨 AI 引发的能源困境。其首席 AI 官 Philippe Rambach 指出，高密度 AI 数据中心正将电力可用性推向新极限，公司近期已与软银及富士康合作，致力于整合、快速部署高能效 AI 基础设施。</p>
+                <div class="card-tags">
+                    <span class="tag tag-infra">能源瓶颈</span>
+                    <span class="tag tag-infra">液冷</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.stocktitan.net/news/SBGSY/schneider-electric-advances-energy-intelligence-at-viva-tech-42aqksrynoff.html" target="_blank" rel="noopener">StockTitan</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">firstcolo 在德国开建 24 MW FRA7 数据中心，专为 GPU 负载优化</span>
+                    <span class="card-date">2026-06-15</span>
+                </div>
+                <p class="card-summary">德国数据中心运营商 firstcolo 宣布启动 FRA7 数据中心建设，总容量 24 MW，专为支持下一代 GPU 和专用加速器的高密度机柜设计。项目采用先进的液冷和浸没式冷却方案，以应对单机柜 80-120 千瓦的 AI 负载需求。</p>
+                <div class="card-tags">
+                    <span class="tag tag-infra">高密度计算</span>
+                    <span class="tag tag-infra">欧洲基建</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.hpcwire.com/aiwire/2026/06/15/firstcolo-begins-construction-of-24-mw-fra7-data-center-in-germany" target="_blank" rel="noopener">HPCwire</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">JD Supra 法律评论：2026 年 AI 基础设施的核心瓶颈已从算力转向电力</span>
+                    <span class="card-date">2026-06-16</span>
+                </div>
+                <p class="card-summary">MoFo Tech 在 JD Supra 发表分析文章指出，随着 AI 模型训练与部署的算力需求指数级增长，电力的可用性、成本与监管已成为比硬件算力更紧迫的瓶颈。文中强调，2026 年数据中心租约和基础设施协议正围绕电力权利、限电风险及定价机制重新谈判。</p>
+                <div class="card-tags">
+                    <span class="tag tag-infra">法律合规</span>
+                    <span class="tag tag-infra">电力供给</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.jdsupra.com/legalnews/ai-trends-for-2026-power-not-compute-7025410" target="_blank" rel="noopener">JD Supra</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">网易分析：中国 VS 美国算力博弈进入能源基建比拼阶段</span>
+                    <span class="card-date">2026-06-18</span>
+                </div>
+                <p class="card-summary">网易科技分析文章指出，中国以东数西算、8 大国家算力枢纽及 42 个万卡集群为底座，液冷机房 PUE 低至 1.1；美国则因电网私有化与老化问题陷入“有钱买卡却无电开机”的尴尬。文章认为国产芯片替代突破与稳定电网共同构筑了中国算力韧性。</p>
+                <div class="card-tags">
+                    <span class="tag tag-infra">中美博弈</span>
+                    <span class="tag tag-infra">东数西算</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.163.com/dy/article/KUKEU4VS0556DJA3.html" target="_blank" rel="noopener">网易订阅</a></div>
+            </div>
+
+        </div>
+
+        <!-- 9. 产业与政策 -->
+        <div class="section">
+            <div class="section-title">🏛️ 产业与政策 <span class="count">· 3 条</span></div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">安徽省拟设立百亿规模机器人产业基金群，投早、投小、投硬科技</span>
+                    <span class="card-date">2026-06-15</span>
+                </div>
+                <p class="card-summary">安徽省发布《关于推动机器人产业高质量发展的实施意见》征求意见稿，拟设立百亿规模基金群，其中省财政筹资金额不少于 20 亿元。2027-2030 年每年统筹 5 亿财政资金，专项支持关键技术攻关、创新平台建设及场景应用推广。</p>
+                <div class="card-tags">
+                    <span class="tag tag-policy">政府基金</span>
+                    <span class="tag tag-policy">产业链</span>
+                </div>
+                <div class="card-source">来源：<a href="https://www.stcn.com/article/detail/3961291.html" target="_blank" rel="noopener">证券时报</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">ITIF 发布政策建议：美国亟需制定国家机器人战略以应对中国挑战</span>
+                    <span class="card-date">2026-06-18</span>
+                </div>
+                <p class="card-summary">美国信息技术与创新基金会（ITIF）发布文章警告，在美国机器人政策碎片化的同时，中国已通过“中国制造 2025”等国家战略，为机器人产业投入至少 60 亿美元补贴及上千亿级产业基金。ITIF 呼吁美国国会设立跨机构机器人委员会，以期制定国家级综合战略。</p>
+                <div class="card-tags">
+                    <span class="tag tag-policy">中美博弈</span>
+                    <span class="tag tag-policy">政策建议</span>
+                </div>
+                <div class="card-source">来源：<a href="https://itif.org/publications/2026/06/18/america-needs-a-national-robotics-strategy" target="_blank" rel="noopener">ITIF</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">2026 上半年具身智能融资 460 亿：头部企业拿走七成，马太效应显著</span>
+                    <span class="card-date">2026-06-22</span>
+                </div>
+                <p class="card-summary">据 IT 桔子与投资界统计，2026 年上半年国内具身智能赛道发生 288 起融资，总额超 460 亿元。排名前 5 的企业（千寻智能、曦望 Sunrise 等）拿走约 171 亿，占行业资金近四成。国资背景机构参与率高达 42%，地方引导基金开始要求税收落地与产业集群对赌。</p>
+                <div class="card-tags">
+                    <span class="tag tag-policy">投融资</span>
+                    <span class="tag tag-policy">资本集中</span>
+                </div>
+                <div class="card-source">来源：<a href="https://news.pedaily.cn/202606/565245.shtml" target="_blank" rel="noopener">投资界</a></div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>本报告生成于 2026 年 6 月 22 日（模拟时间）。</p>
+            <p>数据来源于公开信源，经人工编辑筛选与摘编。内容仅供学术参考，不构成投资建议。</p>
+            <p>AI 与机器人学术周报 · 保留所有权利。</p>
+        </footer>
+
+    </div>
+</body>
+</html>
