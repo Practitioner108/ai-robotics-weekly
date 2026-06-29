@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI与机器人学术周报 · 2026年6月22日–29日</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card-bg: #f8f9fb;
+      --text: #1a1a2e;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --border: #e2e5ea;
+      --tag-bg-math: #eef2ff;
+      --tag-text-math: #2563eb;
+      --tag-bg-emb: #f0fdf4;
+      --tag-text-emb: #15803d;
+      --tag-bg-conf: #fff7ed;
+      --tag-text-conf: #c2410c;
+      --tag-bg-ind: #fdf2f8;
+      --tag-text-ind: #be185d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+      background: var(--card-bg);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .stats span {
+      background: #eef2ff;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      border-left: 5px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .section-title .count {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .no-news {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      transition: none;
+    }
+
+    .card .news-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .card .news-date {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card .news-summary {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card .news-comment {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+
+    .card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tag {
+      padding: 0.2rem 0.7rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .tag-math {
+      background: var(--tag-bg-math);
+      color: var(--tag-text-math);
+    }
+
+    .tag-emb {
+      background: var(--tag-bg-emb);
+      color: var(--tag-text-emb);
+    }
+
+    .tag-conf {
+      background: var(--tag-bg-conf);
+      color: var(--tag-text-conf);
+    }
+
+    .tag-ind {
+      background: var(--tag-bg-ind);
+      color: var(--tag-text-ind);
+    }
+
+    .card .source {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .card .source:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🤖 AI与机器人学术周报</h1>
+      <p>2026年6月22日 – 6月29日</p>
+    </div>
+    <div class="stats">
+      <span>📰 总条目数：12</span>
+      <span>📂 板块数：9</span>
+    </div>
+
+    <!-- 1. 本期焦点 -->
+    <div class="section">
+      <div class="section-title">🔍 本期焦点</div>
+      <div class="card">
+        <div class="news-summary">
+          本周，AI 在数学推理领域持续展现突破：中国团队发布的 TongGeometry 在《Nature Machine Intelligence》上展示了超越 AlphaGeometry 的逻辑推理能力；多款国产大模型在高考数学评测中表现亮眼。产业层面，深圳机器人“八大金刚”迎来业绩与估值的双击时刻，工信部拟制定人形机器人行业标准，推动商业化落地。此外，AAAI 2026 夏季研讨会正在首尔举行，具身智能创新峰会也在杭州召开，多线进展共同勾勒出人工智能从推理到实体的加速跃迁。
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. AI数学与推理突破 -->
+    <div class="section">
+      <div class="section-title">🧮 AI 数学与推理突破 <span class="count">（3 条）</span></div>
+      
+      <div class="card">
+        <div class="news-title">TongGeometry：中国团队在逻辑推理领域实现里程碑式突破</div>
+        <div class="news-date">2026年6月22日 · Nature Machine Intelligence</div>
+        <div class="news-summary">
+          中国研究团队开发的 TongGeometry 在逻辑推理任务中超越 DeepMind 的 AlphaGeometry，在国际数学奥林匹克（IMO）几何问题上取得更高的准确率。该论文发表于《Nature Machine Intelligence》，标志着符号推理与大模型结合的又一重要进展。
+        </div>
+        <div class="news-comment">✏️ 点评：这是中国团队在自动几何推理赛道上的硬核成果，有望为数学定理证明和 AGI 逻辑基础带来新工具。</div>
+        <div class="tags">
+          <span class="tag tag-math">数学推理</span>
+          <span class="tag tag-math">逻辑几何</span>
+          <span class="tag tag-math">Nature MI</span>
+        </div>
+        <a class="source" href="https://www.academicjobs.com/research-publication-news/chinese-researchers-tonggeometry-ai-logical-reasoning-breakthrough-nature-machine-intelligence-2312" target="_blank" rel="noopener">来源：AcademicJobs.com</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">复旦大学报告：用U统计量揭开大模型推理的神秘面纱</div>
+        <div class="news-date">2026年6月22日 · 复旦大学应用数学中心</div>
+        <div class="news-summary">
+          复旦大学史成春研究员作题为《用U统计量揭开大模型推理的神秘面纱》的学术报告，从统计学习理论角度解释大语言模型涌现推理能力的机制，为理解 AI 推理提供了新的数学框架。
+        </div>
+        <div class="news-comment">✏️ 点评：基础理论突破是推理可解释性的关键，U统计量视角有望为模型设计和训练提供原则性指导。</div>
+        <div class="tags">
+          <span class="tag tag-math">理论解释</span>
+          <span class="tag tag-math">统计学习</span>
+        </div>
+        <a class="source" href="https://am.fudan.edu.cn" target="_blank" rel="noopener">来源：复旦大学应用数学中心</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">大模型高考放榜：讯飞星火在多科表现出色，引发教育评测关注</div>
+        <div class="news-date">2026年6月26日 · 多鲸资本</div>
+        <div class="news-summary">
+          2026年高考结束后，多家媒体发布大模型高考评测。讯飞星火在数学推理、作文表达、英语应用文等多科目中稳定处于第一梯队，交叉验证了其在推理与综合理解方面的持续进步。
+        </div>
+        <div class="news-comment">✏️ 点评：以高考作为统一标尺测评大模型，直观反映了国产模型在基础数理与语言能力上的快速追赶。</div>
+        <div class="tags">
+          <span class="tag tag-math">模型评测</span>
+          <span class="tag tag-math">教育</span>
+        </div>
+        <a class="source" href="http://www.djcapital.net/nr.jsp" target="_blank" rel="noopener">来源：多鲸资本</a>
+      </div>
+    </div>
+
+    <!-- 3. AI for Science -->
+    <div class="section">
+      <div class="section-title">🔬 AI for Science（科学智能） <span class="count">（0 条）</span></div>
+      <div class="no-news">本周暂无相关重大进展</div>
+    </div>
+
+    <!-- 4. 具身智能与机器人突破 -->
+    <div class="section">
+      <div class="section-title">🦾 具身智能与机器人突破 <span class="count">（1 条）</span></div>
+      <div class="card">
+        <div class="news-title">2026中国具身智能与人形机器人创新峰会于6月25-26日在杭州召开</div>
+        <div class="news-date">2026年6月25日–26日 · 杭州</div>
+        <div class="news-summary">
+          为期两天的峰会聚焦具身智能核心技术、核心部件与应用场景，邀请250余位来自科研院所、整机企业、AI公司及投资机构的代表。议题涵盖大模型驱动的规划与操作、传感器、减速器、电子皮肤等关键创新。
+        </div>
+        <div class="news-comment">✏️ 点评：此类全国性峰会进一步夯实了具身智能从实验室走向产业的桥梁，是人形机器人商业化生态的重要一环。</div>
+        <div class="tags">
+          <span class="tag tag-emb">具身智能</span>
+          <span class="tag tag-emb">人形机器人</span>
+          <span class="tag tag-conf">行业峰会</span>
+        </div>
+        <a class="source" href="https://finance.sina.com.cn/roll/2025-12-26/doc-inheautp8187085.shtml" target="_blank" rel="noopener">来源：新浪财经（会议通知）</a>
+      </div>
+    </div>
+
+    <!-- 5. 机械臂本体 -->
+    <div class="section">
+      <div class="section-title">⚙️ 机械臂本体（结构·驱动·运动学·控制） <span class="count">（0 条）</span></div>
+      <div class="no-news">本周暂无相关重大进展</div>
+    </div>
+
+    <!-- 6. DeepSeek专栏 -->
+    <div class="section">
+      <div class="section-title">🐋 DeepSeek 专栏 <span class="count">（0 条）</span></div>
+      <div class="no-news">本周暂无相关重大进展</div>
+    </div>
+
+    <!-- 7. 顶级会议与学术动态 -->
+    <div class="section">
+      <div class="section-title">📚 顶级会议与学术动态 <span class="count">（1 条）</span></div>
+      <div class="card">
+        <div class="news-title">AAAI 2026 夏季研讨会（Summer Symposium）在首尔举行</div>
+        <div class="news-date">2026年6月22日–24日 · 韩国首尔</div>
+        <div class="news-summary">
+          由AAAI主办的年度夏季研讨会于6月22-24日在东国大学召开，涵盖AI前沿理论、认知启发计算、伦理与社会等多个主题，是人工智能领域重要的学术交流平台。
+        </div>
+        <div class="news-comment">✏️ 点评：作为AAAI的标志性夏季活动，该研讨会为研究者提供了发布早期思想与跨学科合作的契机，对下半年顶会投稿亦有预热效应。</div>
+        <div class="tags">
+          <span class="tag tag-conf">AAAI</span>
+          <span class="tag tag-conf">学术会议</span>
+        </div>
+        <a class="source" href="https://aaai.org" target="_blank" rel="noopener">来源：AAAI 官网</a>
+      </div>
+    </div>
+
+    <!-- 8. AI基础设施与能效 -->
+    <div class="section">
+      <div class="section-title">⚡ AI 基础设施与能效 <span class="count">（0 条）</span></div>
+      <div class="no-news">本周暂无相关重大进展</div>
+    </div>
+
+    <!-- 9. 产业与政策 -->
+    <div class="section">
+      <div class="section-title">🏭 产业与政策 <span class="count">（7 条）</span></div>
+
+      <div class="card">
+        <div class="news-title">深圳机器人“八大金刚”迎来业绩与估值双击时刻</div>
+        <div class="news-date">2026年6月22日 · 经济参考报</div>
+        <div class="news-summary">
+          深圳已形成以优必选、荣耀、乐聚等为代表的机器人产业矩阵，2025年总产值达2426亿元。2026年以来多家企业IPO推进，融资活跃度全国领先。
+        </div>
+        <div class="news-comment">✏️ 点评：深圳完整产业链与资本闭环，正加速其成为全球人形机器人产业化高地。</div>
+        <div class="tags">
+          <span class="tag tag-ind">机器人产业</span>
+          <span class="tag tag-ind">深圳</span>
+        </div>
+        <a class="source" href="http://jjckb.xinhuanet.com/20260622/7b311e647f324deebb246b6804fb7e1e/c.html" target="_blank" rel="noopener">来源：经济参考报</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">人形机器人商业化提速：工信部拟制定多场景技术标准</div>
+        <div class="news-date">2026年6月24日 · 证券日报/证券时报</div>
+        <div class="news-summary">
+          工信部公开征求意见，拟制定人形机器人在变电站、家电制造等场景的技术要求。同时，2026年度人形机器人与具身智能实景实训专项行动已启动，目标年内万台级落地能力。
+        </div>
+        <div class="news-comment">✏️ 点评：标准先行+场景牵引，将有效扭转“重展演轻落地”的现状，为规模化应用扫清障碍。</div>
+        <div class="tags">
+          <span class="tag tag-ind">政策标准</span>
+          <span class="tag tag-ind">人形机器人</span>
+        </div>
+        <a class="source" href="https://www.stcn.com/article/detail/3975820.html" target="_blank" rel="noopener">来源：证券时报</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">智能科技领域投融资周报：上周融资总额超4600亿元</div>
+        <div class="news-date">2026年6月22日 · 亿欧智库</div>
+        <div class="news-summary">
+          6月15日至21日的一周内，智能科技领域披露投融资事件32起，融资总额约4639.96亿元，数量和金额均居所有行业首位，显示资本对AI与硬科技赛道的持续重注。
+        </div>
+        <div class="news-comment">✏️ 点评：在宏观环境复杂背景下，智能科技赛道依旧是最吸金的投资主题。</div>
+        <div class="tags">
+          <span class="tag tag-ind">投融资</span>
+          <span class="tag tag-ind">智能科技</span>
+        </div>
+        <a class="source" href="https://www.iyiou.com/t/tourongzizhoubao" target="_blank" rel="noopener">来源：亿欧</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">Crunchbase：2026年机器人初创公司融资热潮持续，Saronic等获巨额融资</div>
+        <div class="news-date">2026年6月26日 · Crunchbase News</div>
+        <div class="news-summary">
+          Crunchbase 本周报道指出，全球机器人初创公司在2026年融资额再创新高。国防科技公司Saronic 完成17.5亿美元D轮融资，德国Neura Robotics获14亿美元C轮融资，Skild AI 估值跃升至140亿美元。
+        </div>
+        <div class="news-comment">✏️ 点评：大额融资事件印证了物理AI与具身智能赛道的高景气，资本正从数字AI向物理世界延伸。</div>
+        <div class="tags">
+          <span class="tag tag-ind">风投</span>
+          <span class="tag tag-ind">机器人</span>
+        </div>
+        <a class="source" href="https://news.crunchbase.com/robotics/startup-venture-funding-surges-2026-data" target="_blank" rel="noopener">来源：Crunchbase</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">2026高考季：AI志愿填报进入Agent时代</div>
+        <div class="news-date">2026年6月22日 · 多鲸资本</div>
+        <div class="news-summary">
+          百度、阿里、腾讯、新东方等机构纷纷升级AI志愿填报工具，引入智能体（Agent）技术，实现个性化方案生成与深度交互，高考服务市场竞争全面智能化。
+        </div>
+        <div class="news-comment">✏️ 点评：Agent 能力在教育领域率先落地，标志着AI从信息检索向决策辅助的重要跃迁。</div>
+        <div class="tags">
+          <span class="tag tag-ind">教育科技</span>
+          <span class="tag tag-ind">Agent</span>
+        </div>
+        <a class="source" href="http://www.djcapital.net/nr.jsp" target="_blank" rel="noopener">来源：多鲸资本</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">当AI开始帮教师工作：15家值得关注的教育科技公司</div>
+        <div class="news-date">2026年6月22日 · 多鲸资本/Fast Company</div>
+        <div class="news-summary">
+          Fast Company 梳理了15家利用AI帮助教师减少行政负担、识别学生风险、优化课程设计的教育科技公司，覆盖K-12与高等教育场景。
+        </div>
+        <div class="news-comment">✏️ 点评：教育领域的AI应用正从“学生端”拓展到“教师端”，有望系统性缓解教师资源紧张的难题。</div>
+        <div class="tags">
+          <span class="tag tag-ind">教育科技</span>
+          <span class="tag tag-ind">AI应用</span>
+        </div>
+        <a class="source" href="http://www.djcapital.net/nr.jsp" target="_blank" rel="noopener">来源：多鲸资本</a>
+      </div>
+
+      <div class="card">
+        <div class="news-title">香港力推教育AI：每位教师30小时培训、每校50万港元支持</div>
+        <div class="news-date">2026年6月23日 · 多鲸资本</div>
+        <div class="news-summary">
+          香港特区政府推出教育人工智能支持计划，为每位教师提供30小时AI专业培训，并向每所学校拨款50万港元，用于校本AI教育方案开发。
+        </div>
+        <div class="news-comment">✏️ 点评：政策驱动是教育AI落地的关键推力，香港方案为其他地区提供了可参考的样板。</div>
+        <div class="tags">
+          <span class="tag tag-ind">政策</span>
+          <span class="tag tag-ind">教育</span>
+        </div>
+        <a class="source" href="http://www.djcapital.net/nr.jsp" target="_blank" rel="noopener">来源：多鲸资本</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>AI与机器人学术周报 · 生成时间：2026年6月29日</p>
+      <p>信息来源于公开学术新闻与产业报道，仅供学术交流参考，不构成投资建议。</p>
+    </div>
+  </div>
+</body>
+</html>
