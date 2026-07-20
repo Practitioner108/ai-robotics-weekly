@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>AI与机器人周报 · 2026年7月13日—20日</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card-bg: #f8f9fb;
+      --text: #1a1a2e;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --border: #e2e5ea;
+      --tag-bg-blue: #e8f0fe;
+      --tag-text-blue: #0d47a1;
+      --tag-bg-green: #e8f5e9;
+      --tag-text-green: #1b5e20;
+      --tag-bg-purple: #f3e5f5;
+      --tag-text-purple: #4a148c;
+      --tag-bg-red: #fce4ec;
+      --tag-text-red: #880e4f;
+      --tag-bg-amber: #fff8e1;
+      --tag-text-amber: #e65100;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      border-left: 6px solid var(--accent);
+      padding-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      background: var(--card-bg);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .section {
+      margin-top: 2.5rem;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .section-title small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-left: 0.6rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 650;
+      color: var(--text);
+    }
+    .card-date {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    .card-body {
+      color: var(--text-secondary);
+      margin-bottom: 0.8rem;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+    .tag {
+      font-size: 0.78rem;
+      padding: 0.15rem 0.65rem;
+      border-radius: 20px;
+      background: var(--tag-bg-blue);
+      color: var(--tag-text-blue);
+      font-weight: 500;
+    }
+    .tag.green {
+      background: var(--tag-bg-green);
+      color: var(--tag-text-green);
+    }
+    .tag.purple {
+      background: var(--tag-bg-purple);
+      color: var(--tag-text-purple);
+    }
+    .tag.red {
+      background: var(--tag-bg-red);
+      color: var(--tag-text-red);
+    }
+    .tag.amber {
+      background: var(--tag-bg-amber);
+      color: var(--tag-text-amber);
+    }
+    .source-link {
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+    .source-link a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .source-link a:hover {
+      border-bottom-color: var(--accent);
+    }
+    .empty-notice {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      border: 1px dashed var(--border);
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+    footer p {
+      margin: 0.3rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>🤖 AI与机器人周报</h1>
+  <div class="subtitle">2026年7月13日 – 7月20日 · 聚焦学术突破与产业前沿</div>
+
+  <!-- 统计栏 -->
+  <div class="stats">
+    <div class="stat-item"><span class="stat-number">11</span> 条新闻</div>
+    <div class="stat-item">📂 9 个板块</div>
+    <div class="stat-item">🔗 10+ 个信源</div>
+  </div>
+
+  <!-- 1. 本期焦点 -->
+  <div class="section">
+    <div class="section-title">🔦 本期焦点</div>
+    <div class="card">
+      <p>本周，2026世界人工智能大会（WAIC）在上海开幕，国家主席习近平出席并发表主旨讲话，强调人工智能发展与治理。同时，我国首颗软件定义三维近存计算AI芯片DF1000正式发布，实现架构级突破。学术界围绕“AI for Science”展开深度讨论：AI正在打破科研瓶颈，但尚未产生根本性突破，模型需学会“善用失败”。具身智能投资持续火热，机器人赛道融资额已逼近2025全年水平。此外，DeepSeek V4技术分析文章引发社区关注，顶级会议论文录用消息密集传出。</p>
+    </div>
+  </div>
+
+  <!-- 2. AI 数学与推理突破 -->
+  <div class="section">
+    <div class="section-title">🧮 AI 数学与推理突破 <small>(0条)</small></div>
+    <div class="empty-notice">本周暂无相关重大进展。近期引起广泛讨论的Erdős猜想否定结果等仍停留在预印本或厂商公告阶段，尚未出现新的经同行评议的数学推理突破。</div>
+  </div>
+
+  <!-- 3. AI for Science（科学智能） -->
+  <div class="section">
+    <div class="section-title">🔬 AI for Science（科学智能） <small>(2条)</small></div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">AI筛选出25万篇可疑癌症论文：论文工厂检测工具引发科研诚信风暴</span>
+        <span class="card-date">📅 2026-07-16</span>
+      </div>
+      <div class="card-body">昆士兰科技大学团队开发的新型AI工具扫描了1999年至2024年间260万篇癌症研究论文，识别出超过25万篇具有“论文工厂”特征的疑似造假文章。该研究发表于《BMJ》，揭示了大规模学术不端问题的严重性，为AI用于学术出版质量控制提供了可扩展的解决方案。</div>
+      <div class="tags"><span class="tag green">AI for Science</span><span class="tag">科研诚信</span></div>
+      <div class="source-link">🔗 来源：<a href="https://www.sciencedaily.com/releases/2026/07/260714225538.htm" target="_blank" rel="noopener">ScienceDaily / BMJ</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">WAIC 2026科学前沿论坛：AI正在打破科研瓶颈，但尚未产生根本突破</span>
+        <span class="card-date">📅 2026-07-18</span>
+      </div>
+      <div class="card-body">7月17日的WAIC科学前沿论坛上，崂山实验室、昌平实验室、上海人工智能实验室等机构专家指出，当前AI缺乏提出颠覆性假设的能力，且无法承担错误假说的风险。上海人工智能实验室主任周伯文提出，模型需从“模仿成功”走向“善用失败”，通过与物理世界交互、在负反馈中学习才能产出真正未知的发现。实验室同步发布“书生·端砚”科学发现平台，覆盖从假设到实验的完整科研流程。</div>
+      <div class="tags"><span class="tag green">AI for Science</span><span class="tag purple">WAIC 2026</span></div>
+      <div class="source-link">🔗 来源：<a href="https://www.thepaper.cn/newsDetail_forward_33612766" target="_blank" rel="noopener">澎湃新闻</a></div>
+    </div>
+  </div>
+
+  <!-- 4. 具身智能与机器人突破 -->
+  <div class="section">
+    <div class="section-title">🦾 具身智能与机器人突破 <small>(1条)</small></div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">人形机器人≠具身智能的全部：服务机器人行业正在被严重误读</span>
+        <span class="card-date">📅 2026-07-13</span>
+      </div>
+      <div class="card-body">中国日报网刊文指出，市场过度聚焦人形机器人，而忽视了已在配送、清扫、巡检等场景大规模落地的非人形复合多态机器人。云迹UP等模块化机器人通过可更换任务舱实现多任务覆盖，在经济性和部署成本上优于同成本的人形方案。文章呼吁资本和媒体重新审视“非人形”服务机器人的真实产业价值。</div>
+      <div class="tags"><span class="tag">具身智能</span><span class="tag red">产业观点</span></div>
+      <div class="source-link">🔗 来源：<a href="https://tech.chinadaily.com.cn/a/202607/13/WS6a54a41ca310d709c2fbd3eb.html" target="_blank" rel="noopener">中国日报网</a></div>
+    </div>
+  </div>
+
+  <!-- 5. 机械臂本体 -->
+  <div class="section">
+    <div class="section-title">🛠️ 机械臂本体（结构·驱动·运动学·控制） <small>(0条)</small></div>
+    <div class="empty-notice">本周暂无相关重大进展。近期公开的机械臂研究多为综述性论文或预印本，未出现突破性的结构、驱动或控制方案。</div>
+  </div>
+
+  <!-- 6. DeepSeek 专栏 -->
+  <div class="section">
+    <div class="section-title">🧠 DeepSeek 专栏 <small>(1条)</small></div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">深度解读：DeepSeek-V4 发布后发生了什么？百万上下文、国产芯片适配与成本革命</span>
+        <span class="card-date">📅 2026-07-13</span>
+      </div>
+      <div class="card-body">腾讯云社区发布热点调研报告，全面复盘DeepSeek V4预览版（4月24日发布）的技术细节与产业影响。报告指出V4系列标配百万Token上下文窗口，采用CSA+HCA混合注意力架构；重点适配华为昇腾等国产芯片，降低对CUDA生态依赖；推理成本降至GPT的1/70。文章认为V4开启了“算力不再绑定英伟达、顶级能力持续开源扩散”的新格局。</div>
+      <div class="tags"><span class="tag amber">DeepSeek</span><span class="tag">模型分析</span></div>
+      <div class="source-link">🔗 来源：<a href="https://developer.cloud.tencent.com/article/2708724" target="_blank" rel="noopener">腾讯云开发者社区</a></div>
+    </div>
+  </div>
+
+  <!-- 7. 顶级会议与学术动态 -->
+  <div class="section">
+    <div class="section-title">📚 顶级会议与学术动态 <small>(2条)</small></div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">AI4Science 2026 国际会议论文提交截止，聚焦科学智能双向赋能</span>
+        <span class="card-date">📅 2026-07-15</span>
+      </div>
+      <div class="card-body">2026年国际人工智能与科学会议（AI4Science 2026）于7月15日截止投稿。会议计划于10月23-25日举行，涵盖AI基础方法、科学发现、物理启发AI等方向，将设立可复现性倡议和数据集/基准赛道，强调跨学科合作与真实世界影响。</div>
+      <div class="tags"><span class="tag purple">学术会议</span><span class="tag green">AI for Science</span></div>
+      <div class="source-link">🔗 来源：<a href="https://www.ic-ai4science.org" target="_blank" rel="noopener">IC-AI4Science 官网</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">中国科学院自动化所等多项成果被ACL 2026录用，顶会录用信息密集更新</span>
+        <span class="card-date">📅 2026-07-14</span>
+      </div>
+      <div class="card-body">GitHub开源项目Top-Tier-Conference-Achievements-Report记录显示，7月14日中国科学院自动化研究所语言与知识计算课题组论文被ACL 2026录用；7月13日另有论文被中科院一区Top期刊CAAI TRIT接收。同期，ICML、IJCAI等顶会录用结果陆续公开，国内多所高校均有斩获。</div>
+      <div class="tags"><span class="tag purple">顶会录用</span><span class="tag">ACL 2026</span></div>
+      <div class="source-link">🔗 来源：<a href="https://github.com/shengyp/Top-Tier-Conference-Achievements-Report" target="_blank" rel="noopener">GitHub - 顶会成果追踪</a></div>
+    </div>
+  </div>
+
+  <!-- 8. AI 基础设施与能效 -->
+  <div class="section">
+    <div class="section-title">⚡ AI 基础设施与能效 <small>(1条)</small></div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">我国首颗软件定义三维近存计算AI芯片发布：520 TFLOPS，突破制程依赖</span>
+        <span class="card-date">📅 2026-07-13</span>
+      </div>
+      <div class="card-body">央视新闻报道，东方算芯发布全球首颗大算力3D芯片DF1000，采用14纳米制程，实现每秒520万亿次浮点运算。芯片通过软件定义方式动态调配硬件资源，结合三维混合键合技术，访存带宽达6.4 TB/s，有效缓解“存储墙”瓶颈。同期发布全栈软件工具链及液冷超节点等完整产品体系，为国产大模型训练推理提供不依赖先进制程的算力方案。</div>
+      <div class="tags"><span class="tag">AI芯片</span><span class="tag amber">算力基础设施</span></div>
+      <div class="source-link">🔗 来源：<a href="https://news.qq.com/rain/a/20260713A0AGS600" target="_blank" rel="noopener">IT之家 / 央视新闻</a></div>
+    </div>
+  </div>
+
+  <!-- 9. 产业与政策 -->
+  <div class="section">
+    <div class="section-title">🏭 产业与政策 <small>(4条)</small></div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">2026世界人工智能大会开幕，习近平出席并发表主旨讲话</span>
+        <span class="card-date">📅 2026-07-13</span>
+      </div>
+      <div class="card-body">外交部宣布，WAIC 2026将于7月17日至20日在上海举办，主题“智能伙伴 共创未来”。国家主席习近平出席开幕式并全面阐述中国人工智能发展与治理的政策立场。大会被定位为凝聚共识、深化合作的里程碑式事件。</div>
+      <div class="tags"><span class="tag red">政策</span><span class="tag purple">WAIC 2026</span></div>
+      <div class="source-link">🔗 来源：<a href="https://www.163.com/dy/article/L1Q0UN0G05118K7K.html" target="_blank" rel="noopener">网易 · 人工智能产业日报</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">中国将机器人纳入AI战略重点，“十五五”规划补贴或达3000亿美元</span>
+        <span class="card-date">📅 2026-07-15</span>
+      </div>
+      <div class="card-body">据Cryptopolitan及ABI Research分析，中国正将机器人硬件作为下一阶段人工智能战略的核心，人形机器人与工业机器人均被纳入重点方向。预计“十五五”规划相关补贴规模可达约3000亿美元。WAIC 2026将成为这一战略转向的重要展示平台。</div>
+      <div class="tags"><span class="tag red">产业政策</span><span class="tag">机器人</span></div>
+      <div class="source-link">🔗 来源：<a href="https://www.digitaltoday.co.kr/cn/view/81845/china-bets-on-robotics-as-next-ai-play-pouring-policy-and-funds-into-humanoids" target="_blank" rel="noopener">Digital Today</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">智能科技投融资周报：智谱获272亿元战略融资，珞石机器人上市</span>
+        <span class="card-date">📅 2026-07-13</span>
+      </div>
+      <div class="card-body">亿欧数据显示，上周（7月6日-12日）中国智能科技领域共披露33起投融资事件，融资总额约364.3亿元。智谱获272.33亿元战略投资，星动纪元完成10亿元C轮，珞石机器人、Momenta等企业成功上市。具身智能与自动驾驶赛道资本高度活跃。</div>
+      <div class="tags"><span class="tag">投融资</span><span class="tag red">产业动态</span></div>
+      <div class="source-link">🔗 来源：<a href="https://data.iyiou.com/intelligence/details/28a38267ebfc7399129d2427316476e0" target="_blank" rel="noopener">亿欧数据</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">全球机器人融资2026年已超230亿美元，逼近2025全年总额</span>
+        <span class="card-date">📅 2026-07-16</span>
+      </div>
+      <div class="card-body">Crunchbase及Briefs.co数据显示，2026年全球机器人初创企业融资额已突破230亿美元，接近2025年全年的260亿美元。Figure AI签署商业合同，Agility Robotics的Digit人形机器人已在亚马逊等真实仓储环境工作，试点加速转化为商业部署。</div>
+      <div class="tags"><span class="tag">机器人·投融资</span><span class="tag red">行业趋势</span></div>
+      <div class="source-link">🔗 来源：<a href="https://news.crunchbase.com/robotics/startup-venture-funding-surges-2026-data" target="_blank" rel="noopener">Crunchbase</a> & <a href="https://www.briefs.co/news/robotics-startups-raised-23-billion-in-2026-closing-in-on-all-of-2025" target="_blank" rel="noopener">Briefs.co</a></div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>📰 AI与机器人周报 · 2026年7月13日—7月20日</p>
+    <p>生成时间：2026年7月20日 12:00 UTC+8 · 本报告仅收录7天内公开信息，不构成投资建议</p>
+    <p>所有内容均源自公开学术论文、官方公告及权威媒体报道，转载请注明出处</p>
+  </footer>
+
+</div>
+</body>
+</html>
