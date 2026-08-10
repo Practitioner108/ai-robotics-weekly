@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 与机器人周报 | 2026年8月3日 — 8月10日</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card-bg: #f8f9fb;
+            --text: #1a1a2e;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e2e5ea;
+            --tag-bg-ai: #ebf4ff;
+            --tag-text-ai: #1d4ed8;
+            --tag-bg-sci: #eef2ff;
+            --tag-text-sci: #4338ca;
+            --tag-bg-robot: #fce7f3;
+            --tag-text-robot: #be185d;
+            --tag-bg-mech: #ecfdf5;
+            --tag-text-mech: #047857;
+            --tag-bg-deep: #f0f9ff;
+            --tag-text-deep: #0369a1;
+            --tag-bg-conf: #fff7ed;
+            --tag-text-conf: #c2410c;
+            --tag-bg-infra: #fefce8;
+            --tag-text-infra: #a16207;
+            --tag-bg-policy: #f1f5f9;
+            --tag-text-policy: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+        .container { max-width: 960px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        header h1 { font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.4rem; }
+        header .date-range { font-size: 1.1rem; color: var(--text-secondary); }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0 2rem;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 0.6rem 1.5rem;
+            text-align: center;
+        }
+        .stat-value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+        .stat-label { font-size: 0.85rem; color: var(--text-secondary); }
+        .section { margin: 2.5rem 0; }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text);
+            border-left: 5px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .section-title .count {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 0.2rem 0.8rem;
+            margin-left: 0.5rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            transition: box-shadow 0.2s;
+        }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--text); }
+        .card-date { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .card-summary { font-size: 0.95rem; color: var(--text); margin-bottom: 0.5rem; }
+        .card-comment { font-size: 0.88rem; color: var(--text-secondary); font-style: italic; margin-bottom: 0.6rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; }
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .tag.ai { background: var(--tag-bg-ai); color: var(--tag-text-ai); }
+        .tag.sci { background: var(--tag-bg-sci); color: var(--tag-text-sci); }
+        .tag.robot { background: var(--tag-bg-robot); color: var(--tag-text-robot); }
+        .tag.mech { background: var(--tag-bg-mech); color: var(--tag-text-mech); }
+        .tag.deep { background: var(--tag-bg-deep); color: var(--tag-text-deep); }
+        .tag.conf { background: var(--tag-bg-conf); color: var(--tag-text-conf); }
+        .tag.infra { background: var(--tag-bg-infra); color: var(--tag-text-infra); }
+        .tag.policy { background: var(--tag-bg-policy); color: var(--tag-text-policy); }
+        .source-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; }
+        .source-link:hover { text-decoration: underline; }
+        .no-news { color: var(--text-secondary); font-style: italic; padding: 1rem; background: var(--card-bg); border-radius: 8px; }
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <h1>🤖 AI 与机器人周报</h1>
+        <div class="date-range">2026年8月3日 — 8月10日</div>
+    </header>
+
+    <!-- 统计栏 -->
+    <div class="stats-bar">
+        <div class="stat-item"><div class="stat-value" id="total-articles">23</div><div class="stat-label">总条目</div></div>
+        <div class="stat-item"><div class="stat-value">9</div><div class="stat-label">板块</div></div>
+        <div class="stat-item"><div class="stat-value">16</div><div class="stat-label">引用信源</div></div>
+    </div>
+
+    <!-- 1. 本期焦点 -->
+    <div class="section">
+        <div class="section-title">📌 本期焦点</div>
+        <div class="card">
+            <p style="font-size:1rem; line-height:1.8;">
+                本周，<strong>DeepSeek V4 Flash</strong> 以极低推理成本刷新行业认知，每百万输出 token 仅 0.28 美元，较 Claude Fable 5 便宜超 100 倍，同时宣布计划上调服务价格，引发“AI 价格战”逆转讨论。
+                同期，<strong>宇树科技</strong>正式启动科创板 IPO 询价，估值约 420 亿元，带动多家机器人初创企业密集融资；<strong>OpenAI</strong> 的 Astra 模型被报道解决了 10 个此前悬而未决的数学难题。
+                AI for Science 方面，SLAC 和伯克利实验室分别发布了关于数据可重复性及 AI 加速材料研发的突破。产业界，中国政策与资本持续加码具身智能，破壳机器人、求之科技等完成大额融资，标志着机器人赛道从技术验证向商业落地加速切换。
+            </p>
+        </div>
+    </div>
+
+    <!-- 2. AI 数学与推理突破 -->
+    <div class="section">
+        <div class="section-title">🧠 AI 数学与推理突破 <span class="count">3 条</span></div>
+
+        <div class="card">
+            <div class="card-title">OpenAI Astra 报道解决 10 个未解数学难题</div>
+            <div class="card-date">2026年8月3日 | 来源：This Week in AI (YouTube)</div>
+            <div class="card-summary">
+                OpenAI 的 Astra 系统利用机器可验证的 Lean 证明，成功解决了 10 个此前数学家们多年未能攻克的问题。该成果被视为 AI 首次在需要深度推理的数学前沿取得自主突破，由外部专家验证。
+            </div>
+            <div class="card-comment">💬 这意味着 AI 不仅仅在辅助证明，而是能够自主提出创造性证明，是数学发现范式的重大转变。</div>
+            <div class="tags"><span class="tag ai">数学推理</span><span class="tag ai">Lean 证明</span></div>
+            <a class="source-link" href="https://www.youtube.com/watch?v=ppfLvPYeLiQ" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">ICML 2026 论文 "Agent Primitives" 解读：多智能体系统模块化设计</div>
+            <div class="card-date">2026年8月7日 | 来源：53AI</div>
+            <div class="card-summary">
+                论文提出将多智能体系统拆分为三种可复用的智能体原语，原语之间通过 KV-Cache 通信，改善了以往架构不可复用、自然语言通信易衰减的痛点，为复杂推理任务的可靠执行提供了新范式。
+            </div>
+            <div class="card-comment">💬 该工作可能为后续构建更可靠、可复用的“AI 推理团队”提供工程基础。</div>
+            <div class="tags"><span class="tag ai">多智能体</span><span class="tag conf">ICML 2026</span></div>
+            <a class="source-link" href="https://www.53ai.com/keyword/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Qwen3.8-Max 发布：阿里云推出 2.4 万亿参数旗舰模型</div>
+            <div class="card-date">2026年8月6日 | 来源：53AI</div>
+            <div class="card-summary">
+                阿里云发布新一代旗舰大模型 Qwen3.8-Max，参数规模达 2.4 万亿，并接入“千问办公”产品公测。模型在编程、办公、多模态任务上表现突出，计划下周开源，进一步推动推理与跨模态能力的平民化。
+            </div>
+            <div class="card-comment">💬 超大规模的 MoE 模型开源将显著降低开发者的前沿推理成本，加速应用落地。</div>
+            <div class="tags"><span class="tag ai">大模型</span><span class="tag ai">开源</span></div>
+            <a class="source-link" href="https://www.53ai.com/keyword/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95" target="_blank">查看来源 →</a>
+        </div>
+    </div>
+
+    <!-- 3. AI for Science -->
+    <div class="section">
+        <div class="section-title">🔬 AI for Science <span class="count">3 条</span></div>
+
+        <div class="card">
+            <div class="card-title">SLAC/Stanford：高可重复性数据是 AI 驱动科学发现的关键</div>
+            <div class="card-date">2026年8月3日 | 来源：SLAC</div>
+            <div class="card-summary">
+                研究发表于 <em>Nature Catalysis</em>，指出在材料科学中，实验数据的可重复性直接影响 AI 模型的可靠性。团队通过标准化测试流程，显著提升了锂离子电池正极材料数据的质量，为 AI 在能源材料领域的应用奠定基础。
+            </div>
+            <div class="card-comment">💬 再次凸显“数据质量”是 AI4Science 最大瓶颈，标准化流程是必经之路。</div>
+            <div class="tags"><span class="tag sci">材料科学</span><span class="tag sci">数据质量</span></div>
+            <a class="source-link" href="https://www6.slac.stanford.edu/news/2026-08-03-ai-drive-science-discoveries-highly-reproducible-data-key" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">伯克利实验室：新 AI 建模方法加速先进材料开发</div>
+            <div class="card-date">2026年8月3日 | 来源：Berkeley Lab</div>
+            <div class="card-summary">
+                研究人员结合热力学与机器学习动力学模型，模拟固态反应的全过程，仅需几分钟即可预测反应中间产物及杂质。该模型在钡钛氧化物上得到实验验证，有望将新材料研发周期从数年缩短至数月。
+            </div>
+            <div class="card-comment">💬 AI 正在从“筛选材料”进化到“设计反应路径”，离自主实验更近一步。</div>
+            <div class="tags"><span class="tag sci">材料设计</span><span class="tag sci">动力学预测</span></div>
+            <a class="source-link" href="https://newscenter.lbl.gov/2026/08/03/new-ai-modeling-approach-accelerates-the-development-of-advanced-materials" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Georgia Tech 将领导国家云实验室，推动先进制造与材料研究</div>
+            <div class="card-date">2026年8月3日 | 来源：Georgia Tech</div>
+            <div class="card-summary">
+                获 NSF 1810 万美元资助，将建设 AI 驱动的云实验室，实现实验全流程自动化：AI 代理解析研究人员的高层“配方”，调度机器人和仪器，通过数字孪生优化实验。这是美国国家网络 20 个云实验室的一部分。
+            </div>
+            <div class="card-comment">💬 云实验室让远程“排队做实验”成为可能，有望大幅提升科研通量与可重复性。</div>
+            <div class="tags"><span class="tag sci">自动化实验</span><span class="tag sci">云实验室</span></div>
+            <a class="source-link" href="https://news.research.gatech.edu/2026/08/03/georgia-tech-lead-national-cloud-laboratory-advanced-manufacturing-and-materials" target="_blank">查看来源 →</a>
+        </div>
+    </div>
+
+    <!-- 4. 具身智能与机器人突破 -->
+    <div class="section">
+        <div class="section-title">🦾 具身智能与机器人突破 <span class="count">4 条</span></div>
+
+        <div class="card">
+            <div class="card-title">宇树科技启动科创板 IPO 询价，估值约 420 亿元</div>
+            <div class="card-date">2026年8月3日 | 来源：综合报道</div>
+            <div class="card-summary">
+                中国人形机器人龙头宇树科技正式进入 IPO 发行阶段，发行市值约 420 亿元。其 H1 人形机器人已在工业巡检、物流等场景实现超 5500 台出货，成为全球量产规模最大的人形机器人企业之一。
+            </div>
+            <div class="card-comment">💬 标志着人形机器人从“炫技”走向“造血”，IPO 将为产业链注入更多量产资本。</div>
+            <div class="tags"><span class="tag robot">人形机器人</span><span class="tag policy">IPO</span></div>
+            <a class="source-link" href="https://finance.ifeng.com/c/8qX1Vjt4CPF" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">破壳机器人获数亿美元 Pre-A 轮融资</div>
+            <div class="card-date">2026年8月3日 | 来源：中国基金报</div>
+            <div class="card-summary">
+                智能硬件与电商服务商破壳机器人完成 Pre-A 轮融资，金额为数亿美元，凸显资本对“机器人+服务”商业模式的认可。公司主打面向新零售和家庭场景的轻量级交互机器人。
+            </div>
+            <div class="card-comment">💬 非人形机器人同样获得大额融资，说明资本正在多路径布局具身智能。</div>
+            <div class="tags"><span class="tag robot">服务机器人</span><span class="tag policy">融资</span></div>
+            <a class="source-link" href="https://www.sohu.com/a/1058363162_465270" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">求之科技一个月内完成天使轮与天使+轮，累计超 2 亿美元</div>
+            <div class="card-date">2026年8月3日 | 来源：中国基金报</div>
+            <div class="card-summary">
+                由前大疆科学家周谷越创立的求之科技（DISCOVER Robotics）再次完成 1 亿美元天使+轮融资，投资方包括华映资本、IDG 等。公司聚焦家庭场景的“具身 AI 终端”，结合海量硬件量产经验与前沿模型研发。
+            </div>
+            <div class="card-comment">💬 家庭场景被视为具身智能终极蓝海，拥有量产经验的团队更受资本青睐。</div>
+            <div class="tags"><span class="tag robot">家庭机器人</span><span class="tag policy">融资</span></div>
+            <a class="source-link" href="https://www.sohu.com/a/1058363162_465270" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">特斯拉 Optimus 产能目标上调至每年 1000 万台？</div>
+            <div class="card-date">2026年8月4日 | 来源：AI 科技热点日报</div>
+            <div class="card-summary">
+                据行业媒体消息，特斯拉将 Optimus 人形机器人的远期产能目标提高至 1000 万台/年，同时计划 2026 年资本支出超 200 亿美元，其中部分用于机器人与 AI 基础设施。尽管具体量产时间未定，但激进目标刺激了产业链预期。
+            </div>
+            <div class="card-comment">💬 特斯拉的产能叙事持续推高人形机器人的市场想象，但实际产能仍是严峻考验。</div>
+            <div class="tags"><span class="tag robot">人形机器人</span><span class="tag policy">产能</span></div>
+            <a class="source-link" href="https://blog.csdn.net/qq_45752541/article/details/148950089" target="_blank">查看来源 →</a>
+        </div>
+    </div>
+
+    <!-- 5. 机械臂本体 -->
+    <div class="section">
+        <div class="section-title">🛠️ 机械臂本体 · 结构·驱动·运动学·控制 <span class="count">0 条</span></div>
+        <div class="no-news">本周暂无相关重大进展。</div>
+    </div>
+
+    <!-- 6. DeepSeek 专栏 -->
+    <div class="section">
+        <div class="section-title">🐋 DeepSeek 专栏 <span class="count">4 条</span></div>
+
+        <div class="card">
+            <div class="card-title">DeepSeek V4 Flash 成本远低于竞争者，仅为 Claude Fable 5 的 1/100</div>
+            <div class="card-date">2026年8月3日 | 来源：Reuters, Artificial Analysis</div>
+            <div class="card-summary">
+                根据 Artificial Analysis 数据，DeepSeek V4 Flash 每百万输出 token 仅需 0.28 美元，输入 token 为 0.14 美元，比 Anthropic 的 Claude Fable 5 便宜超过 100 倍，在知名模型中成本最低。
+            </div>
+            <div class="card-comment">💬 极致的成本优势推动 AI 调用量激增，也迫使其他厂商跟进降价。</div>
+            <div class="tags"><span class="tag deep">V4 Flash</span><span class="tag deep">成本优势</span></div>
+            <a class="source-link" href="https://www.reuters.com/business/retail-consumer/deepseeks-new-ai-model-is-by-far-cheapest-well-known-models-run-research-firm-2026-08-03" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">DeepSeek 计划对其 AI 服务实施“显著”提价</div>
+            <div class="card-date">2026年8月6日 | 来源：Bloomberg</div>
+            <div class="card-summary">
+                据彭博社报道，DeepSeek 内部计划大幅上调 AI 服务价格，一反此前极致低价的策略。此举可能源于巨大的调用量压力与盈利平衡需求，也预示行业将逐步脱离纯粹的价格战。
+            </div>
+            <div class="card-comment">💬 提价意味着 DeepSeek 开始转向可持续的商业化模式，可能影响开发者生态。</div>
+            <div class="tags"><span class="tag deep">价格调整</span><span class="tag deep">商业化</span></div>
+            <a class="source-link" href="https://www.bloomberg.com/news/articles/2026-08-06/deepseek-plans-significant-price-increase-for-its-ai-services" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">DeepSeek V4 Flash 单日处理 8 万亿 Token，调用量飙升</div>
+            <div class="card-date">2026年8月3日 | 来源：证券时报</div>
+            <div class="card-summary">
+                海外 OpenCode 平台数据显示，DeepSeek V4 Flash 单日处理达 8T Token，其中 5T 为免费试用额度消耗。OpenRouter 排名中，V4 Flash 上周以 7.22 万亿 Token 的调用量位居第一，中国大模型连续十四周领跑。
+            </div>
+            <div class="card-comment">💬 超大规模调用量验证了 V4 Flash 的实用性，也带来巨大的算力成本压力。</div>
+            <div class="tags"><span class="tag deep">调用量</span><span class="tag deep">V4 Flash</span></div>
+            <a class="source-link" href="https://www.stcn.com/article/detail/4054906.html" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">DeepSeek 估值曝光，梁文锋内部交流透露公司愿景</div>
+            <div class="card-date">2026年8月3日 | 来源：第一财经</div>
+            <div class="card-summary">
+                在近期首次外部股权融资中，DeepSeek 估值接近 3250-3509 亿元。创始人梁文锋在内部交流中强调公司不希望做“更赚钱”的公司，坚持开源与 AGI 探索。此次融资后，DeepSeek 将进一步投入下一代模型与基础设施。
+            </div>
+            <div class="card-comment">💬 估值攀升反映出市场对 DeepSeek 技术路线的认可，开源与商业化的平衡仍待观察。</div>
+            <div class="tags"><span class="tag deep">融资估值</span><span class="tag deep">战略</span></div>
+            <a class="source-link" href="https://www.stcn.com/article/detail/4054906.html" target="_blank">查看来源 →</a>
+        </div>
+    </div>
+
+    <!-- 7. 顶级会议与学术动态 -->
+    <div class="section">
+        <div class="section-title">🎓 顶级会议与学术动态 <span class="count">3 条</span></div>
+
+        <div class="card">
+            <div class="card-title">AI4Science 2026 全论文提交截止日期 8 月 5 日</div>
+            <div class="card-date">2026年8月5日 | 来源：ic-ai4science.org</div>
+            <div class="card-summary">
+                第二届国际人工智能科学会议 (AI4Science 2026) 的全论文提交于 8 月 5 日截止。会议将于 10 月在深圳举行，聚焦 AI for Science 的基础与前沿应用。
+            </div>
+            <div class="card-comment">💬 提醒研究者及时提交高质量论文，AI4Science 正成为顶会新热点。</div>
+            <div class="tags"><span class="tag conf">截稿</span><span class="tag sci">AI4Science</span></div>
+            <a class="source-link" href="https://www.ic-ai4science.org" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">CCF ADL173 期《具身智能机器人》开启报名</div>
+            <div class="card-date">2026年8月3日 | 来源：CCF</div>
+            <div class="card-summary">
+                中国计算机学会将于 8 月 14-16 日在北京举办为期三天的前沿讲习班，主题为具身智能机器人。由北京大学仉尚航等专家主讲，内容涵盖多模态大模型、视觉-语言-动作模型等。
+            </div>
+            <div class="card-comment">💬 国内学术社区正加速培育具身智能人才，讲习班成为产学研交流的重要平台。</div>
+            <div class="tags"><span class="tag conf">讲习班</span><span class="tag robot">具身智能</span></div>
+            <a class="source-link" href="https://www.ccf.org.cn/Focus/2026-08-03/920162.shtml" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">WACV 2027 第一轮通知截止日期临近（8 月 10 日）</div>
+            <div class="card-date">2026年8月10日 | 来源：Bibby AI</div>
+            <div class="card-summary">
+                冬季计算机视觉应用会议 (WACV 2027) 第一轮评审通知于 8 月 10 日截止。该会议聚焦视觉在现实场景中的应用。
+            </div>
+            <div class="card-comment">💬 提示计算机视觉研究者关注后续投稿窗口与最终录用结果。</div>
+            <div class="tags"><span class="tag conf">截止日期</span></div>
+            <a class="source-link" href="https://trybibby.com/conference-deadlines" target="_blank">查看来源 →</a>
+        </div>
+    </div>
+
+    <!-- 8. AI 基础设施与能效 -->
+    <div class="section">
+        <div class="section-title">⚡ AI 基础设施与能效 <span class="count">1 条</span></div>
+
+        <div class="card">
+            <div class="card-title">NTT DATA 与 ENGIE 合作去碳化全球数据中心</div>
+            <div class="card-date">2026年8月3日 (报道) | 来源：Climate Tech Newsletter</div>
+            <div class="card-summary">
+                双方建立全球合作伙伴关系，将结合可再生能源采购、能效优化与碳减排策略，为 NTT DATA 的 AI 数据中心提供清洁能源支持，以削减 AI 爆炸式增长带来的碳足迹。
+            </div>
+            <div class="card-comment">💬 面对 AI 能耗激增，绿色电力合作成为科技巨头与能源企业的共同选择。</div>
+            <div class="tags"><span class="tag infra">绿色计算</span><span class="tag infra">数据中心</span></div>
+            <a class="source-link" href="https://www.linkedin.com/pulse/climate-tech-newsletter-august-3-2026-soojin-choung-mibrc" target="_blank">查看来源 →</a>
+        </div>
+    </div>
+
+    <!-- 9. 产业与政策 -->
+    <div class="section">
+        <div class="section-title">🏛️ 产业与政策 <span class="count">5 条</span></div>
+
+        <div class="card">
+            <div class="card-title">多家机器人公司同日宣布融资：破壳、求之、听象等</div>
+            <div class="card-date">2026年8月3日-4日 | 来源：亿欧、中国基金报</div>
+            <div class="card-summary">
+                8月3日至4日，国内多家机器人及 AI 企业公布融资：破壳机器人获数亿美元 Pre-A 轮，求之科技再获 1 亿美元天使+轮，听象科技完成数千万人民币 A 轮，观瑞慧途机器人获天使轮。资本快速涌入具身智能与机器听觉等领域。
+            </div>
+            <div class="card-comment">💬 一日多融的现象表明具身智能赛道已进入资本密集布局期。</div>
+            <div class="tags"><span class="tag policy">融资</span><span class="tag robot">机器人</span></div>
+            <a class="source-link" href="https://www.iyiou.com/AI" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">西湖心辰获 B+ 轮融资，AI 心理咨询赛道受瞩目</div>
+            <div class="card-date">2026年8月3日 | 来源：亿欧</div>
+            <div class="card-summary">
+                AI 心理咨询服务商西湖心辰完成数亿人民币 B+ 轮融资，知名投资机构联合参投。AI 在心理健康领域的应用正从概念验证走向规模服务。
+            </div>
+            <div class="card-comment">💬 后疫情时代心理健康需求旺盛，AI 辅助咨询可能成为新的增长点。</div>
+            <div class="tags"><span class="tag policy">融资</span><span class="tag ai">AI+心理</span></div>
+            <a class="source-link" href="https://www.iyiou.com/AI" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Olix AI 完成 3.12 亿美元 A 轮，英国 AI 芯片研发加速</div>
+            <div class="card-date">2026年8月3日 | 来源：亿欧</div>
+            <div class="card-summary">
+                英国 AI 芯片研发商 Olix AI 获得 3.12 亿美元 A 轮融资，显示全球依然在加大 AI 算力链上游投入，以降低对英伟达的依赖。
+            </div>
+            <div class="card-comment">💬 欧洲也在积极构建自主 AI 芯片生态，多元化供应格局正在形成。</div>
+            <div class="tags"><span class="tag policy">芯片</span><span class="tag policy">融资</span></div>
+            <a class="source-link" href="https://www.iyiou.com/AI" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Crunchbase：本周多笔超 10 亿美元大额融资，机器人领域火热</div>
+            <div class="card-date">2026年8月7日 | 来源：Crunchbase</div>
+            <div class="card-summary">
+                根据 Crunchbase 数据，本周至少有三家公司获得超 10 亿美元的融资，其中包含机器人领域。投资人倾向于拥有真实工厂验证和量产能力的公司，2026 年机器人行业总投资已超 400 亿美元。
+            </div>
+            <div class="card-comment">💬 大额融资集中流向能交付的头部企业，洗牌加速。</div>
+            <div class="tags"><span class="tag policy">投资</span><span class="tag robot">机器人</span></div>
+            <a class="source-link" href="https://news.crunchbase.com/robotics/startup-venture-funding-surges-2026-data" target="_blank">查看来源 →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">中国 2026 上半年 19 项机器人政策密集落地，产业进入新阶段</div>
+            <div class="card-date">2026年8月3日 (总结发布) | 来源：机器人大讲堂</div>
+            <div class="card-summary">
+                据梳理，2026 年上半年中国出台 19 项与机器人及具身智能相关的国家政策，涵盖标准体系、实训基地、首台套保险补偿等。具身智能首次写入“十五五”规划纲要，政府工作报告连续两年提及，产业从政策引导进入规模化落地阶段。
+            </div>
+            <div class="card-comment">💬 政策密度前所未有，为机器人产业提供了从研发到市场的全链条支持。</div>
+            <div class="tags"><span class="tag policy">政策</span><span class="tag robot">具身智能</span></div>
+            <a class="source-link" href="https://news.qq.com/rain/a/20260803A08GI400" target="_blank">查看来源 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 AI 与机器人周报 | 生成时间：2026年8月10日</p>
+        <p>内容基于公开学术与行业来源，仅供信息参考，不构成投资建议。</p>
+    </footer>
+
+</div>
+</body>
+</html>
