@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 与机器人学术产业周报 | 2026.08.10–2026.08.17</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --card-bg: #f8f9fb;
+  --text: #1a1a2e;
+  --text-secondary: #555;
+  --accent: #2563eb;
+  --border: #e2e5ea;
+  --tag-bg: #eef2ff;
+  --tag-text: #2563eb;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  line-height: 1.65;
+  padding: 32px 16px;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+header {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+header h1 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+header .subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+.stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 24px;
+  margin-bottom: 28px;
+}
+.stat-item {
+  flex: 1 1 150px;
+  min-width: 130px;
+}
+.stat-item .stat-num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.stat-item .stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.section {
+  margin-bottom: 42px;
+}
+.section-title {
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+  padding-left: 12px;
+  border-left: 5px solid var(--accent);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.section-title .count {
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: var(--tag-bg);
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+.card h3 {
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+  line-height: 1.45;
+}
+.card .meta {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+}
+.card .summary {
+  margin-bottom: 10px;
+  font-size: 0.96rem;
+}
+.card .comment {
+  background: #fff;
+  border-left: 3px solid var(--accent);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  margin: 10px 0;
+}
+.card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.source-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.source-link:hover {
+  text-decoration: underline;
+}
+.empty-note {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  background: var(--card-bg);
+  border: 1px dashed var(--border);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 30px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>AI 与机器人学术产业周报</h1>
+  <div class="subtitle">仅收录 2026 年 8 月 10 日 — 8 月 17 日期间发布的新闻</div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num" id="total-news">13</div>
+    <div class="stat-label">总条目数</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">9</div>
+    <div class="stat-label">板块数</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">12</div>
+    <div class="stat-label">引用信源数</div>
+  </div>
+</div>
+
+<!-- 1. 本期焦点 -->
+<section class="section">
+  <div class="section-title">本期焦点 <span class="count">1</span></div>
+  <div class="card">
+    <p class="summary">本周，AI 学术与产业的主线围绕“可验证的推理进展”和“具身智能从演示走向部署”展开。DeepSeek-V4-Pro 正式版发布，Agent 能力大幅跃升，Terminal Bench 2.1 得分逼近全球第一；MIT Technology Review 与 Microsoft 分别从科学智能和气候/生物模拟角度强调“AI 做科研需要推理而不只是数据”；具身智能方面，人形机器人规模化落地分析、灵巧手产品发布和真实场景应用成为焦点。与此同时，学术会议复现审计揭示顶刊论文可复现性隐忧，AI 基础设施能效和产业政策也持续升温。</p>
+  </div>
+</section>
+
+<!-- 2. AI 数学与推理突破 -->
+<section class="section">
+  <div class="section-title">AI 数学与推理突破 <span class="count">1</span></div>
+  <div class="card">
+    <h3>国内外知名大模型及应用——模型/应用维度（2026/08/14 更新）</h3>
+    <div class="meta">日期：2026-08-14 | 来源：知乎专栏</div>
+    <p class="summary">该专栏按模型/应用维度梳理了近期国内外大模型更新，8 月更新包括：DeepSeek 开源混合推理模型 DeepSeek-V3.1、字节 Seed-OSS 推理模型、OpenAI GPT-5 与 GPT-5 Thinking、Claude Opus 4.1、Qwen-Image 生图模型、MiniMax Speech 2.5 音频模型等。其中推理相关模型更新密集，显示大模型正从通用能力向强化推理、多模态混合推理方向加速迭代。</p>
+    <p class="comment">意义点评：该更新列表是观察本周模型生态变化的一个窗口。虽然不构成单一学术突破，但它集中反映了主流厂商在推理模型赛道的持续加码，为下游研究和应用提供了模型选型参考。</p>
+    <div class="tags"><span class="tag">模型更新</span><span class="tag">推理模型</span><span class="tag">大模型生态</span></div>
+    <a class="source-link" href="https://zhuanlan.zhihu.com/p/670574382" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+</section>
+
+<!-- 3. AI for Science（科学智能） -->
+<section class="section">
+  <div class="section-title">AI for Science（科学智能） <span class="count">2</span></div>
+  <div class="card">
+    <h3>Microsoft 展示 2026 年多项科学智能突破：从气候预测到材料发现</h3>
+    <div class="meta">日期：2026-08-17 | 来源：Custom Map Poster / Microsoft Research</div>
+    <p class="summary">汇总了 Microsoft 近期多项 AI 科学突破：Aurora 大气与气象预测基础模型在精度、速度和计算效率上显著优于传统方法，并可微调用于空气污染、海浪和热带气旋预测；BioEmu-1 能在单块 GPU 上每小时生成数千种蛋白质结构，大幅降低药物发现中蛋白质稳定性预测的成本；MatterGen 与 MatterSim 则推进材料发现与模拟。</p>
+    <p class="comment">意义点评：Microsoft 的三条科学智能主线覆盖环境、生命科学和材料，展示 AI 从“辅助计算”向“主动发现”迁移的趋势。尤其是 BioEmu-1 在单 GPU 上规模化生成蛋白质结构，体现了科学基础模型降低算力门槛的潜力。</p>
+    <div class="tags"><span class="tag">科学智能</span><span class="tag">气候预测</span><span class="tag">蛋白质结构</span><span class="tag">材料发现</span></div>
+    <a class="source-link" href="https://custommapposter.com/article/microsoft-s-ai-revolution-10-amazing-scientific-breakthroughs/12095" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+  <div class="card">
+    <h3>MIT Technology Review：科学智能需要推理，而不仅仅是数据</h3>
+    <div class="meta">日期：2026-08-10 | 来源：MIT Technology Review</div>
+    <p class="summary">文章由 Eric Schmidt 和 Suhas Mahesh 撰写，提出构建能模拟人类科研过程的 AI 智能体，将加速科学发现。文章强调，仅依赖大规模数据并不足够，AI 必须发展出接近科学家的推理能力，才能在假设生成、实验设计、结果解释等环节真正发挥作用。</p>
+    <p class="comment">意义点评：这是本周科学智能方向最重要的观点性文章之一。它呼应了“AI for science 需要 reasoning”的共识，对当前以数据规模为中心的 AI4S 路线提出了明确方向性建议，值得研究者和资助机构关注。</p>
+    <div class="tags"><span class="tag">科学智能</span><span class="tag">AI 智能体</span><span class="tag">科研推理</span></div>
+    <a class="source-link" href="https://www.technologyreview.com/2026/08/10/1141384/ai-agents-for-science" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+</section>
+
+<!-- 4. 具身智能与机器人突破 -->
+<section class="section">
+  <div class="section-title">具身智能与机器人突破 <span class="count">3</span></div>
+  <div class="card">
+    <h3>2026 人形机器人规模化落地时代：国内外十大头部公司技术与产业剖析</h3>
+    <div class="meta">日期：2026-08-10 | 来源：CSDN</div>
+    <p class="summary">文章分析 2026 年作为具身智能产业从技术验证期迈入规模化商业落地关键阶段的背景，聚焦拓斯达、特斯拉、波士顿动力等十家代表性企业。拓斯达以“场景+产品+数据+AI”闭环切入工业具身智能，其“小拓”人形机器人单臂负载 10kg、自重 15kg，负载自重比 0.67，远超行业常见水平；同时，行业整体趋势显示软硬件解耦、上下游协同分工正在形成。</p>
+    <p class="comment">意义点评：工业场景成为人形机器人“真实落地”的关键试金石。拓斯达等企业以工厂需求为核心，强调“装备硬件+工业大模型”双轮驱动，为行业从展示型产品向可交付解决方案转型提供了样本。</p>
+    <div class="tags"><span class="tag">人形机器人</span><span class="tag">具身智能</span><span class="tag">工业落地</span><span class="tag">产业分析</span></div>
+    <a class="source-link" href="https://www.csdn.net/article/2026-08-10/163641239" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+  <div class="card">
+    <h3>中科慧思携三款灵巧手入局，推动具身智能从“能动”迈向“能干”</h3>
+    <div class="meta">日期：2026-08-10 | 来源：新华网客户端</div>
+    <p class="summary">中科慧思在湖南长沙湘江新区发布 L1、D1、M1 三款灵巧手产品，并预发布 F 系列绳驱仿生灵巧手。公司由中科慧灵、蓝思科技与湖南华夏投资集团共同发起，核心团队源自中国科学院自动化研究所。产品矩阵覆盖通用操作、高自由度操作和场景适配，目标从“运动控制”转向“真实任务完成”。</p>
+    <p class="comment">意义点评：灵巧手是机器人从“能动”到“会干活”的关键瓶颈。中科慧思的多系列产品发布和“科研人才+制造能力+政府资源”协同模式，体现了国内具身智能在操作末端环节的集体攻关。</p>
+    <div class="tags"><span class="tag">灵巧手</span><span class="tag">具身智能</span><span class="tag">机器人操作</span><span class="tag">产业落地</span></div>
+    <a class="source-link" href="https://app.xinhuanet.com/news/article.html?articleId=202608109b3599aa3e784d1cad31a1e5abc2731d" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+  <div class="card">
+    <h3>从“演示”到“部署”：具身智能加快走向真实场景</h3>
+    <div class="meta">日期：2026-08-15 | 来源：新华网上海频道</div>
+    <p class="summary">2026 第四届英佛 EAI 具身智能机器人产业大会暨展览会于 8 月 12 日在上海新国际博览中心开幕。多家参展企业集中展示了人形机器人在工业制造、交通指挥、互联网直播等真实场景的应用成果，体现了行业从展厅演示走向实际工程部署的转变。</p>
+    <p class="comment">意义点评：展览会透露出具身智能产业的成熟信号：企业不再只展示酷炫动作，而是开始展示产线工序、交通管理等可落地的真实任务，印证了行业正在经历从“技术表演”到“实用交付”的跃迁。</p>
+    <div class="tags"><span class="tag">具身智能</span><span class="tag">产业大会</span><span class="tag">真实场景部署</span></div>
+    <a class="source-link" href="http://www.sh.xinhuanet.com/20260815/0cf524c44d4c46fba182470876713969/c.html" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+</section>
+
+<!-- 5. 机械臂本体 -->
+<section class="section">
+  <div class="section-title">机械臂本体（结构·驱动·运动学·控制） <span class="count">0</span></div>
+  <div class="empty-note">本周暂无相关重大进展。素材中相关论文多为早期发表或综述性内容，未发现可确认在本周（2026-08-10 至 2026-08-17）发布的机械臂本体研究突破。</div>
+</section>
+
+<!-- 6. DeepSeek 专栏 -->
+<section class="section">
+  <div class="section-title">DeepSeek 专栏 <span class="count">2</span></div>
+  <div class="card">
+    <h3>DeepSeek-V4-Pro 正式版发布：Agent 能力大幅跃升</h3>
+    <div class="meta">日期：2026-08-13 | 来源：DeepSeek API Docs 更新日志</div>
+    <p class="summary">8 月 13 日，DeepSeek API 更新日志显示 DeepSeek-V4-Pro 已完成更新，该版本在 Terminal Bench 2.1 上取得 87.9 分，DeepSWE 得分 62.7，Toolathlon-Verified 得分 74.1，并原生支持 OpenAI Responses API 格式，适配 Codex。模型在推理、工具调用和代码生成等 Agent 核心能力上均有显著改进。</p>
+    <p class="comment">意义点评：V4-Pro 的正式更新标志着 DeepSeek 在 Agent 方向的持续加码。从数据看，其 Terminal Bench 2.1 得分已逼近 Anthropic Fable 5，并在 DeepSWE 上近乎五倍提升，说明其在软件工程智能体领域具备较强竞争力。</p>
+    <div class="tags"><span class="tag">DeepSeek</span><span class="tag">Agent 能力</span><span class="tag">V4-Pro</span><span class="tag">API 更新</span></div>
+    <a class="source-link" href="https://api-docs.deepseek.com/zh-cn/updates" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+  <div class="card">
+    <h3>AI 应用周度观察：DeepSeek-V4-Pro 正式版上线，Agent 指标全面跃升</h3>
+    <div class="meta">日期：2026-08-16 | 来源：界面新闻 / 东方财富网</div>
+    <p class="summary">报道称 8 月 12 日深夜 DeepSeek 官网 API 文档更新，模型版本切换为“DeepSeek-V4-Pro-0813”。正式版重点强化 Agent 能力，在 Terminal Bench 2.1 上得分 87.9，距离全球第一的 Anthropic Fable 5 仅差 0.1 分；DeepSWE 得分从预览版 12.8 升至 62.7。模型支持 100 万 Token 上下文，输出定价 0.87 美元/百万 Token。同周，阿里开源 Qwen3.8-Max 旗舰权重、Meta 发布 Muse Glimmer 30B 开放权重。</p>
+    <p class="comment">意义点评：该周报将 DeepSeek-V4-Pro 作为本周通用消费级 AI 应用的核心事件。模型在低成本下实现 Agent 能力跃升，对开发者生态和算力成本管理具有直接参考价值。</p>
+    <div class="tags"><span class="tag">DeepSeek</span><span class="tag">Agent 能力</span><span class="tag">API 更新</span><span class="tag">开源模型</span></div>
+    <a class="source-link" href="https://wap.eastmoney.com/a/202608163842493741.html" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+</section>
+
+<!-- 7. 顶级会议与学术动态 -->
+<section class="section">
+  <div class="section-title">顶级会议与学术动态 <span class="count">1</span></div>
+  <div class="card">
+    <h3>AI 倒查论文 100 年：99.2% 的顶刊论文存在可验证问题</h3>
+    <div class="meta">日期：2026-08-10 | 来源：量子位</div>
+    <p class="summary">报道了使用 AI Agent 对学术论文进行系统性复现审计的研究。美国某研究审查公司用 AI Agent 对 ICML 2026 全部 168 篇口头报告论文进行结果复现，其中 92 篇拥有可供验证的结论性声明，最终只有 34 篇能复现超过四成结论，仅 8 篇能复现八成以上。另有研究基于 GPT-5 的论文检查系统发现，平均每篇论文被检测出 4.7 个客观错误，99.2% 的论文至少被标记出 1 个问题；数学与公式错误占比最高，达 54%。</p>
+    <p class="comment">意义点评：这是一项具有警醒意义的学术生态研究。AI 正在成为论文可验证性审计的新工具，也暴露出当前顶刊论文在代码开源、实验复现、公式正确性等方面的系统性隐忧。对科研评价和学术出版流程将产生深远影响。</p>
+    <div class="tags"><span class="tag">学术审计</span><span class="tag">复现性</span><span class="tag">AI Agent</span><span class="tag">顶会论文</span></div>
+    <a class="source-link" href="https://www.qbitai.com/2026/08/469795.html" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+</section>
+
+<!-- 8. AI 基础设施与能效 -->
+<section class="section">
+  <div class="section-title">AI 基础设施与能效 <span class="count">1</span></div>
+  <div class="card">
+    <h3>AI 光计算芯片研发公司奇算光启完成天使轮及天使+轮融资</h3>
+    <div class="meta">日期：2026-08-10 | 来源：上海证券报 / 搜狐</div>
+    <p class="summary">奇算光启成立于 2024 年，专注 AI 光计算芯片研发，目标突破电子芯片能效极限。公司已完成 256×256 规模光计算芯片回片及部分关键模块验证。天使轮由高瓴创投领投，天使+轮由高瓴创投、真格基金、上海未来产业基金联合领投，累计融资规模达数亿元。公司创始人钟翰森博士曾参与“九章”光量子计算原型机研究。投资方认为其全光干涉光计算可实现百倍于高端 GPU 的算力能效。</p>
+    <p class="comment">意义点评：在 AI 算力能耗与电力供给矛盾日益突出的背景下，光计算被视为突破电子芯片能效瓶颈的重要路径。此次融资显示资本对新型 AI 算力基础设施的持续押注，未来能否从验证走向规模化商用值得关注。</p>
+    <div class="tags"><span class="tag">光计算</span><span class="tag">AI 芯片</span><span class="tag">算力能效</span><span class="tag">融资动态</span></div>
+    <a class="source-link" href="https://www.sohu.com/a/1061061830_120988576" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+</section>
+
+<!-- 9. 产业与政策 -->
+<section class="section">
+  <div class="section-title">产业与政策 <span class="count">3</span></div>
+  <div class="card">
+    <h3>AI 行业日报 2026-08-10：融资、产品与政策信号集中释放</h3>
+    <div class="meta">日期：2026-08-10 | 来源：Buttondown / 顾剪 AI 情报</div>
+    <p class="summary">日报显示：红熊 AI 完成数亿元 A+ 轮融资；天基通算融合初创公司完成数千万元首轮融资；月之暗面已向投资人发送上市议案，最快 6 个月内在港 IPO；零一万物计划 2027 年香港上市。政策方面，工信部将加快出台“人工智能+软件”行动方案，并将印发算力标准体系建设指南，推动算力市场化定价等标准。我国人形机器人整机产品超全球半数，智能算力规模达 2185 EFLOPS。</p>
+    <p class="comment">意义点评：AI 行业正经历从“卷参数”到“卷落地”的转折。IPO 潮、算力标准化、制造业政策等信号表明，产业链正向可计价、可交付的方向迈进。但资本对“落地”的强调也凸显了 AI 应用商业化的紧迫性。</p>
+    <div class="tags"><span class="tag">产业政策</span><span class="tag">AI 融资</span><span class="tag">算力标准</span><span class="tag">IPO</span></div>
+    <a class="source-link" href="https://buttondown.com/anzi/archive/ai-u884c-u4e1a-u65e5-u62a5-2026-08-10" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+  <div class="card">
+    <h3>聚焦智能驾驶、机器人、光伏产业：创业板新添三条主题指数</h3>
+    <div class="meta">日期：2026-08-12 | 来源：人民数据库 / 中国证券报</div>
+    <p class="summary">深交所全资子公司深圳证券信息有限公司近期发布创业板智能驾驶指数、创业板机器人指数、创业板光伏指数三条创业板主题指数。此举标志着“创系列”指数进一步提质扩面，为投资者把握经济转型升级红利提供优质工具。</p>
+    <p class="comment">意义点评：创业板机器人指数的发布，从资本工具层面强化了机器人产业的辨识度和流动性，为机器人相关企业的估值锚定和资金配置提供了基础设施，也体现了资本市场对机器人赛道的持续关注。</p>
+    <div class="tags"><span class="tag">资本市场</span><span class="tag">机器人指数</span><span class="tag">创业板</span><span class="tag">产业政策</span></div>
+    <a class="source-link" href="https://data.people.com.cn/pd/zcmy" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+  <div class="card">
+    <h3>金融“工具箱”持续扩容 护航“硬科技”出海</h3>
+    <div class="meta">日期：2026-08-10 | 来源：中国经营报</div>
+    <p class="summary">报道指出，“硬科技”出海已成为中国产业升级与全球竞争力重塑的关键浪潮。工业机器人、人工智能与创新药等“新新三样”正接力成为出海增长新引擎。金融机构持续扩容产品和服务工具箱，为硬科技出海提供支持。</p>
+    <p class="comment">意义点评：工业机器人和人工智能被并列为“新新三样”，反映出政策层面对 AI 和机器人产业作为出海新引擎的认可。金融配套的持续完善，有助于降低企业出海门槛，加速国内硬科技全球化布局。</p>
+    <div class="tags"><span class="tag">硬科技出海</span><span class="tag">工业机器人</span><span class="tag">人工智能</span><span class="tag">金融政策</span></div>
+    <a class="source-link" href="http://dianzibao.cb.com.cn/html/2026-08/10/content_341024.htm?div=-1" target="_blank" rel="noopener">查看原始来源 →</a>
+  </div>
+</section>
+
+<footer>
+  <p>生成时间：2026-08-17 | 本报告仅收录 2026 年 8 月 10 日 — 8 月 17 日期间的新闻素材</p>
+  <p>免责声明：本报告基于公开素材自动整理，不代表任何投资或学术评价建议。所有来源链接归原作者所有，仅供学习参考。</p>
+</footer>
+</div>
+</body>
+</html>
