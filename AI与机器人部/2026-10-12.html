@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI与机器人学术周报｜2026.10.05 - 2026.10.12</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card-bg: #f8f9fb;
+            --text: #1a1a2e;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e2e5ea;
+            --tag-bg-blue: #e9efff;
+            --tag-text-blue: #1e4bb7;
+            --tag-bg-green: #e6f6ec;
+            --tag-text-green: #1e7a3c;
+            --tag-bg-orange: #fff1e5;
+            --tag-text-orange: #b85c00;
+            --tag-bg-purple: #f1ecff;
+            --tag-text-purple: #5b2ab8;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+            line-height: 1.65;
+            padding: 32px 20px 48px;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        header.main-header {
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+        .top-title {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .top-subtitle {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+        .stats-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            font-size: 14px;
+        }
+        .stats-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .stats-num {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .stats-label {
+            color: var(--text-secondary);
+        }
+        .section {
+            margin-bottom: 34px;
+        }
+        .section-title {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+            color: var(--text);
+        }
+        .section-count {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--accent);
+            background: var(--tag-bg-blue);
+            padding: 2px 10px;
+            border-radius: 999px;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .card-date {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .journal {
+            font-style: italic;
+        }
+        .card-summary {
+            font-size: 14.5px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .card-comment {
+            font-size: 14px;
+            color: var(--text-secondary);
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 12px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .tag {
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 999px;
+            background: var(--tag-bg-blue);
+            color: var(--tag-text-blue);
+            font-weight: 500;
+        }
+        .tag.green {
+            background: var(--tag-bg-green);
+            color: var(--tag-text-green);
+        }
+        .tag.orange {
+            background: var(--tag-bg-orange);
+            color: var(--tag-text-orange);
+        }
+        .tag.purple {
+            background: var(--tag-bg-purple);
+            color: var(--tag-text-purple);
+        }
+        .card-source {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .card-source a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .card-source a:hover {
+            text-decoration: underline;
+        }
+        .empty-note {
+            background: var(--card-bg);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            color: var(--text-secondary);
+            font-size: 14.5px;
+        }
+        footer.footer {
+            border-top: 1px solid var(--border);
+            margin-top: 20px;
+            padding-top: 16px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        a {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="main-header">
+        <div class="top-title">AI 与机器人学术周报</div>
+        <div class="top-subtitle">2026年10月05日 — 2026年10月12日 · 仅收录本周内新闻 · 静态 HTML</div>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stats-item">
+            <span class="stats-num" id="total-news">9</span>
+            <span class="stats-label">总条目数</span>
+        </div>
+        <div class="stats-item">
+            <span class="stats-num" id="total-sections">9</span>
+            <span class="stats-label">板块数</span>
+        </div>
+        <div class="stats-item">
+            <span class="stats-num" id="total-sources">8</span>
+            <span class="stats-label">引用信源数</span>
+        </div>
+    </div>
+
+    <!-- 1. 本期焦点 -->
+    <div class="section">
+        <div class="section-title">
+            本期焦点
+            <span class="section-count">1</span>
+        </div>
+        <div class="card">
+            <div class="card-title">AI 科学周启幕，DeepSeek 密集释放模型与基础设施更新，State of AI 报告发布</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-05 至 2026-10-12</span>
+            </div>
+            <div class="card-summary">
+                本周，第二届 AI for Science Week 在德国美因茨开幕，推动科学智能从方法走向应用落地。DeepSeek 方面连续发布推理权重下载、API 缓存资费优化与 Harness 沙箱更新，持续强化开源生态。与此同时，2026 年度 State of AI Report 于 10 月 8 日正式发布，系统回顾过去一年 AI 研究、产业与政策走向，并特别强调“物理 AI 正在接近其 GPT-2 时刻”。此外，AAMAS、AISTATS、ACM WebConf、EACL 等多个顶级学术会议在本周迎来投稿截止日，学术社区进入新一轮成果提交高峰。
+            </div>
+            <div class="card-comment">
+                本周的核心主题是“从模型到系统、从虚拟到物理”：科学智能会议、机器人融资激增、DeepSeek 基础设施优化与多会议截止并行，反映出 AI 发展正在进入效率、可靠性与跨学科落地的关键阶段。
+            </div>
+            <div class="tags">
+                <span class="tag">本期焦点</span>
+                <span class="tag green">学术动态</span>
+                <span class="tag orange">产业报告</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. AI 数学与推理突破 -->
+    <div class="section">
+        <div class="section-title">
+            AI 数学与推理突破
+            <span class="section-count">0</span>
+        </div>
+        <div class="empty-note">
+            本周暂无相关重大进展。在给定时间窗口内，未能确认可收录的 AI 数学与推理方向新突破或论文。
+        </div>
+    </div>
+
+    <!-- 3. AI for Science -->
+    <div class="section">
+        <div class="section-title">
+            AI for Science（科学智能）
+            <span class="section-count">1</span>
+        </div>
+        <div class="card">
+            <div class="card-title">AI for Science Week 2026 在德国美因茨举行，聚焦科学智能方法与应用</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-05 至 10-09</span>
+                <span class="journal">德国美因茨 · 约翰内斯·古腾堡大学</span>
+            </div>
+            <div class="card-summary">
+                第二届 AI for Science Week（AI4Sci Week 2026）于 10 月 5 日至 9 日在德国美因茨举行。活动包含第二届 AI for Science 国际会议（AI4Sci 2026）与第 29 届 Discovery Science 会议（DS 2026），前者主要关注 AI 在科学中的应用，后者则侧重面向科学的新 AI 方法。会议旨在将应用领域研究者与计算机科学研究者聚集在一起，共同构建更强大的“AI for science”方法、系统与工具。
+            </div>
+            <div class="card-comment">
+                该会议延续了 2025 年在卢布尔雅那的版本，通过统一注册费串联多场活动，体现了科学智能社区从方法研发到跨学科落地的整合趋势。
+            </div>
+            <div class="tags">
+                <span class="tag">AI for Science</span>
+                <span class="tag green">学术会议</span>
+                <span class="tag purple">科学发现</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://ai4sciweek.org" target="_blank" rel="noopener">https://ai4sciweek.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. 具身智能与机器人突破 -->
+    <div class="section">
+        <div class="section-title">
+            具身智能与机器人突破
+            <span class="section-count">0</span>
+        </div>
+        <div class="empty-note">
+            本周暂无相关重大进展。具备本周明确日期的具身智能与机器人突破新闻素材不足，未予以收录。
+        </div>
+    </div>
+
+    <!-- 5. 机械臂本体 -->
+    <div class="section">
+        <div class="section-title">
+            机械臂本体（结构·驱动·运动学·控制）
+            <span class="section-count">0</span>
+        </div>
+        <div class="empty-note">
+            本周暂无相关重大进展。检索到的机械臂相关论文、专利或综述多为旧有成果，且无法确认在本周时间窗口内产生，故不予收录。
+        </div>
+    </div>
+
+    <!-- 6. DeepSeek 专栏 -->
+    <div class="section">
+        <div class="section-title">
+            DeepSeek 专栏
+            <span class="section-count">3</span>
+        </div>
+        <div class="card">
+            <div class="card-title">DeepSeek-R1 完整推理权重开放下载，多项基准比肩商业闭源旗舰</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-08</span>
+                <span class="journal">DeepSeek 官网快讯</span>
+            </div>
+            <div class="card-summary">
+                据 DeepSeek 报刊头版与简讯电讯，DeepSeek-R1 完整推理权重已在全网开放下载。官方称其在多项基准上可与商业闭源旗舰模型相媲美，并继续坚持开源与开放协议，将推理能力提供给研究者和开发者社区。
+            </div>
+            <div class="card-comment">
+                开源推理权重进一步降低了高性能推理模型的获取门槛，延续了 DeepSeek 以开放生态促进研究扩散的策略。
+            </div>
+            <div class="tags">
+                <span class="tag">DeepSeek</span>
+                <span class="tag green">开源模型</span>
+                <span class="tag purple">推理</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://dp.deepkseep.com.cn/index.html" target="_blank" rel="noopener">https://dp.deepkseep.com.cn/index.html</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">DeepSeek API 开放平台全面升级上下文自动缓存，重复调用百万 Token 仅需 0.1 元</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-07</span>
+                <span class="journal">DeepSeek 官网快讯</span>
+            </div>
+            <div class="card-summary">
+                DeepSeek API 开放平台宣布全面升级上下文自动缓存机制。根据官方资费通报，重复调用百万 Token 的成本大幅降低，仅需 0.1 元。该机制可自动启用 Context Caching，无需人工干预，旨在提升高频推理场景下的成本效率。
+            </div>
+            <div class="card-comment">
+                缓存资费优化是推理成本竞争的重要环节，对基于 DeepSeek 构建的上层应用具有直接降本意义。
+            </div>
+            <div class="tags">
+                <span class="tag">DeepSeek</span>
+                <span class="tag orange">API 优化</span>
+                <span class="tag">推理成本</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://dp.deepkseep.com.cn/index.html" target="_blank" rel="noopener">https://dp.deepkseep.com.cn/index.html</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">DeepSeek Harness 离线安全评测沙箱 2.0 发布，支持一键断网验证与形式化证明</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-05</span>
+                <span class="journal">DeepSeek 官网快讯</span>
+            </div>
+            <div class="card-summary">
+                DeepSeek Harness 离线安全评测沙箱 2.0 于本周发布。该工具支持一键断网验证与形式化证明，为模型评测提供更严格、可隔离的运行环境。此前 DeepSeek Harness 已作为开源人工智能代理运行时及开发框架推出。
+            </div>
+            <div class="card-comment">
+                Harness 2.0 的离线与形式化验证能力有助于提升模型评测的可信度，也契合强调 AI 可重复性与安全性的研究趋势。
+            </div>
+            <div class="tags">
+                <span class="tag">DeepSeek</span>
+                <span class="tag purple">评测沙箱</span>
+                <span class="tag green">开源工具</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://dp.deepkseep.com.cn/index.html" target="_blank" rel="noopener">https://dp.deepkseep.com.cn/index.html</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. 顶级会议与学术动态 -->
+    <div class="section">
+        <div class="section-title">
+            顶级会议与学术动态
+            <span class="section-count">1</span>
+        </div>
+        <div class="card">
+            <div class="card-title">多个顶级学术会议本周迎来投稿截止：AAMAS、AISTATS、ACM WebConf、EACL</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-10 至 10-12</span>
+                <span class="journal">Bibby AI 会议截止日历</span>
+            </div>
+            <div class="card-summary">
+                本周进入 2026-2027 学术会议投稿的关键截止时段。其中，AAMAS 2027（自主智能体与多智能体系统）全文与 AISTATS 2027 论文截止日期均为 2026 年 10 月 10 日。ACM WebConf 2027 摘要截止与 EACL 2027 提交截止均为 2026 年 10 月 12 日。上述会议覆盖多智能体系统、统计机器学习、Web 科学和自然语言处理等方向。
+            </div>
+            <div class="card-comment">
+                多个会议截止日期集中于本周，是相关领域研究者提交成果的重要节点，也意味着下一轮论文评审与发表周期正式启动。
+            </div>
+            <div class="tags">
+                <span class="tag">学术会议</span>
+                <span class="tag green">投稿截止</span>
+                <span class="tag purple">AAMAS/AISTATS/WebConf/EACL</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://trybibby.com/conference-deadlines/cn" target="_blank" rel="noopener">https://trybibby.com/conference-deadlines/cn</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. AI 基础设施与能效 -->
+    <div class="section">
+        <div class="section-title">
+            AI 基础设施与能效
+            <span class="section-count">0</span>
+        </div>
+        <div class="empty-note">
+            本周暂无相关重大进展。AI 基础设施与能效方向中，素材多为趋势报告、远期会议或旧文，无法确认在 7 天窗口内发生的具体新进展，故未收录。
+        </div>
+    </div>
+
+    <!-- 9. 产业与政策 -->
+    <div class="section">
+        <div class="section-title">
+            产业与政策
+            <span class="section-count">3</span>
+        </div>
+        <div class="card">
+            <div class="card-title">State of AI Report 2026 发布：物理 AI 接近“GPT-2 时刻”，中国机器人融资领跑全球</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-08</span>
+                <span class="journal">State of AI Report 2026</span>
+            </div>
+            <div class="card-summary">
+                第八届年度 State of AI Report 于 10 月 8 日正式发布。报告分析了过去 12 个月 AI 研究、产业、政策与安全的进展，并指出：Anthropic、OpenAI 和 Google 在接近饱和的基准上继续领先；AI 正在加速自身发展，Claude 已参与 Anthropic 约 26% 的受监督模型研发；物理 AI 正在接近其“GPT-2 时刻”；多个开放数学问题被攻克；AI 辅助药物项目进入 III 期临床。在机器人融资方面，中国约揽获全球近三分之二的人形机器人资金。
+            </div>
+            <div class="card-comment">
+                该报告作为行业年度关键参考，进一步确认了从模型能力竞赛向智能化基础设施、物理 AI 与跨行业落地延伸的趋势。
+            </div>
+            <div class="tags">
+                <span class="tag">产业报告</span>
+                <span class="tag green">物理 AI</span>
+                <span class="tag orange">全球趋势</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://www.stateof.ai/State-of-AI-Report-2026.pdf" target="_blank" rel="noopener">https://www.stateof.ai/State-of-AI-Report-2026.pdf</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">亿欧投融资数据库：10 月 5 日多起 AI 与机器人相关融资事件披露</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-05</span>
+                <span class="journal">亿欧</span>
+            </div>
+            <div class="card-summary">
+                根据亿欧投融资数据库，10 月 5 日披露了多起融资事件，包括 Thunder Bridge V、Inflection Poin VIII 等空白支票公司上市，以及四川光特等人工智能应用企业融资。当日数据反映出科技与 AI 相关资本活动持续活跃。
+            </div>
+            <div class="card-comment">
+                尽管单笔事件以资本市场动态为主，但 AI 应用、机器人相关标的正持续吸引资本关注，为后续产业扩张提供资金基础。
+            </div>
+            <div class="tags">
+                <span class="tag">投融资</span>
+                <span class="tag orange">资本市场</span>
+                <span class="tag">AI 产业</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://www.iyiou.com" target="_blank" rel="noopener">https://www.iyiou.com</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">中国生成式 AI 用户规模突破 7 亿，普及率超 50%</div>
+            <div class="card-meta">
+                <span class="card-date">2026-10-05</span>
+                <span class="journal">金色财经 / 生成式人工智能应用发展报告（2026）</span>
+            </div>
+            <div class="card-summary">
+                10 月 5 日汇总的数字领域动态显示，《生成式人工智能应用发展报告（2026）》披露，截至 2026 年上半年，中国生成式 AI 用户规模突破 7 亿人，普及率超过 50%。这一数据表明每两个中国人中就有一人使用生成式 AI 产品，中国 AI 产业的大众基础进一步扩大。
+            </div>
+            <div class="card-comment">
+                用户规模与普及率是衡量 AI 产业渗透深度的重要指标，也反映出生成式 AI 正从早期尝鲜走向大规模日常使用。
+            </div>
+            <div class="tags">
+                <span class="tag">产业政策</span>
+                <span class="tag green">用户数据</span>
+                <span class="tag">生成式 AI</span>
+            </div>
+            <div class="card-source">
+                来源：<a href="https://news.cnyes.com/news/id/6622565" target="_blank" rel="noopener">https://news.cnyes.com/news/id/6622565</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>生成时间：2026-10-12 · 本报告仅收录 2026-10-05 至 2026-10-12 期间的新闻</div>
+        <div>免责声明：内容基于公开素材整理，仅供学术信息参考，不构成投资建议</div>
+    </footer>
+</div>
+</body>
+</html>
