@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 与机器人学术产业周报 · 2026.10.12—2026.10.19</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card-bg: #f8f9fb;
+      --text: #1a1a2e;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --border: #e2e5ea;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+      line-height: 1.65;
+      padding: 24px;
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .header .date-range {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .stat {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 20px;
+      min-width: 128px;
+      text-align: center;
+    }
+    .stat .num {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+    .stat .label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+    .section {
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      line-height: 1.4;
+    }
+    .section-title .count {
+      color: var(--accent);
+      font-size: 14px;
+      margin-left: 8px;
+      font-weight: 600;
+    }
+    .focus-text {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #1f2937;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+    .card .meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .card .summary {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    .card .point {
+      font-size: 13px;
+      color: #334155;
+      background: #eef2ff;
+      border-left: 3px solid var(--accent);
+      padding: 8px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: #e8effd;
+      color: #1d4ed8;
+    }
+    .source-link {
+      font-size: 12px;
+    }
+    .source-link a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .source-link a:hover {
+      text-decoration: underline;
+    }
+    .empty {
+      color: var(--text-secondary);
+      font-size: 14px;
+      background: var(--card-bg);
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .footer {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 12px;
+      margin-top: 28px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1>AI 与机器人学术产业周报</h1>
+      <div class="date-range">时间范围：2026年10月12日 — 2026年10月19日</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="num">10</div>
+          <div class="label">总条目数</div>
+        </div>
+        <div class="stat">
+          <div class="num">9</div>
+          <div class="label">板块数</div>
+        </div>
+        <div class="stat">
+          <div class="num">10</div>
+          <div class="label">引用信源数</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 1. 本期焦点 -->
+    <section class="section" id="focus">
+      <div class="section-title">本期焦点</div>
+      <p class="focus-text">
+        本周最值得关注的进展是：中国科学家依托上海人工智能实验室“书生”S2大模型首次攻克世界级数学难题“三维吉斯猜想”，并完成形式化验证；
+        爱芯元智发布AX8860大算力边端AI芯片，推动物理AI从验证走向现场生产力落地；
+        具身智能领域资本与产业热度持续升高，宇树科技王兴兴判断具身智能拐点可能在1—2年内到来。
+        Google Research 也在本周发布多项AI for Science突破，覆盖地球智能、公共卫生与自主实验室方向。
+      </p>
+    </section>
+
+    <!-- 2. AI 数学与推理突破 -->
+    <section class="section" id="math">
+      <div class="section-title">AI 数学与推理突破<span class="count">(1 条)</span></div>
+
+      <div class="card">
+        <h3>中国科学家首次用国产大模型“书生”S2攻克世界级数学难题——三维吉斯猜想</h3>
+        <div class="meta">日期：2026年10月15日｜发表/来源：上海人工智能实验室 / 上观新闻</div>
+        <p class="summary">
+          上海人工智能实验室宣布，大湾区大学教授许地生团队依托“书生”科学多模态大模型S2，破解了由法国数学家艾蒂安·吉斯于1995年提出的三维吉斯（Ghys）猜想。
+          模型首轮推理即产出400页推导报告，先后完成7批接续推演，问题图从15个节点扩展到389个，输出上千页严密推导，并生成数十种全新论证思路。
+          北京大学董彬教授、刘若川院士团队完成形式化验证，相关证明论文已在arXiv发表，形式化代码在GitHub公开。
+          研究团队下一步将把能力封装进“书生·端砚”科学发现平台的数学验证模块。
+        </p>
+        <p class="point">
+          意义点评：这是中国数学家首次用中国大模型攻克世界级数学难题，展示了“专家直觉+机器递归推理”的科研新范式，对搜索空间巨大、专家稀缺的基础研究领域具有可复制推广价值。
+        </p>
+        <div class="tags">
+          <span class="tag">数学推理</span>
+          <span class="tag">形式化验证</span>
+          <span class="tag">书生S2</span>
+          <span class="tag">基础研究</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://caifuhao.eastmoney.com/news/20261015103030273017380" target="_blank" rel="noopener">https://caifuhao.eastmoney.com/news/20261015103030273017380</a></div>
+      </div>
+    </section>
+
+    <!-- 3. AI for Science（科学智能） -->
+    <section class="section" id="ai4science">
+      <div class="section-title">AI for Science（科学智能）<span class="count">(1 条)</span></div>
+
+      <div class="card">
+        <h3>Google Research@ 2026：发布10项“放大人类创造力”的科研突破</h3>
+        <div class="meta">日期：2026年10月14日｜来源：Google Research Blog（Yossi Matias）</div>
+        <p class="summary">
+          Google 在旗舰活动 Research@ 上发布10项研究进展，涵盖地球AI公共卫生（登革热、霍乱等风险预测）、Deep Review 技术文档深度分析、地球智能地理空间代理等方向。
+          相关更新还包括10月16日发布的“将AI代理锚定于生物现实：自主湿实验室构建模块”，强调把AI能力从模型转化为实验自动化工具。
+        </p>
+        <p class="point">
+          意义点评：Google 将AI用于地球科学、公共卫生与自主实验自动化，体现AI for Science从“模型能力展示”走向“可部署科学工具”的趋势。
+        </p>
+        <div class="tags">
+          <span class="tag">AI for Science</span>
+          <span class="tag">Google Research</span>
+          <span class="tag">地球AI</span>
+          <span class="tag">自主实验室</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity" target="_blank" rel="noopener">https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity</a></div>
+      </div>
+    </section>
+
+    <!-- 4. 具身智能与机器人突破 -->
+    <section class="section" id="embodied">
+      <div class="section-title">具身智能与机器人突破<span class="count">(3 条)</span></div>
+
+      <div class="card">
+        <h3>宇树科技王兴兴：具身智能拐点或1—2年内到来，GPT-7明年或直接突破瓶颈</h3>
+        <div class="meta">日期：2026年10月13日｜来源：36Kr/Tech商业</div>
+        <p class="summary">
+          10月12日，中国国际工业博览会开幕式上，宇树科技创始人王兴兴谈及具身智能技术拐点时表示：
+          如果进展顺利，具身智能拐点可能在1—2年内实现；明年GPT-7发布后，可能直接突破具身智能的所有瓶颈，推动人形机器人实现场景化商业部署。
+        </p>
+        <p class="point">
+          意义点评：头部人形机器人创始人对时间表的判断较以往更为激进，显示“大模型能力外溢”正成为具身智能产业预期中的关键变量。
+        </p>
+        <div class="tags">
+          <span class="tag">具身智能</span>
+          <span class="tag">人形机器人</span>
+          <span class="tag">宇树科技</span>
+          <span class="tag">GPT-7</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://eu.36kr.com/en/p/4023570140829573" target="_blank" rel="noopener">https://eu.36kr.com/en/p/4023570140829573</a></div>
+      </div>
+
+      <div class="card">
+        <h3>2026世界机器人大会展示人形机器人突破：硬件中心转向智能驱动的具身AI</h3>
+        <div class="meta">日期：2026年10月14日｜来源：QUE.com</div>
+        <p class="summary">
+          2026世界机器人大会的核心主题之一，是从硬件中心式机器人向智能驱动的具身AI转变。
+          大语言模型与多模态AI系统正被集成到机器人平台，使机器人具备自然语言交互、任务规划与动态环境自适应行为。
+          MERICS报告将人形机器人视为中国科技战略的关键支柱之一，并将其与能源政策、数字基础设施和经济规划深度关联。
+        </p>
+        <p class="point">
+          意义点评：机器人竞争的差异化核心正从机械工程转向认知层，全球机器人产业与AI、能源、数字基础设施的协同关系进一步加深。
+        </p>
+        <div class="tags">
+          <span class="tag">WRC 2026</span>
+          <span class="tag">具身智能</span>
+          <span class="tag">人形机器人</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://que.com/world-robot-conference-2026-showcases-humanoid-robotics-breakthroughs" target="_blank" rel="noopener">https://que.com/world-robot-conference-2026-showcases-humanoid-robotics-breakthroughs</a></div>
+      </div>
+
+      <div class="card">
+        <h3>2026国内头部具身智能企业实力榜单：三大技术赛道分化，多维竞争格局全景解析</h3>
+        <div class="meta">日期：2026年10月12日｜来源：新华报业网 / 河北青年报</div>
+        <p class="summary">
+          报道将国内头部具身智能企业划分为三大核心赛道：全栈自研、世界模型、具身生态。
+          全栈自研阵营以卧安机器人、越疆科技等为代表，从技术验证迈向批量交付；世界模型阵营以银河通用、自变量机器人、星动纪元等为代表；
+          具身生态阵营以智元机器人、越疆科技等为代表，通过开放平台降低行业研发门槛。
+          报告特别提到卧安机器人“一脑多形”的OneModel体系，统一感知、决策与交互能力，形成“一次训练、多端部署”的系统化方案。
+        </p>
+        <p class="point">
+          意义点评：产业正从“技术竞赛”转向“商业兑现”，企业路线分化成为重要信号；平台化与数据飞轮将决定具身智能企业的长期竞争力。
+        </p>
+        <div class="tags">
+          <span class="tag">具身智能</span>
+          <span class="tag">产业格局</span>
+          <span class="tag">世界模型</span>
+          <span class="tag">全栈自研</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://www.xhby.net/content/s6acca771e4b06852bfeca655.html" target="_blank" rel="noopener">https://www.xhby.net/content/s6acca771e4b06852bfeca655.html</a></div>
+      </div>
+    </section>
+
+    <!-- 5. 机械臂本体（结构·驱动·运动学·控制） -->
+    <section class="section" id="manipulator">
+      <div class="section-title">机械臂本体（结构·驱动·运动学·控制）<span class="count">(1 条)</span></div>
+
+      <div class="card">
+        <h3>统一连续体机器人驱动平台的设计与表征</h3>
+        <div class="meta">日期：2026年10月14日｜来源：alphaXiv（arXiv:2610.19798）</div>
+        <p class="summary">
+          该研究提出一种统一驱动平台，将驱动硬件和软件与连续体机器人设计解耦。
+          平台可为不同类别连续体机器人提供模块化驱动，可扩展至大量自由度，并能与传统串联机械臂集成构成混合架构。
+          研究团队在开源手术机器人系统上完成验证，实现亚毫米级平移精度与小于5°的旋转误差；
+          同时展示了受限环境下的连续体摄像头遥操作，以及2.53mm同心管机器人钳具与传统腕式器械的双手操作。全部硬件设计与ROS软件已开源。
+        </p>
+        <p class="point">
+          意义点评：该平台直击连续体机器人驱动系统重复设计、跨机构难复用的问题，有望降低微创手术与工业检测领域的连续体机器人研发门槛。
+        </p>
+        <div class="tags">
+          <span class="tag">连续体机器人</span>
+          <span class="tag">绳驱动</span>
+          <span class="tag">运动控制</span>
+          <span class="tag">开源硬件</span>
+          <span class="tag">手术机器人</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://www.alphaxiv.org/zh/abs/2610.19798" target="_blank" rel="noopener">https://www.alphaxiv.org/zh/abs/2610.19798</a></div>
+      </div>
+    </section>
+
+    <!-- 6. DeepSeek 专栏 -->
+    <section class="section" id="deepseek">
+      <div class="section-title">DeepSeek 专栏<span class="count">(0 条)</span></div>
+      <div class="empty">本周暂无相关重大进展。部分素材涉及DeepSeek历史回顾、年度统计或无法确认具体发布日期的内容，按七日内标准未予收录。</div>
+    </section>
+
+    <!-- 7. 顶级会议与学术动态 -->
+    <section class="section" id="conferences">
+      <div class="section-title">顶级会议与学术动态<span class="count">(1 条)</span></div>
+
+      <div class="card">
+        <h3>学者网本周集中发布多项2026学术会议征稿预告，含具身智能机器人国际会议</h3>
+        <div class="meta">日期：2026年10月12日｜来源：学者网 SCHOLAT+</div>
+        <p class="summary">
+          学者网本周发布多项国际学术会议征稿预告，包括2026年具身智能机器人与智能科学国际学术会议（EIRIS 2026，浙江温州）、
+          2026年多模态、机器学习与数据科学国际学术会议（MMLDS 2026，河南郑州）、
+          第八届机器学习、大数据与商务智能国际会议（MLBDBI 2026，浙江杭州）等。
+          会议主题覆盖具身智能、机器学习、数据科学与计算机前沿技术等方向。
+        </p>
+        <p class="point">
+          意义点评：10月中旬国内学术会议征稿进入活跃期，具身智能与AI交叉方向持续升温，为科研人员提供了新的投稿窗口与学术交流机会。
+        </p>
+        <div class="tags">
+          <span class="tag">学术会议</span>
+          <span class="tag">征稿</span>
+          <span class="tag">具身智能</span>
+          <span class="tag">机器学习</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://www.scholat.com/confHome.html" target="_blank" rel="noopener">https://www.scholat.com/confHome.html</a></div>
+      </div>
+    </section>
+
+    <!-- 8. AI 基础设施与能效 -->
+    <section class="section" id="infrastructure">
+      <div class="section-title">AI 基础设施与能效<span class="count">(1 条)</span></div>
+
+      <div class="card">
+        <h3>爱芯元智发布AX8860大算力系列芯片，瞄准边端大模型落地</h3>
+        <div class="meta">日期：2026年10月13日｜来源：腾讯新闻 / IPO早知道</div>
+        <p class="summary">
+          爱芯元智在CIIF 2026（中国国际工业博览会）上发布AX8860大算力边端AI芯片系列。
+          该芯片集成256 TOPS混合精度算力（原生支持FP4）与273 GB/s内存带宽，配备128GB LPDDR5X大容量内存；
+          支持AXLink级联与PCIe 5.0高速互联，具备64路视频解码与16路视频编码能力，采用6nm先进工艺。
+          现场同步发布元曦模组A256S，并展示推理卡与推理服务器；合作伙伴原力灵机展示通用具身大脑DM0.5，运行插入质检、通用工业插入和灵巧手柔性切削等任务。
+        </p>
+        <p class="point">
+          意义点评：该芯片标志着边端AI从技术验证进入以业务价值为导向的端到端生产力落地周期，为智能制造、仓储物流与机器人提供“现场推理”算力底座。
+        </p>
+        <div class="tags">
+          <span class="tag">AI芯片</span>
+          <span class="tag">边缘计算</span>
+          <span class="tag">物理AI</span>
+          <span class="tag">能效</span>
+          <span class="tag">CIIF 2026</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://news.qq.com/rain/a/20261013A0CA1M00" target="_blank" rel="noopener">https://news.qq.com/rain/a/20261013A0CA1M00</a></div>
+      </div>
+    </section>
+
+    <!-- 9. 产业与政策 -->
+    <section class="section" id="industry">
+      <div class="section-title">产业与政策<span class="count">(2 条)</span></div>
+
+      <div class="card">
+        <h3>智能科技领域投融资周报：上周132起事件，融资总额约588.44亿元</h3>
+        <div class="meta">日期：2026年10月19日｜来源：亿欧数据</div>
+        <p class="summary">
+          据亿欧数据统计，上周（2026年10月12日—2026年10月18日）共披露132起投融资事件，
+          涉及98家国内企业、34家国外企业，融资总额约588.44亿元。
+          智能科技领域整体资本活跃度保持高位。
+        </p>
+        <p class="point">
+          意义点评：进入10月中旬，智能科技赛道继续保持较大规模资本流入，为AI与机器人产业的技术验证和规模部署提供资金支持。
+        </p>
+        <div class="tags">
+          <span class="tag">投融资</span>
+          <span class="tag">智能科技</span>
+          <span class="tag">资本市场</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://www.iyiou.com/data/202610191143716" target="_blank" rel="noopener">https://www.iyiou.com/data/202610191143716</a></div>
+      </div>
+
+      <div class="card">
+        <h3>苏度科技完成超10亿元新一轮融资：具身智能“0真机数据”路线获资本加注</h3>
+        <div class="meta">日期：2026年10月12日｜来源：机器人大讲堂</div>
+        <p class="summary">
+          苏度科技宣布完成超10亿元新一轮融资，由上海国投先导、国泰海通、孚腾资本联合领投，
+          道禾长期、东风资产、国开金融、朗玛峰、量图智策等产业及长期资本参与，小米等老股东继续跟投。
+          这是该公司成立17个月以来的第5轮融资，今年4月完成5亿美元Pre-A轮融资后估值已突破200亿元。
+          其路径强调以通用大模型先发优势构建跨场景迁移能力，而非依赖堆叠真机数据。
+        </p>
+        <p class="point">
+          意义点评：资本用真金白银重新投票，显示具身智能的核心壁垒正从硬件参数转向智能本身与真实物理闭环能力；“国资+产业+财务”资本结构也为长周期、重资产赛道提供了参考样本。
+        </p>
+        <div class="tags">
+          <span class="tag">具身智能</span>
+          <span class="tag">融资</span>
+          <span class="tag">苏度科技</span>
+          <span class="tag">产业资本</span>
+        </div>
+        <div class="source-link">来源链接：<a href="https://www.leaderobot.com/news/10143" target="_blank" rel="noopener">https://www.leaderobot.com/news/10143</a></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      生成时间：2026年10月19日｜本报告仅收录2026年10月12日至10月19日期间明确日期的新闻素材，不构成投资建议。
+    </footer>
+  </div>
+</body>
+</html>
