@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 与机器人周报 · 2026年10月19日 — 10月26日</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --card-bg: #f8f9fb;
+  --text: #1a1a2e;
+  --text-secondary: #555;
+  --accent: #2563eb;
+  --border: #e2e5ea;
+  --tag-bg: #eef2ff;
+  --tag-text: #3949ab;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
+    "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.65;
+}
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+header {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+header h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 18px;
+  min-width: 110px;
+}
+.stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.section {
+  margin-bottom: 32px;
+}
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--tag-bg);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.focus-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  padding: 18px 20px;
+  color: var(--text);
+  font-size: 15px;
+}
+.focus-box p { margin: 0; }
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: #b9c6e6; }
+.card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  margin-bottom: 8px;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+.card-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.card-summary {
+  font-size: 14px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.card-comment {
+  font-size: 13px;
+  color: #334155;
+  background: #ffffff;
+  border: 1px dashed #d7dbe3;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0 0 10px;
+}
+.card-comment::before {
+  content: "点评：";
+  font-weight: 700;
+  color: var(--accent);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.tag {
+  font-size: 11px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.tag.accent {
+  background: #fef3c7;
+  color: #92400e;
+}
+.tag.green {
+  background: #ecfdf5;
+  color: #047857;
+}
+.tag.red {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+.card-link {
+  font-size: 12px;
+  display: inline-block;
+  word-break: break-all;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted #b3c2e8;
+}
+.card-link:hover { border-bottom: 1px solid var(--accent); }
+.empty-note {
+  color: var(--text-secondary);
+  font-size: 14px;
+  padding: 16px 18px;
+  background: #fafafa;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .page { padding: 18px 12px 40px; }
+  .card { padding: 14px; }
+  .card-header { flex-direction: column; gap: 4px; }
+  .card-meta { white-space: normal; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>AI 与机器人周报</h1>
+  <p class="subtitle">2026年10月19日 — 2026年10月26日 · 第 43 周</p>
+  <div class="stats">
+    <div class="stat-card"><div class="stat-number">13</div><div class="stat-label">总条目数</div></div>
+    <div class="stat-card"><div class="stat-number">9</div><div class="stat-label">板块数</div></div>
+    <div class="stat-card"><div class="stat-number">11</div><div class="stat-label">引用信源数</div></div>
+  </div>
+</header>
+
+<!-- 1. 本期焦点 -->
+<div class="section">
+  <div class="section-title">本期焦点 <span class="section-count">1</span></div>
+  <div class="focus-box">
+    <p>本周最值得关注的进展是中国团队依托国产"书生"科学多模态大模型 S2 破解了困扰国际数学界 30 余年的三维 Ghys 猜想，相关证明已在 arXiv 发布，并由北京大学团队完成形式化验证。这是中国数学家首次使用国产大模型攻克世界级数学难题。与此同时，DeepSeek 于 10 月 20 日开源了其生产级推理框架 DeepInfer，支持华为昇腾 950 NPU 与英伟达 SM100 GPU，进一步强化了国产算力与开源 AI 生态的协同。具身智能方面，一份本周的社区速报指出，清华全尺寸人形机器人冲刺速度突破 7 m/s 并实现高速过弯，Amazon 与密歇根大学则将人形机器人全身作为抓取面，搬运成功率提升至 90%。这三大主题共同反映了 AI 正从"能力展示"加速转向"可验证的科学突破与可复现的工程基础设施"。</p>
+  </div>
+</div>
+
+<!-- 2. AI 数学与推理突破 -->
+<div class="section">
+  <div class="section-title">AI 数学与推理突破 <span class="section-count">3</span></div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Lean 形式化构造被证实推翻无穷逻辑中的 Vaught 猜想</h3>
+      <span class="card-meta">2026-10-22 · 预印本（尚未同行评审）</span>
+    </div>
+    <p class="card-summary">一个经过 Lean 形式化检查的构造被用于推翻 Vaught 猜想在无穷逻辑中的版本。该工作带有显式"临时性"标注，同时保存了原始仓库中的句子识别与谱转移限制说明，并将方法论标签升级为"形式化支持"状态，等待同行评审与独立语义审计。作者在 10 月 22 日补充了与命题 4.32、4.34、4.35 对应的形式化产物。</p>
+    <p class="card-comment">AI 协助的形式化验证正在成为高等数学前沿的标准工具箱，但当前仍需谨慎对待未经过同行评审的临时性结论，形式化验证只能保证推理的一致性，无法完全确认数学意义的正确性。</p>
+    <div class="tags"><span class="tag">形式化验证</span><span class="tag">模型论</span><span class="tag">描述集合论</span><span class="tag red">待同行评审</span></div>
+    <a class="card-link" href="https://kingy.ai/mathematics-science-breakthrough-tracker">来源：Kingy AI 数学与科学突破追踪</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">AlphaProof Nexus 获批同行评审论文：广泛形式化证明搜索</h3>
+      <span class="card-meta">2026-10-19 记录 · 同行评审通过</span>
+    </div>
+    <p class="card-summary">AlphaProof Nexus 于本周获得同行评审发表，研究聚焦大规模形式化证明搜索，涉及形式数学、组合数学与自动定理证明。该工作被标注为"证据等级 1"，AI 参与度为"是"，表明相关证明搜索管线已经通过学术共同体的正式评审。</p>
+    <p class="card-comment">这是本周少数经过同行评审的 AI 数学成果之一，说明面向通用形式证明空间的搜索方法正从原型走向规范化贡献，对后续自动定理证明系统的演进有风向标意义。</p>
+    <div class="tags"><span class="tag">自动定理证明</span><span class="tag">组合数学</span><span class="tag green">同行评审</span></div>
+    <a class="card-link" href="https://kingy.ai/mathematics-science-breakthrough-tracker">来源：Kingy AI 数学与科学突破追踪</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">中国团队 + 国产大模型：三维 Ghys 猜想被攻克，证明已被形式化验证</h3>
+      <span class="card-meta">2026-10-19 · arXiv 预印本 / 科普中国</span>
+    </div>
+    <p class="card-summary">上海人工智能实验室访问学者、大湾区大学教授许地生团队依托"书生"科学多模态大模型 S2，采用人机协同模式，由 AI 承担大规模长链条数学推演，科研人员把握方向、甄别思路，经历多轮交互最终完成三维 Ghys 猜想的证明。Ghys 猜想 1995 年由法国数学家提出，是复动力系统领域长期公开难题，其对应的实数版本至今仍是未解难题。北京大学董彬教授、刘若川院士团队对该证明完成形式化验证，验证了正确性。这是中国科学家首次用中国大模型攻克世界级数学难题。</p>
+    <p class="card-comment">该事件的意义超过单个定理的证明本身：它展示了一种"专家直觉 + 系统搜索 + 形式化验证"的新科研闭环，且采用的大模型、验证管线与开源代码均来自国内，对提升本土"数学智能基础设施"的战略价值不可忽视。</p>
+    <div class="tags"><span class="tag">Ghys 猜想</span><span class="tag">书生 S2</span><span class="tag">形式化验证</span><span class="tag green">重大突破</span></div>
+    <a class="card-link" href="https://finance.sina.com.cn/wm/2026-10-19/doc-inivumam6892733.shtml">来源：新浪财经（科普中国）</a>
+  </div>
+</div>
+
+<!-- 3. AI for Science -->
+<div class="section">
+  <div class="section-title">AI for Science（科学智能） <span class="section-count">2</span></div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">OpenAI 收购 Orchestra Bio，加速 AI 驱动的生物发现</h3>
+      <span class="card-meta">2026-10-20 · OpenAI 官方公告</span>
+    </div>
+    <p class="card-summary">OpenAI 于 10 月 20 日宣布收购生物科技公司 Orchestra Bio。这是继此前"使用数千个 AI 代理挖掘生物数据新线索"的研究发布后，OpenAI 进一步向生命科学领域进行组织层面的补强。收购内容及交易条款未全部公开，但 OpenAI 将 Orchestra Bio 的团队与实验平台纳入其研究部署体系，意图将大规模 AI 推理能力与生物实验验证能力更紧密地结合。</p>
+    <p class="card-comment">此前 10 月 21 日发布的数千智能体挖掘生物线索研究展示了"AI 扩展科学假设空间"的能力，收购则说明 OpenAI 正在从模型服务商向具备实验闭环的 AI4S 主体演化，这一动作值得持续跟踪。</p>
+    <div class="tags"><span class="tag">生物发现</span><span class="tag">AI 智能体</span><span class="tag">OpenAI</span><span class="tag accent">产业进展</span></div>
+    <a class="card-link" href="https://openai.com">来源：OpenAI 研究与部署页面</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">OpenAI：数千个 AI 智能体在复杂生物数据中识别新研究线索</h3>
+      <span class="card-meta">2026-10-21 · OpenAI 研究发布</span>
+    </div>
+    <p class="card-summary">OpenAI 发布研究，展示由数千个 AI 智能体并行分析复杂生物数据、发现潜在研究方向的新管线。该系统旨在将传统上依靠少数专家判断的假设生成任务，转化为可由 AI 智能体规模化探索的流程，尤其在基因调控、细胞互作等高维数据场景中筛选出具有后续实验价值的候选线索。</p>
+    <p class="card-comment">这标志着 AI for Science 的重心开始从"预测单一结构或靶点"升级为"自动生成与筛选科学假设"，让 AI 从工具角色向科研流程上游的假设提出环节渗透。</p>
+    <div class="tags"><span class="tag">科学智能</span><span class="tag">多智能体</span><span class="tag">生物数据</span><span class="tag green">学术前沿</span></div>
+    <a class="card-link" href="https://openai.com">来源：OpenAI 研究与部署页面</a>
+  </div>
+</div>
+
+<!-- 4. 具身智能与机器人突破 -->
+<div class="section">
+  <div class="section-title">具身智能与机器人突破 <span class="section-count">2</span></div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">清华全尺寸人形机器人冲刺突破 7 m/s，并实现高速过弯</h3>
+      <span class="card-meta">2026-10-19 · 机器人与具身智能每日进展推荐</span>
+    </div>
+    <p class="card-summary">本期《机器人与具身智能每日进展推荐》精选了 5 项工作，其中清华团队的全尺寸人形机器人在冲刺测试中跑出 7 m/s 以上的速度并完成高速过弯，展示了连续高速动态行走的实际稳定性。同期内容还包括：Amazon 与密歇根大学将人形机器人全身构造为抓取面、实现 90% 搬运成功率；Spark-0 使用千小时全手触觉人类数据预训练 VTLA；FoveaVLA 以注视动作取代腕部相机；EgoMatrix 把第一视角视频端到端转换为可回放的灵巧演示。</p>
+    <p class="card-comment">高速过弯与全身抓取这两个方向都在打破"人形机器人只能做低速、局部操作的假设"，说明控制策略与感知表征正在共同推动人形机器人的动态能力边界。</p>
+    <div class="tags"><span class="tag">人形机器人</span><span class="tag">高速运动</span><span class="tag">灵巧操作</span><span class="tag green">前沿探索</span></div>
+    <a class="card-link" href="https://www.unifolm.com">来源：宇树具身智能社群</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">CMU 人形全身避障 SWAP、佐治亚理工第三臂人形等 4 项论文入选周进展</h3>
+      <span class="card-meta">2026-10-21 · 机器人与具身智能每日进展推荐</span>
+    </div>
+    <p class="card-summary">本期推荐覆盖 2026-10-19 至 10-21 窗口内的 4 篇论文与 1 条商业动态：CMU 的人形全身避障工作 SWAP，佐治亚理工的第三臂人形系统，中山大学双人形交互 OmniInteract，爱丁堡盲视触觉保定球，以及 Agility 与农机巨头 AGCO 的 Digit 工厂试点签约，体现出从学术全身控制到工厂落地并行推进的趋势。</p>
+    <p class="card-comment">第三臂人形与双人形交互意味着具身智能的研究对象不再局限于"单机个体"，而是开始包括全身冗余自由度与多机协同，这对后续多智能体具身系统提供了新视角。</p>
+    <div class="tags"><span class="tag">全身避障</span><span class="tag">多人形交互</span><span class="tag">触觉操作</span><span class="tag accent">产业落地</span></div>
+    <a class="card-link" href="https://www.unifolm.com">来源：宇树具身智能社群</a>
+  </div>
+</div>
+
+<!-- 5. 机械臂本体 -->
+<div class="section">
+  <div class="section-title">机械臂本体（结构·驱动·运动学·控制） <span class="section-count">0</span></div>
+  <div class="empty-note">本周暂无相关重大进展，无 2026-10-19 至 10-26 期间发布的机械臂本体基础研究新论文入选。</div>
+</div>
+
+<!-- 6. DeepSeek 专栏 -->
+<div class="section">
+  <div class="section-title">DeepSeek 专栏 <span class="section-count">3</span></div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">DeepSeek 开源 DeepInfer：高性能推理框架，支持英伟达 SM100 与华为昇腾 950</h3>
+      <span class="card-meta">2026-10-20 · AI Weekly / DeepSeek 仓库</span>
+    </div>
+    <p class="card-summary">DeepSeek 在 GitHub 以 Apache 2.0 许可开源了 DeepInfer，官方称其为"支撑 DeepSeek 大规模生产服务的高性能推理框架"，目标是 DeepSeek-V4.1-Flash 模型，同时支持英伟达 SM100 GPU 与华为昇腾 950 NPU。后者正是 DeepSeek 上周宣布计划在 2026 年底前用于预训练的国产芯片。代码仓库承载了 DeepSeek 近期系统论文中多项技术的生产化实现。</p>
+    <p class="card-comment">DeepInfer 的开源意义在于把推理框架与国产 NPU 深度绑定，为在华为昇腾生态上复现 DeepSeek 推理性能提供了官方级工具，进一步降低国内 AI 基础设施的迁移成本。</p>
+    <div class="tags"><span class="tag">开源</span><span class="tag">推理框架</span><span class="tag">昇腾 950</span><span class="tag">安全研究</span></div>
+    <a class="card-link" href="https://aiweekly.co/ai-news-today/edition/2026-10-20">来源：AI Weekly 每日版（2026-10-20）</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">DeepSeek 拟完成 150 亿美元融资，加快 AI 竞赛步伐</h3>
+      <span class="card-meta">2026-10-22 · Reuters</span>
+    </div>
+    <p class="card-summary">据路透社消息，DeepSeek 即将完成约 150 亿美元规模的融资，以巩固其在基础模型与基础设施方面的投入。与此对应，美国方面于 10 月 19 日禁止政府部门使用中国 AI 服务（包括 DeepSeek）。地缘政治与资本流入的张力反映出 DeepSeek 在全球 AI 格局中的关键位置。</p>
+    <p class="card-comment">融资规模与政府禁令的同期出现，说明 DeepSeek 已经从单纯模型厂商上升为具有地缘影响力的 AI 主体，其后续在美国市场的发展空间将取决于本土化部署与合规路径。</p>
+    <div class="tags"><span class="tag">DeepSeek</span><span class="tag">融资</span><span class="tag">地缘政策</span><span class="tag red">政策风险</span></div>
+    <a class="card-link" href="https://www.reuters.com/technology/deepseek">来源：Reuters — DeepSeek 专题</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">DeepSeek 论文再证"AI 肌肉脑袋时代"终结</h3>
+      <span class="card-meta">2026-10-21 · Constellation Research</span>
+    </div>
+    <p class="card-summary">Constellation Research 专栏作者 Larry Dignan 将 DeepSeek 近期论文视为"AI 暴力堆算力时代接近尾声"的又一证据。文章认为，DeepSeek 的系统级效率优化路线正在改变以更大参数、更大集群为核心的叙事，推动产业把注意力转向推理效率、内存系统与硬件协同设计。</p>
+    <p class="card-comment">此类产业观察并非独立新发现，但反映了本周国际市场对 DeepSeek 范式影响力的持续确认：效率叙事正在成为全球 AI 产业对话的主轴之一。</p>
+    <div class="tags"><span class="tag">DeepSeek</span><span class="tag">效率</span><span class="tag">推理优化</span><span class="tag accent">媒体观察</span></div>
+    <a class="card-link" href="https://www.constellationr.com/insights/news/deepseeks-paper-latest-evidence-ai-muscle-head-era-coming-end">来源：Constellation Research</a>
+  </div>
+</div>
+
+<!-- 7. 顶级会议与学术动态 -->
+<div class="section">
+  <div class="section-title">顶级会议与学术动态 <span class="section-count">2</span></div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">EMNLP 2026 于布达佩斯开幕：NLP 领域进入十月会期</h3>
+      <span class="card-meta">2026-10-24 — 10-29 · 布达佩斯，匈牙利</span>
+    </div>
+    <p class="card-summary">EMNLP 2026 于 10 月 24 日在布达佩斯开幕，持续至 10 月 29 日。作为计算语言学与自然语言处理的顶级会议，本届会议包含长文、短文、研讨会与系统演示等多项环节，论文提交在 5 月 25 日截止，目前论文评审已完成，进入会程展示阶段。</p>
+    <p class="card-comment">EMNLP 是本周唯一正在召开的顶级 NLP 会议，本周内陆续释出的论文、演示与 workshop 内容，将构成未来一周各科技媒体与学术社区讨论的主要素材之一，值得重点关注。</p>
+    <div class="tags"><span class="tag">EMNLP 2026</span><span class="tag">自然语言处理</span><span class="tag">布达佩斯</span></div>
+    <a class="card-link" href="https://github.com/khairulislam/ML-conferences">来源：ML 会议日程清单（GitHub）</a>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Roboflow 会议动态：2026-10-22 旧金山计算机视觉峰会</h3>
+      <span class="card-meta">2026-10-22 · The Midway，旧金山，美国</span>
+    </div>
+    <p class="card-summary">Roboflow 于 10 月 22 日在旧金山 The Midway 举办年度智能视觉峰会，聚焦面向产品与工程团队的视觉系统部署。Roboflow 的会议目录同时更新了 NeurIPS 2026、ICML 2026、CVPR 2026 等会议的日程与关键信息，并将 NeurIPS 2026 定位为追踪基础模型、强化学习、多模态系统与高效推断等方向的年度核心会议。</p>
+    <p class="card-comment">该峰会并非传统学术会议，但其受众与 CVPR/NeurIPS 的工程落地方向重合度较高。在当前产业界更关注"产品化视觉"而非纯学术指标的背景下，这类会议的价值正在上升。</p>
+    <div class="tags"><span class="tag">计算机视觉</span><span class="tag">Roboflow</span><span class="tag">工程部署</span></div>
+    <a class="card-link" href="https://roboflow.com/blog/ai-computer-vision-conferences">来源：Roboflow 博客</a>
+  </div>
+</div>
+
+<!-- 8. AI 基础设施与能效 -->
+<div class="section">
+  <div class="section-title">AI 基础设施与能效 <span class="section-count">1</span></div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">英伟达 DGX Spark 64GB 桌面 AI 计算机于 10 月 23 日发售</h3>
+      <span class="card-meta">2026-10-23 · IT 时代网 / 腾讯新闻技术频道</span>
+    </div>
+    <p class="card-summary">英伟达披露 DGX Spark 桌面 AI 计算机将推出 64GB 内存版本，于 10 月 23 日发售。该设备基于 GB10 Grace-Blackwell 超算芯片，面向本地 AI 模型微调与高效推理场景，宏碁、戴尔、华硕等 OEM 厂商将同步推出基于该平台的整机。同期，CoreWeave 宣布英伟达 Vera Rubin NVL72 系统在其云平台正式投入生产，实测强化学习场景吞吐量达到 GB200 NVL72 的 3.8 倍，最大提升 4.8 倍。</p>
+    <p class="card-comment">桌面级与云端的 AI 基础设施同时在本周扩产放量，说明英伟达正在同时主攻"企业本地推理"与"超大规模数据中心"两个市场。桌面 64GB 版本的普及将为个人开发者和小团队提供比以往更强的本地微调条件。</p>
+    <div class="tags"><span class="tag">NVIDIA</span><span class="tag">DGX Spark</span><span class="tag">Vera Rubin</span><span class="tag">AI 基础设施</span></div>
+    <a class="card-link" href="https://www.sohu.com/a/1088622556_121423427">来源：IT 时代网（搜狐）</a>
+  </div>
+</div>
+
+<!-- 9. 产业与政策 -->
+<div class="section">
+  <div class="section-title">产业与政策 <span class="section-count">1</span></div>
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">首批六项人形机器人国家标准正式获批，机器人板块催化密集</h3>
+      <span class="card-meta">2026-10-21 · 每经网 / 新浪财经</span>
+    </div>
+    <p class="card-summary">国内首批六项人形机器人领域国家标准已正式获批，为人形机器人产业的标准化与规模化发展提供制度基础。多部门发文推动具身智能进入商贸场景，进一步打开从工业端向消费端和服务业延伸的应用空间。同时，海外科技巨头计划自研人形机器人并将"大脑"研发列为重点，海外车企龙头的量产进程也持续推进，产业链反馈本体周产量较年初明显爬坡。</p>
+    <p class="card-comment">国标获批是人形机器人从"能造出来"到"能规模化监管、检测、流通"的关键一步，意味着后续在质检、安全、互操作性方面有了评判尺度，对二级市场的机器人板块形成直接催化。</p>
+    <div class="tags"><span class="tag">人形机器人</span><span class="tag">国家标准</span><span class="tag">具身智能政策</span><span class="tag accent">政策</span></div>
+    <a class="card-link" href="https://finance.sina.com.cn/stock/t/2026-10-21/doc-inivxvuv6270757.shtml">来源：新浪财经（每日经济新闻）</a>
+  </div>
+</div>
+
+<footer>
+  <span>生成时间：2026年10月26日</span>
+  <span>免责声明：本报告仅作信息汇编与学术交流用途，不构成投资或政策建议。所有内容均来源于公开网络素材，原始来源链接已标注，版权归属原发布方。</span>
+</footer>
+</div>
+</body>
+</html>
